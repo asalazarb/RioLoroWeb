@@ -1,0 +1,2 @@
+class Reino < ApplicationRecord
+end

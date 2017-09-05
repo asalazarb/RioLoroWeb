@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @log.fecha %>
+</p>
+
+<p>
+  <strong>Hora:</strong>
+  <%= @log.hora %>
+</p>
+
+<p>
+  <strong>Accion:</strong>
+  <%= @log.accion %>
+</p>
+
+<%= link_to 'Edit', edit_log_path(@log) %> |
+<%= link_to 'Back', logs_path %>

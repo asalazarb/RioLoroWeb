@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombrecomun:</strong>
+  <%= @especy.nombreComun %>
+</p>
+
+<p>
+  <strong>Nombrecientifico:</strong>
+  <%= @especy.nombreCientifico %>
+</p>
+
+<p>
+  <strong>Imagen:</strong>
+  <%= @especy.imagen %>
+</p>
+
+<p>
+  <strong>Taxomomia:</strong>
+  <%= @especy.taxomomia %>
+</p>
+
+<p>
+  <strong>Estaenpeligro:</strong>
+  <%= @especy.estaEnPeligro %>
+</p>
+
+<%= link_to 'Edit', edit_especy_path(@especy) %> |
+<%= link_to 'Back', especies_path %>

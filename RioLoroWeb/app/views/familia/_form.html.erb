@@ -1,0 +1,22 @@
+<%= form_with(model: familium, local: true) do |form| %>
+  <% if familium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(familium.errors.count, "error") %> prohibited this familium from being saved:</h2>
+
+      <ul>
+      <% familium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombreFamilia %>
+    <%= form.text_field :nombreFamilia, id: :familium_nombreFamilia %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

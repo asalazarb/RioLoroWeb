@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombreComun: MyString
+  nombreCientifico: MyString
+  imagen: MyString
+  taxomomia: MyString
+  estaEnPeligro: 
+
+two:
+  nombreComun: MyString
+  nombreCientifico: MyString
+  imagen: MyString
+  taxomomia: MyString
+  estaEnPeligro: 
