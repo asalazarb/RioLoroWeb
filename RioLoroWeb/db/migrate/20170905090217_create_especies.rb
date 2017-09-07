@@ -5,7 +5,7 @@ class CreateEspecies < ActiveRecord::Migration[5.1]
       t.string :nombreCientifico
       t.string :imagen
       t.string :taxomomia
-      t.bool :estaEnPeligro
+      t.boolean :estaEnPeligro
 
       t.belongs_to :reino
       t.belongs_to :orden
