@@ -4,6 +4,8 @@ class CreateInventarios < ActiveRecord::Migration[5.1]
       t.string :nombre
       t.string :ubicacion
 
+      t.has_many :especies
+      t.has_one :log
       t.timestamps
     end
   end

@@ -8,6 +8,7 @@ class CreateUsuarios < ActiveRecord::Migration[5.1]
       t.string :nombreUsuario
       t.string :password
 
+      t.has_one :tipo_usuario
       t.timestamps
     end
   end
