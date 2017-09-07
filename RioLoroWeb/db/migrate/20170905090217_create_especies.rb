@@ -7,7 +7,10 @@ class CreateEspecies < ActiveRecord::Migration[5.1]
       t.string :taxomomia
       t.bool :estaEnPeligro
 
-      t.belongs_to :reino, :orden, :familium, :clase
+      t.belongs_to :reino
+      t.belongs_to :orden
+      t.belongs_to :familium
+      t.belongs_to :clase
       t.timestamps
     end
   end
