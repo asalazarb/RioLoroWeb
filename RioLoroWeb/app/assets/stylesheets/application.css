@@ -12,4 +12,11 @@
  *
  *= require_tree .
  *= require_self
- */
+*/
+
+ @import "bootstrap";
+ @import "style.green-500.scss";
+ @import "plugins.scss";
+ @import "preload.scss";
+ /*@import "font-awesome-sprockets";*/
+ /*@import "font-awesome";*/

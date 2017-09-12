@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   resources :ordens
   resources :reinos
   get 'home/index'
-
   resources :especies
 
   root 'home#index'
