@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :tipo_usuarios
   resources :usuarios
   resources :accions
