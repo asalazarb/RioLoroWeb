@@ -15,6 +15,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require ecommerce
-//= require app.min
+
 //= require plugins.min
-//= require_tree .
+//= require app.min
+//= require portfolio
