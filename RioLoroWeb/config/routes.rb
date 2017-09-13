@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :especies
 
   root 'home#index'
+
+  
 end
