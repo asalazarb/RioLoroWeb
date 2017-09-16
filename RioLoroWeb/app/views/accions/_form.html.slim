@@ -1,0 +1,15 @@
+= form_with(model: accion, local: true) do |form|
+  - if accion.errors.any?
+    #error_explanation
+      h2
+        = pluralize(accion.errors.count, "error")
+        |  prohibited this accion from being saved:
+      ul
+        - accion.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :accion
+    = form.text_field :accion, id: :accion_accion
+  .actions
+    = form.submit

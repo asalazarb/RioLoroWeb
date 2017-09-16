@@ -1,0 +1,11 @@
+p
+  strong
+    | Nombre:
+  = @inventario.nombre
+p
+  strong
+    | Ubicacion:
+  = @inventario.ubicacion
+= link_to 'Edit', edit_inventario_path(@inventario)
+|  | 
+= link_to 'Back', inventarios_path

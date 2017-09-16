@@ -1,0 +1,27 @@
+p#notice
+  = notice
+h1
+  | Inventarios
+table
+  thead
+    tr
+      th
+        | Nombre
+      th
+        | Ubicacion
+      th[colspan="3"]
+  tbody
+    - @inventarios.each do |inventario|
+      tr
+        td
+          = inventario.nombre
+        td
+          = inventario.ubicacion
+        td
+          = link_to 'Show', inventario
+        td
+          = link_to 'Edit', edit_inventario_path(inventario)
+        td
+          = link_to 'Destroy', inventario, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Inventario', new_inventario_path

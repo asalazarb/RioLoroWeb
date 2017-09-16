@@ -1,0 +1,15 @@
+= form_with(model: clase, local: true) do |form|
+  - if clase.errors.any?
+    #error_explanation
+      h2
+        = pluralize(clase.errors.count, "error")
+        |  prohibited this clase from being saved:
+      ul
+        - clase.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :nombreClase
+    = form.text_field :nombreClase, id: :clase_nombreClase
+  .actions
+    = form.submit

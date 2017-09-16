@@ -1,0 +1,15 @@
+= form_with(model: reino, local: true) do |form|
+  - if reino.errors.any?
+    #error_explanation
+      h2
+        = pluralize(reino.errors.count, "error")
+        |  prohibited this reino from being saved:
+      ul
+        - reino.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :nombreReino
+    = form.text_field :nombreReino, id: :reino_nombreReino
+  .actions
+    = form.submit

@@ -1,0 +1,23 @@
+p#notice
+  = notice
+h1
+  | Reinos
+table
+  thead
+    tr
+      th
+        | Nombrereino
+      th[colspan="3"]
+  tbody
+    - @reinos.each do |reino|
+      tr
+        td
+          = reino.nombreReino
+        td
+          = link_to 'Show', reino
+        td
+          = link_to 'Edit', edit_reino_path(reino)
+        td
+          = link_to 'Destroy', reino, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Reino', new_reino_path

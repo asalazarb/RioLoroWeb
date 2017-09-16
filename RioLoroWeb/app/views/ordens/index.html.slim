@@ -1,0 +1,23 @@
+p#notice
+  = notice
+h1
+  | Ordens
+table
+  thead
+    tr
+      th
+        | Nombreorden
+      th[colspan="3"]
+  tbody
+    - @ordens.each do |orden|
+      tr
+        td
+          = orden.nombreOrden
+        td
+          = link_to 'Show', orden
+        td
+          = link_to 'Edit', edit_orden_path(orden)
+        td
+          = link_to 'Destroy', orden, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Orden', new_orden_path

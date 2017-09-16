@@ -1,0 +1,15 @@
+p
+  strong
+    | Fecha:
+  = @log.fecha
+p
+  strong
+    | Hora:
+  = @log.hora
+p
+  strong
+    | Accion:
+  = @log.accion
+= link_to 'Edit', edit_log_path(@log)
+|  | 
+= link_to 'Back', logs_path
