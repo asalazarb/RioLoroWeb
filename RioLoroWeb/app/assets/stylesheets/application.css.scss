@@ -12,11 +12,9 @@
  *
 
  *= require_self
+
+ * Plugins scss ya contiene bootstrap
 */
- @import "bootstrap-sprockets";
- @import "bootstrap";
- /**@import "font-awesome-sprockets";
- @import "font-awesome";*/
 
  @import "preload.min.css";
  @import "plugins.scss";
