@@ -18,8 +18,8 @@ html
 
       /! HEADER
       = render :partial => 'layouts/header'
-
-      = render :partial => 'layouts/content_header'
+      
+      = yield :content_header
       .container
         = yield
       = render :partial => 'layouts/footer'

@@ -1,10 +1,9 @@
-.ms-hero-page.ms-hero-img-city2.ms-hero-bg-info.mb-6
-  .text-center.color-white.mt-6.mb-6.index-1
-    h1 Material Style Store
-    p.lead.lead-lg
-      | Welcome to the Material Style Store. Discover the latest products at incredible prices.
-      br/
-      | Don't forget to check our daily offers.
-    a.btn.btn-raised.btn-white.color-danger href="javascript:void(0)"
-      i.zmdi.zmdi-label
-      | Latest offers
+- content_for :content_header do
+  .ms-hero-page.ms-hero-img-city2.ms-hero-bg-info.mb-6
+    .text-center.color-white.mt-6.mb-6.index-1
+      h1 #{@title}
+      p.lead.lead-lg
+        | #{@description}
+        - unless @description2.nil?
+          br/
+          | #{@description2}
