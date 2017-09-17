@@ -1,0 +1,27 @@
+p#notice
+  = notice
+h1
+  | Tipo Usuarios
+table
+  thead
+    tr
+      th
+        | Nombretipo
+      th
+        | Nivelpermiso
+      th[colspan="3"]
+  tbody
+    - @tipo_usuarios.each do |tipo_usuario|
+      tr
+        td
+          = tipo_usuario.nombreTipo
+        td
+          = tipo_usuario.nivelPermiso
+        td
+          = link_to 'Show', tipo_usuario
+        td
+          = link_to 'Edit', edit_tipo_usuario_path(tipo_usuario)
+        td
+          = link_to 'Destroy', tipo_usuario, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Tipo Usuario', new_tipo_usuario_path

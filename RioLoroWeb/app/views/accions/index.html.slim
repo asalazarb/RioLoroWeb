@@ -1,0 +1,23 @@
+p#notice
+  = notice
+h1
+  | Accions
+table
+  thead
+    tr
+      th
+        | Accion
+      th[colspan="3"]
+  tbody
+    - @accions.each do |accion|
+      tr
+        td
+          = accion.accion
+        td
+          = link_to 'Show', accion
+        td
+          = link_to 'Edit', edit_accion_path(accion)
+        td
+          = link_to 'Destroy', accion, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Accion', new_accion_path

@@ -1,0 +1,23 @@
+p#notice
+  = notice
+h1
+  | Familia
+table
+  thead
+    tr
+      th
+        | Nombrefamilia
+      th[colspan="3"]
+  tbody
+    - @familia.each do |familium|
+      tr
+        td
+          = familium.nombreFamilia
+        td
+          = link_to 'Show', familium
+        td
+          = link_to 'Edit', edit_familium_path(familium)
+        td
+          = link_to 'Destroy', familium, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Familium', new_familium_path

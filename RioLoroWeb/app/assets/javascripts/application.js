@@ -10,11 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require rails-ujs
-//= require turbolinks
-//= require ecommerce
+// Plugins ya contiene jquery, bootstrap, etc.
 
 //= require plugins.min
 //= require app.min

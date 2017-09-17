@@ -1,0 +1,110 @@
+- @title="Especies"
+- @description = "Welcome to the Material Style Store. Discover the latest products at incredible prices"
+- @description2 = "Don't forget to check our daily offers."
+
+= render :partial => 'layouts/content_header'
+
+.row
+  .col-md-3.hidden-sm.hidden-xs
+    .card.card-primary
+      .card-header
+        h3.card-title
+          i.zmdi.zmdi-filter-list
+          | Filter List
+      .card-block.no-pb
+        form.form-horizontal
+          h4.no-m.color-primary
+            | Categories
+          .form-group.mt-1
+            .radio.no-mb
+              label
+                input#optionsRadios0.filter[type="radio" name="optionsRadios" value="option0" checked="" data-filter="all"]
+                |  All
+            .radio.no-mb
+              label
+                input#optionsRadios1.filter[type="radio" name="optionsRadios" value="option1" data-filter=".category-1"]
+                |  Category One
+            .radio.no-mb
+              label
+                input#optionsRadios2.filter[type="radio" name="optionsRadios" value="option2" data-filter=".category-2"]
+                |  Category Two
+            .radio.no-mb
+              label
+                input#optionsRadios3.filter[type="radio" name="optionsRadios" value="option3" data-filter=".category-3"]
+                |  Category Three
+            .radio.no-mb
+              label
+                input#optionsRadios4.filter[type="radio" name="optionsRadios" value="option4" data-filter=".category-4"]
+                |  Category Four
+            .radio.no-mb
+              label
+                input#optionsRadios5.filter[type="radio" name="optionsRadios" value="option5" data-filter=".category-5"]
+                |  Category Five
+            .radio.no-mb
+              label
+                input#optionsRadios6.filter[type="radio" name="optionsRadios" value="option6" data-filter=".category-6"]
+                |  Category Six
+        h4.mt-2.color-primary.no-mb
+          | Columns
+      ul.nav.nav-tabs.nav-tabs-transparent.indicator-primary.nav-tabs-full.nav-tabs-4[role="tablist"]
+        li
+          a#Cols1.withoutripple[href="#home7" aria-controls="home7" role="tab" data-toggle="tab"]
+            | 1
+        li
+          a#Cols2.withoutripple[href="#profile7" aria-controls="profile7" role="tab" data-toggle="tab"]
+            | 2
+        li.active
+          a#Cols3.withoutripple[href="#messages7" aria-controls="messages7" role="tab" data-toggle="tab"]
+            | 3
+        li
+          a#Cols4.withoutripple[href="#settings7" aria-controls="settings7" role="tab" data-toggle="tab"]
+            | 4
+      .card-block
+        form.form-horizontal
+          .form-group.no-mt
+            .col-md-12
+              h4.no-m.color-primary.mb-2
+                | Descriptions
+              .togglebutton
+                label
+                  input#port-show[type="checkbox"]
+                  |  Show description
+  .col-md-9
+    #Container.row
+      .col-md-4.col-sm-6.mix.category-1
+        .card
+          figure.ms-thumbnail
+            = image_tag("port14.jpg", class: "img-responsive")
+            figcaption.ms-thumbnail-caption.text-center
+              .ms-thumbnail-caption-content
+                h4.ms-thumbnail-caption-title.mb-2
+                  | Lorem ipsum dolor
+                a.btn-circle.btn-circle-raised.btn-circle-xs.mr-1.btn-circle-white.color-danger[href="javascript:void(0)"]
+                  i.zmdi.zmdi-favorite
+                a.btn-circle.btn-circle-raised.btn-circle-xs.ml-1.mr-1.btn-circle-white.color-warning[href="javascript:void(0)"]
+                  i.zmdi.zmdi-star
+                a.btn-circle.btn-circle-raised.btn-circle-xs.ml-1.btn-circle-white.color-success[href="javascript:void(0)"]
+                  i.zmdi.zmdi-share
+          .card-block.text-center.portfolio-item-caption.hidden
+            h3.color-primary.no-mt
+              | Lorem ipsum dolor
+            p
+              | Explicabo consequatur quidem praesentium quas qui eius ina Cupiditate ratione sint.
+      .col-md-4.col-sm-6.mix.category-3
+        .card
+          figure.ms-thumbnail
+            figcaption.ms-thumbnail-caption.text-center
+              .ms-thumbnail-caption-content
+                h4.ms-thumbnail-caption-title.mb-2
+                  | Lorem ipsum dolor
+                a.btn-circle.btn-circle-raised.btn-circle-xs.mr-1.btn-circle-white.color-danger[href="javascript:void(0)"]
+                  i.zmdi.zmdi-favorite
+                a.btn-circle.btn-circle-raised.btn-circle-xs.ml-1.mr-1.btn-circle-white.color-warning[href="javascript:void(0)"]
+                  i.zmdi.zmdi-star
+                a.btn-circle.btn-circle-raised.btn-circle-xs.ml-1.btn-circle-white.color-success[href="javascript:void(0)"]
+                  i.zmdi.zmdi-share
+          .card-block.text-center.portfolio-item-caption.hidden
+            h3.color-primary.no-mt
+              | Lorem ipsum dolor
+            p
+              | Explicabo consequatur quidem praesentium quas qui eius ina Cupiditate ratione sint.

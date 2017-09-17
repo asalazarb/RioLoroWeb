@@ -1,0 +1,27 @@
+= form_with(model: especy, local: true) do |form|
+  - if especy.errors.any?
+    #error_explanation
+      h2
+        = pluralize(especy.errors.count, "error")
+        |  prohibited this especy from being saved:
+      ul
+        - especy.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :nombreComun
+    = form.text_field :nombreComun, id: :especy_nombreComun
+  .field
+    = form.label :nombreCientifico
+    = form.text_field :nombreCientifico, id: :especy_nombreCientifico
+  .field
+    = form.label :imagen
+    = form.text_field :imagen, id: :especy_imagen
+  .field
+    = form.label :taxomomia
+    = form.text_field :taxomomia, id: :especy_taxomomia
+  .field
+    = form.label :estaEnPeligro
+    = form.text_field :estaEnPeligro, id: :especy_estaEnPeligro
+  .actions
+    = form.submit

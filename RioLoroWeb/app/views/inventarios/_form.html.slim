@@ -1,0 +1,18 @@
+= form_with(model: inventario, local: true) do |form|
+  - if inventario.errors.any?
+    #error_explanation
+      h2
+        = pluralize(inventario.errors.count, "error")
+        |  prohibited this inventario from being saved:
+      ul
+        - inventario.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :nombre
+    = form.text_field :nombre, id: :inventario_nombre
+  .field
+    = form.label :ubicacion
+    = form.text_field :ubicacion, id: :inventario_ubicacion
+  .actions
+    = form.submit

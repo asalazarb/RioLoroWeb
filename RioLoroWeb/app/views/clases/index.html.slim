@@ -1,0 +1,23 @@
+p#notice
+  = notice
+h1
+  | Clases
+table
+  thead
+    tr
+      th
+        | Nombreclase
+      th[colspan="3"]
+  tbody
+    - @clases.each do |clase|
+      tr
+        td
+          = clase.nombreClase
+        td
+          = link_to 'Show', clase
+        td
+          = link_to 'Edit', edit_clase_path(clase)
+        td
+          = link_to 'Destroy', clase, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New Clase', new_clase_path

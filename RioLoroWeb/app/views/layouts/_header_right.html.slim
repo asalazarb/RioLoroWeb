@@ -1,0 +1,43 @@
+.header-right
+  .share-menu
+    ul.share-menu-list
+      li.animated.fadeInRight.animation-delay-3
+        a.btn-circle.btn-google href="javascript:void(0)"
+          i.zmdi.zmdi-google
+      li.animated.fadeInRight.animation-delay-2
+        a.btn-circle.btn-facebook href="javascript:void(0)"
+          i.zmdi.zmdi-facebook
+      li.animated.fadeInRight.animation-delay-1
+        a.btn-circle.btn-twitter href="javascript:void(0)"
+          i.zmdi.zmdi-twitter
+    a.btn-circle.btn-circle-primary.animated.zoomInDown.animation-delay-7 href="javascript:void(0)"
+      i.zmdi.zmdi-share
+  a.btn-circle.btn-circle-primary.no-focus.animated.zoomInDown.animation-delay-8 data-target="#ms-account-modal" data-toggle="modal" href="javascript:void(0)"
+    i.zmdi.zmdi-account
+  form.search-form.animated.zoomInDown.animation-delay-9
+    input#search-box.search-input name="q" placeholder="Search..." type="text" /
+    label for="search-box"
+      i.zmdi.zmdi-search
+  a.btn-ms-menu.btn-circle.btn-circle-primary.sb-toggle-left.animated.zoomInDown.animation-delay-10 href="javascript:void(0)"
+    i.zmdi.zmdi-menu
+
+
+/ p.navbar-text.pull-right
+  - if user_signed_in?
+    |  Logged in as
+    strong
+      = current_user.email
+    | .
+    = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
+    |  |
+    = link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'
+  - else
+    = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
+    |  |
+    = link_to "Login", new_user_session_path, :class => 'navbar-link'
+- if notice
+  p.alert.alert-success
+    = notice
+- if alert
+  p.alert.alert-danger
+    = alert

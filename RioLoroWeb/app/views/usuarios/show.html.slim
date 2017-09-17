@@ -1,0 +1,27 @@
+p
+  strong
+    | Nombre:
+  = @usuario.nombre
+p
+  strong
+    | Apellido1:
+  = @usuario.apellido1
+p
+  strong
+    | Apellido2:
+  = @usuario.apellido2
+p
+  strong
+    | Cedula:
+  = @usuario.cedula
+p
+  strong
+    | Nombreusuario:
+  = @usuario.nombreUsuario
+p
+  strong
+    | Password:
+  = @usuario.password
+= link_to 'Edit', edit_usuario_path(@usuario)
+|  | 
+= link_to 'Back', usuarios_path
