@@ -5,7 +5,6 @@ class EspeciesController < ApplicationController
   # GET /especies.json
   def index
     @especies = Especie.all
-    render :layout => false
   end
 
   # GET /especies/1
