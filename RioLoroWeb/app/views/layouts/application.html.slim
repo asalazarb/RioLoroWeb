@@ -2,29 +2,27 @@ doctype html
 html
   head
     title
-      | RioLoroWeb
+      | #{@title} | BioInventario
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag 'application','https://fonts.googleapis.com/icon?family=Material+Icons', media: 'all', 'data-turbolinks-track' => true
+    / TODO: IF LT IE 9 INCLUDE HTML5SHIV Y RESPOND
   body
-    p.navbar-text.pull-right
-      - if user_signed_in?
-        |  Logged in as 
-        strong
-          = current_user.email
-        | . 
-        = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
-        |  | 
-        = link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'
-      - else
-        = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
-        |  | 
-        = link_to "Login", new_user_session_path, :class => 'navbar-link'
-    - if notice
-      p.alert.alert-success
-        = notice
-    - if alert
-      p.alert.alert-danger
-        = alert
-    = yield
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    #ms-preload.ms-preload
+      #status
+        .spinner
+          .dot1
+          .dot2
+    .sb-site-container
+      = render :partial => 'layouts/modal_login'
+
+      /! HEADER
+      = render :partial => 'layouts/header'
+
+      = render :partial => 'layouts/content_header'
+      .container
+        = yield
+      = render :partial => 'layouts/footer'
+    = render :partial => 'layouts/sliderbar_overlay'
+
+  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

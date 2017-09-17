@@ -13,13 +13,11 @@
 
  *= require_self
 */
-/*@import "font-awesome-sprockets";*/
-
 
  @import "bootstrap";
- @import "font-awesome-sprockets";
- @import "font-awesome";
+ /**@import "font-awesome-sprockets";
+ @import "font-awesome";*/
 
- @import "preload.scss";
- @import "plugins.scss";
- @import "style.green-500.min.scss";
+ @import "preload.min.css";
+ @import "plugins.min.css";
+ @import "style.deep-orange-500.min.css";

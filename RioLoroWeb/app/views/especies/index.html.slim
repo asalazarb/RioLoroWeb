@@ -1,1036 +1,1467 @@
-#ms-preload.ms-preload
-  #status
-    .spinner
-      .dot1
-      .dot2
-.sb-site-container
-  #ms-account-modal.modal.modal-primary[tabindex="-1" role="dialog" aria-labelledby="myModalLabel"]
-    .modal-dialog.animated.zoomIn.animated-3x[role="document"]
-      .modal-content
-        .modal-header.shadow-2dp.no-pb
-          button.close[type="button" data-dismiss="modal" aria-label="Close"]
-            span[aria-hidden="true"]
-              i.zmdi.zmdi-close
-          .modal-title.text-center
-            span.ms-logo.ms-logo-white.ms-logo-sm.mr-1
-              | M
-            h3.no-m.ms-site-title
-              | Bio
-              span
-                | Inventario
-          .modal-header-tabs
-            ul.nav.nav-tabs.nav-tabs-full.nav-tabs-3.nav-tabs-primary[role="tablist"]
-              li.active[role="presentation"]
-                a.withoutripple[href="#ms-login-tab" aria-controls="ms-login-tab" role="tab" data-toggle="tab"]
-                  i.zmdi.zmdi-account
-                  |  Login
-              li[role="presentation"]
-                a.withoutripple[href="#ms-register-tab" aria-controls="ms-register-tab" role="tab" data-toggle="tab"]
-                  i.zmdi.zmdi-account-add
-                  |  Register
-              li[role="presentation"]
-                a.withoutripple[href="#ms-recovery-tab" aria-controls="ms-recovery-tab" role="tab" data-toggle="tab"]
-                  i.zmdi.zmdi-key
-                  |  Recovery Pass
-        .modal-body
-          .tab-content
-            #ms-login-tab.tab-pane.fade.active.in[role="tabpanel"]
-              form[autocomplete="off"]
-                fieldset
-                  .form-group.label-floating
-                    .input-group
-                      span.input-group-addon
-                        i.zmdi.zmdi-account
-                      label.control-label[for="ms-form-user"]
-                        | Username
-                      input#ms-form-user.form-control[type="text"]
-                  .form-group.label-floating
-                    .input-group
-                      span.input-group-addon
-                        i.zmdi.zmdi-lock
-                      label.control-label[for="ms-form-pass"]
-                        | Password
-                      input#ms-form-pass.form-control[type="password"]
-                  .row.mt-2
-                    .col-md-6
-                      .form-group.no-mt
-                        .checkbox
-                          label
-                            input[type="checkbox"]
-                            |  Remember Me
-                    .col-md-6
-                      button.btn.btn-raised.btn-primary.pull-right
-                        | Login
-              .text-center
-                h3
-                  | Login with
-                a.wave-effect-light.btn.btn-raised.btn-facebook[href="javascript:void(0)"]
-                  i.zmdi.zmdi-facebook
-                  |  Facebook
-                a.wave-effect-light.btn.btn-raised.btn-twitter[href="javascript:void(0)"]
-                  i.zmdi.zmdi-twitter
-                  |  Twitter
-                a.wave-effect-light.btn.btn-raised.btn-google[href="javascript:void(0)"]
-                  i.zmdi.zmdi-google
-                  |  Google
-            #ms-register-tab.tab-pane.fade[role="tabpanel"]
-              form
-                fieldset
-                  .form-group.label-floating
-                    .input-group
-                      span.input-group-addon
-                        i.zmdi.zmdi-account
-                      label.control-label[for="ms-form-user"]
-                        | Username
-                      input#ms-form-user.form-control[type="text"]
-                  .form-group.label-floating
-                    .input-group
-                      span.input-group-addon
-                        i.zmdi.zmdi-email
-                      label.control-label[for="ms-form-email"]
-                        | Email
-                      input#ms-form-email.form-control[type="email"]
-                  .form-group.label-floating
-                    .input-group
-                      span.input-group-addon
-                        i.zmdi.zmdi-lock
-                      label.control-label[for="ms-form-pass"]
-                        | Password
-                      input#ms-form-pass.form-control[type="password"]
-                  .form-group.label-floating
-                    .input-group
-                      span.input-group-addon
-                        i.zmdi.zmdi-lock
-                      label.control-label[for="ms-form-pass"]
-                        | Re-type Password
-                      input#ms-form-pass.form-control[type="password"]
-                  button.btn.btn-raised.btn-block.btn-primary
-                    | Register Now
-            #ms-recovery-tab.tab-pane.fade[role="tabpanel"]
-              fieldset
-                .form-group.label-floating
-                  .input-group
-                    span.input-group-addon
-                      i.zmdi.zmdi-account
-                    label.control-label[for="ms-form-user"]
-                      | Username
-                    input#ms-form-user.form-control[type="text"]
-                .form-group.label-floating
-                  .input-group
-                    span.input-group-addon
-                      i.zmdi.zmdi-email
-                    label.control-label[for="ms-form-email"]
-                      | Email
-                    input#ms-form-email.form-control[type="email"]
-                button.btn.btn-raised.btn-block.btn-primary
-                  | Send Password
-  header.ms-header.ms-header-white
-    .container.container-full
-      .ms-title
-        a[href="/especies"]
-          span.ms-logo.animated.zoomInDown.animation-delay-5
-            | M
-        h1.animated.fadeInRight.animation-delay-6
-          | Bio
-          span
-            | Inventario
-      .header-right
-        .share-menu
-          ul.share-menu-list
-            li.animated.fadeInRight.animation-delay-3
-              a.btn-circle.btn-google[href="javascript:void(0)"]
-                i.zmdi.zmdi-google
-            li.animated.fadeInRight.animation-delay-2
-              a.btn-circle.btn-facebook[href="javascript:void(0)"]
-                i.zmdi.zmdi-facebook
-            li.animated.fadeInRight.animation-delay-1
-              a.btn-circle.btn-twitter[href="javascript:void(0)"]
-                i.zmdi.zmdi-twitter
-          a.btn-circle.btn-circle-primary.animated.zoomInDown.animation-delay-7[href="javascript:void(0)"]
-            i.zmdi.zmdi-share
-        a.btn-circle.btn-circle-primary.no-focus.animated.zoomInDown.animation-delay-8[href="javascript:void(0)" data-toggle="modal" data-target="#ms-account-modal"]
-          i.zmdi.zmdi-account
-        form.search-form.animated.zoomInDown.animation-delay-9
-          input#search-box.search-input[type="text" placeholder="Search..." name="q"]
-          label[for="search-box"]
-            i.zmdi.zmdi-search
-        a.btn-ms-menu.btn-circle.btn-circle-primary.sb-toggle-left.animated.zoomInDown.animation-delay-10[href="javascript:void(0)"]
-          i.zmdi.zmdi-menu
-  nav.navbar.navbar-static-top.yamm.ms-navbar.ms-navbar-white
-    .container.container-full
-      .navbar-header
-        a.navbar-brand[href="index.html"]
-          span.ms-logo.ms-logo-sm
-            | M
-          span.ms-title
-            | Bio
-            strong
-              | Inventario
-      #navbar.navbar-collapse.collapse
-        ul.nav.navbar-nav
-          li.dropdown.active
-            a.dropdown-toggle.animated.fadeIn.animation-delay-4[href="javascript:void(0)" data-toggle="dropdown" data-hover="dropdown" data-name="home"]
-              | Home
-              i.zmdi.zmdi-chevron-down
-            ul.dropdown-menu
-              li
-                .ms-menu-double
-                  .tab-content.ms-menu-double-submenu-container
-                    #tab-1.tab-pane.active
+- @title="Especies"
 
-                    #tab-9.tab-pane
-                      ul.ms-menu-double-submenu
-                        li
-                          a[href="home-revolution.html"]
-                            | Home Revolution Devices
-                            span.label.label-success.pull-right
-                              | 1.3
-                        li
-                          a[href="home-revolution2.html"]
-                            | Home Revolution App
-                            span.label.label-success.pull-right
-                              | 1.3
-                        li
-                          a[href="home-revolution3.html"]
-                            | Home Revolution Video
-                            span.label.label-success.pull-right
-                              | 1.3
-                        li
-                          a[href="home-revolution4.html"]
-                            | Home Revolution Idea
-                            span.label.label-success.pull-right
-                              | 1.3
-                    #tab-3.tab-pane
-                      ul.ms-menu-double-submenu
-                        li
-                          a[href="home-shop.html"]
-                            | Home Shop 1
-                        li
-                          a[href="home-shop2.html"]
-                            | Home Shop 2
-                        li.disable
-                          a[href="javascript:void(0)"]
-                            | Home Shop 3 (Next Update)
-                        li.disable
-                          a[href="javascript:void(0)"]
-                            | Home Shop 4 (Next Update)
-                    #tab-8.tab-pane
-                      ul.ms-menu-double-submenu
-                        li
-                          a[href="home-cv.html"]
-                            | Home Profile 1
-                        li
-                          a[href="home-cv2.html"]
-                            | Home Profile 2
-                        li
-                          a[href="home-cv3.html"]
-                            | Home Profile Landing 1
-                        li
-                          a[href="home-cv4.html"]
-                            | Home Profile Landing 2
-                    #tab-4.tab-pane
-                      ul.ms-menu-double-submenu
-                        li
-                          a[href="home-blog.html"]
-                            | Home Blog 1
-                        li
-                          a[href="home-blog2.html"]
-                            | Home Blog 2
-                        li.disable
-                          a[href="javascript:void(0)"]
-                            | Home Blog 3 (Next Update)
-                        li.disable
-                          a[href="javascript:void(0)"]
-                            | Home Blog 4 (Next Update)
-                    #tab-5.tab-pane
-                      ul.ms-menu-double-submenu
-                        li
-                          a[href="home-magazine.html"]
-                            | Home Magazine 1
-                        li.disable
-                          a[href="javascript:void(0)"]
-                            | Magazine 2 (Next Update)
-                        li.disable
-                          a[href="javascript:void(0)"]
-                            | Magazine 3 (Next Update)
-                        li.disable
-                          a[href="javascript:void(0)"]
-                            | Magazine 4 (Next Update)
-                    #tab-6.tab-pane
-                      ul.ms-menu-double-submenu
-                        li
-                          a[href="home-app.html"]
-                            | Home App 1
-                        li
-                          a[href="home-app2.html"]
-                            | Home App 2
-                        li.disable
-                          a[href="javascript:void(0)"]
-                            | Home App 3 (Next Update)
-                        li.disable
-                          a[href="javascript:void(0)"]
-                            | Home App 4 (Next Update)
-                    #tab-7.tab-pane
-                      ul.ms-menu-double-submenu
-                        li
-                          a[href="home-class.html"]
-                            | Home Classifieds 1
-                        li.disable
-                          a[href="javascript:void(0)"]
-                            | Classifieds 2 (Next Update)
-                        li.disable
-                          a[href="javascript:void(0)"]
-                            | Classifieds 3 (Next Update)
-          li.dropdown
-            a.dropdown-toggle.animated.fadeIn.animation-delay-5[href="javascript:void(0)" data-toggle="dropdown" data-hover="dropdown" data-name="page"]
-              | Pages
-              i.zmdi.zmdi-chevron-down
-            ul.dropdown-menu.dropdown-menu-left.animated-2x.animated.fadeIn
-              li.dropdown-submenu
-                a.has_children[href="javascript:void(0)"]
-                  | About us & Team
-                ul.dropdown-menu.dropdown-menu-left
-                  li
-                    a[href="page-about.html"]
-                      | About us Option 1
-                  li
-                    a[href="page-about2.html"]
-                      | About us Option 2
-                  li
-                    a[href="page-about3.html"]
-                      | About us Option 3
-                  li
-                    a[href="page-about4.html"]
-                      | About us Option 4
-                  li.divider
-                  li
-                    a[href="page-team.html"]
-                      | Our Team Option 1
-                  li
-                    a[href="page-team2.html"]
-                      | Our Team Option 2
-              li.dropdown-submenu
-                a.has_children[href="javascript:void(0)"]
-                  | Form
+doctype html
+html
+  head
+    title
+      | #{@title} | BioInventario
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'application','https://fonts.googleapis.com/icon?family=Material+Icons', media: 'all', 'data-turbolinks-track' => true
+    / TODO: IF LT IE 9 INCLUDE HTML5SHIV Y RESPOND
+  body
+    #ms-preload.ms-preload
+      #status
+        .spinner
+          .dot1
+          .dot2
+    .sb-site-container
+      /! Modal
+      #ms-account-modal.modal.modal-primary aria-labelledby="myModalLabel" role="dialog" tabindex="-1"
+        .modal-dialog.animated.zoomIn.animated-3x role="document"
+          .modal-content
+            .modal-header.shadow-2dp.no-pb
+              button.close aria-label="Close" data-dismiss="modal" type="button"
+                span aria-hidden="true"
+                  i.zmdi.zmdi-close
+              .modal-title.text-center
+                span.ms-logo.ms-logo-white.ms-logo-sm.mr-1 M
+                h3.no-m.ms-site-title
+                  | Material
+                  span Style
+              .modal-header-tabs
+                ul.nav.nav-tabs.nav-tabs-full.nav-tabs-3.nav-tabs-primary role="tablist"
+                  li.active role="presentation"
+                    a.withoutripple aria-controls="ms-login-tab" data-toggle="tab" href="#ms-login-tab" role="tab"
+                      i.zmdi.zmdi-account
+                      | Login
+                  li role="presentation"
+                    a.withoutripple aria-controls="ms-register-tab" data-toggle="tab" href="#ms-register-tab" role="tab"
+                      i.zmdi.zmdi-account-add
+                      | Register
+                  li role="presentation"
+                    a.withoutripple aria-controls="ms-recovery-tab" data-toggle="tab" href="#ms-recovery-tab" role="tab"
+                      i.zmdi.zmdi-key
+                      | Recovery Pass
+            .modal-body
+              .tab-content
+                #ms-login-tab.tab-pane.fade.active.in role="tabpanel"
+                  form autocomplete="off"
+                    fieldset
+                      .form-group.label-floating
+                        .input-group
+                          span.input-group-addon
+                            i.zmdi.zmdi-account
+                          label.control-label for="ms-form-user"  Username
+                          input#ms-form-user.form-control type="text" /
+                      .form-group.label-floating
+                        .input-group
+                          span.input-group-addon
+                            i.zmdi.zmdi-lock
+                          label.control-label for="ms-form-pass"  Password
+                          input#ms-form-pass.form-control type="password" /
+                      .row.mt-2
+                        .col-md-6
+                          .form-group.no-mt
+                            .checkbox
+                              label
+                                input type="checkbox" /
+                                | Remember Me
+                        .col-md-6
+                          button.btn.btn-raised.btn-primary.pull-right Login
+                  .text-center
+                    h3 Login with
+                    a.wave-effect-light.btn.btn-raised.btn-facebook href="javascript:void(0)"
+                      i.zmdi.zmdi-facebook
+                      | Facebook
+                    a.wave-effect-light.btn.btn-raised.btn-twitter href="javascript:void(0)"
+                      i.zmdi.zmdi-twitter
+                      | Twitter
+                    a.wave-effect-light.btn.btn-raised.btn-google href="javascript:void(0)"
+                      i.zmdi.zmdi-google
+                      | Google
+                #ms-register-tab.tab-pane.fade role="tabpanel"
+                  form
+                    fieldset
+                      .form-group.label-floating
+                        .input-group
+                          span.input-group-addon
+                            i.zmdi.zmdi-account
+                          label.control-label for="ms-form-user"  Username
+                          input#ms-form-user.form-control type="text" /
+                      .form-group.label-floating
+                        .input-group
+                          span.input-group-addon
+                            i.zmdi.zmdi-email
+                          label.control-label for="ms-form-email"  Email
+                          input#ms-form-email.form-control type="email" /
+                      .form-group.label-floating
+                        .input-group
+                          span.input-group-addon
+                            i.zmdi.zmdi-lock
+                          label.control-label for="ms-form-pass"  Password
+                          input#ms-form-pass.form-control type="password" /
+                      .form-group.label-floating
+                        .input-group
+                          span.input-group-addon
+                            i.zmdi.zmdi-lock
+                          label.control-label for="ms-form-pass"  Re-type Password
+                          input#ms-form-pass.form-control type="password" /
+                      button.btn.btn-raised.btn-block.btn-primary Register Now
+                #ms-recovery-tab.tab-pane.fade role="tabpanel"
+                  fieldset
+                    .form-group.label-floating
+                      .input-group
+                        span.input-group-addon
+                          i.zmdi.zmdi-account
+                        label.control-label for="ms-form-user"  Username
+                        input#ms-form-user.form-control type="text" /
+                    .form-group.label-floating
+                      .input-group
+                        span.input-group-addon
+                          i.zmdi.zmdi-email
+                        label.control-label for="ms-form-email"  Email
+                        input#ms-form-email.form-control type="email" /
+                    button.btn.btn-raised.btn-block.btn-primary Send Password
+      header.ms-header.ms-header-white
+        .container.container-full
+          .ms-title
+            a href="index.html"
+              /! <img src="assets/img/demo/logo-header.png" alt=""
+              span.ms-logo.animated.zoomInDown.animation-delay-5 M
+              h1.animated.fadeInRight.animation-delay-6
+                | Material
+                span Style
+          .header-right
+            .share-menu
+              ul.share-menu-list
+                li.animated.fadeInRight.animation-delay-3
+                  a.btn-circle.btn-google href="javascript:void(0)"
+                    i.zmdi.zmdi-google
+                li.animated.fadeInRight.animation-delay-2
+                  a.btn-circle.btn-facebook href="javascript:void(0)"
+                    i.zmdi.zmdi-facebook
+                li.animated.fadeInRight.animation-delay-1
+                  a.btn-circle.btn-twitter href="javascript:void(0)"
+                    i.zmdi.zmdi-twitter
+              a.btn-circle.btn-circle-primary.animated.zoomInDown.animation-delay-7 href="javascript:void(0)"
+                i.zmdi.zmdi-share
+            a.btn-circle.btn-circle-primary.no-focus.animated.zoomInDown.animation-delay-8 data-target="#ms-account-modal" data-toggle="modal" href="javascript:void(0)"
+              i.zmdi.zmdi-account
+            form.search-form.animated.zoomInDown.animation-delay-9
+              input#search-box.search-input name="q" placeholder="Search..." type="text" /
+              label for="search-box"
+                i.zmdi.zmdi-search
+            a.btn-ms-menu.btn-circle.btn-circle-primary.sb-toggle-left.animated.zoomInDown.animation-delay-10 href="javascript:void(0)"
+              i.zmdi.zmdi-menu
+      nav.navbar.navbar-static-top.yamm.ms-navbar.ms-navbar-white
+        .container.container-full
+          .navbar-header
+            a.navbar-brand href="index.html"
+              /! <img src="assets/img/demo/logo-navbar.png" alt=""
+              span.ms-logo.ms-logo-sm M
+              span.ms-title
+                | Material
+                strong Style
+          #navbar.navbar-collapse.collapse
+            ul.nav.navbar-nav
+              li.dropdown.active
+                a.dropdown-toggle.animated.fadeIn.animation-delay-4 data-hover="dropdown" data-name="home" data-toggle="dropdown" href="javascript:void(0)"
+                  | Home
+                  i.zmdi.zmdi-chevron-down
                 ul.dropdown-menu
                   li
-                    a[href="page-contact.html"]
-                      | Contact Option 1
+                    .ms-menu-double
+                      ul.ms-menu-double-main-menu
+                        li.active
+                          a data-hover="tab" data-toggle="tab" href="#tab-1"
+                            i.zmdi.zmdi-home
+                            | General Purpose
+                        li
+                          a data-hover="tab" href="#tab-2"
+                            i.zmdi.zmdi-desktop-windows
+                            | Landing pages
+                        li
+                          a data-hover="tab" href="#tab-9"
+                            i.zmdi.zmdi-panorama-horizontal
+                            | Slider Revolution
+                        li
+                          a data-hover="tab" data-toggle="tab" href="#tab-3"
+                            i.zmdi.zmdi-store
+                            | Shop
+                        li
+                          a data-hover="tab" data-toggle="tab" href="#tab-8"
+                            i.zmdi.zmdi-account
+                            | Professional Profile
+                        li
+                          a data-hover="tab" data-toggle="tab" href="#tab-4"
+                            i.zmdi.zmdi-edit
+                            | Blog Template
+                        li
+                          a data-hover="tab" data-toggle="tab" href="#tab-5"
+                            i.zmdi.zmdi-flip
+                            | Magazine Template
+                        li
+                          a data-hover="tab" data-toggle="tab" href="#tab-6"
+                            i.zmdi.zmdi-smartphone-iphone
+                            | App Pages
+                        li
+                          a data-hover="tab" data-toggle="tab" href="#tab-7"
+                            i.zmdi.zmdi-search
+                            | Classified Ads
+                      .tab-content.ms-menu-double-submenu-container
+                        #tab-1.tab-pane.active
+                          ul.ms-menu-double-submenu
+                            li
+                              a href="index.html"  Default Home
+                            li
+                              a href="home-generic-2.html"  Home Black Slider
+                            li
+                              a href="home-generic-3.html"  Home Browsers Intro
+                            li
+                              a href="home-generic-4.html"  Home Mobile Intro
+                            li
+                              a href="home-generic-5.html"  Home Material Icons
+                            li
+                              a href="home-generic-6.html"  Home Typed Hero
+                            li
+                              a href="home-generic-7.html"  Home Typed Hero 2
+                        #tab-2.tab-pane
+                          ul.ms-menu-double-submenu
+                            li
+                              a href="home-landing.html"  Home Landing Intro
+                            li
+                              a href="home-landing2.html"  Home Landing Intro 2
+                            li
+                              a href="home-landing4.html"  Home Landing Intro 3
+                            li
+                              a href="home-landing3.html"  Home Landing Video
+                            li
+                              a href="home-cv3.html"  Home Profile Landing 1
+                            li
+                              a href="home-cv4.html"  Home Profile Landing 2
+                            li.disable
+                              a href="javascript:void(0)"  Landing Video 2 (Next Update)
+                        #tab-9.tab-pane
+                          ul.ms-menu-double-submenu
+                            li
+                              a href="home-revolution.html"
+                                | Home Revolution Devices
+                                span.label.label-success.pull-right 1.3
+                            li
+                              a href="home-revolution2.html"
+                                | Home Revolution App
+                                span.label.label-success.pull-right 1.3
+                            li
+                              a href="home-revolution3.html"
+                                | Home Revolution Video
+                                span.label.label-success.pull-right 1.3
+                            li
+                              a href="home-revolution4.html"
+                                | Home Revolution Idea
+                                span.label.label-success.pull-right 1.3
+                        #tab-3.tab-pane
+                          ul.ms-menu-double-submenu
+                            li
+                              a href="home-shop.html"  Home Shop 1
+                            li
+                              a href="home-shop2.html"  Home Shop 2
+                            li.disable
+                              a href="javascript:void(0)"  Home Shop 3 (Next Update)
+                            li.disable
+                              a href="javascript:void(0)"  Home Shop 4 (Next Update)
+                        #tab-8.tab-pane
+                          ul.ms-menu-double-submenu
+                            li
+                              a href="home-cv.html"  Home Profile 1
+                            li
+                              a href="home-cv2.html"  Home Profile 2
+                            li
+                              a href="home-cv3.html"  Home Profile Landing 1
+                            li
+                              a href="home-cv4.html"  Home Profile Landing 2
+                        #tab-4.tab-pane
+                          ul.ms-menu-double-submenu
+                            li
+                              a href="home-blog.html"  Home Blog 1
+                            li
+                              a href="home-blog2.html"  Home Blog 2
+                            li.disable
+                              a href="javascript:void(0)"  Home Blog 3 (Next Update)
+                            li.disable
+                              a href="javascript:void(0)"  Home Blog 4 (Next Update)
+                        #tab-5.tab-pane
+                          ul.ms-menu-double-submenu
+                            li
+                              a href="home-magazine.html"  Home Magazine 1
+                            li.disable
+                              a href="javascript:void(0)"  Magazine 2 (Next Update)
+                            li.disable
+                              a href="javascript:void(0)"  Magazine 3 (Next Update)
+                            li.disable
+                              a href="javascript:void(0)"  Magazine 4 (Next Update)
+                        #tab-6.tab-pane
+                          ul.ms-menu-double-submenu
+                            li
+                              a href="home-app.html"  Home App 1
+                            li
+                              a href="home-app2.html"  Home App 2
+                            li.disable
+                              a href="javascript:void(0)"  Home App 3 (Next Update)
+                            li.disable
+                              a href="javascript:void(0)"  Home App 4 (Next Update)
+                        #tab-7.tab-pane
+                          ul.ms-menu-double-submenu
+                            li
+                              a href="home-class.html"  Home Classifieds 1
+                            li.disable
+                              a href="javascript:void(0)"  Classifieds 2 (Next Update)
+                            li.disable
+                              a href="javascript:void(0)"  Classifieds 3 (Next Update)
+              li.dropdown
+                a.dropdown-toggle.animated.fadeIn.animation-delay-5 data-hover="dropdown" data-name="page" data-toggle="dropdown" href="javascript:void(0)"
+                  | Pages
+                  i.zmdi.zmdi-chevron-down
+                ul.dropdown-menu.dropdown-menu-left.animated-2x.animated.fadeIn
+                  li.dropdown-submenu
+                    a.has_children href="javascript:void(0)"  About us &amp; Team
+                    ul.dropdown-menu.dropdown-menu-left
+                      li
+                        a href="page-about.html"  About us Option 1
+                      li
+                        a href="page-about2.html"  About us Option 2
+                      li
+                        a href="page-about3.html"  About us Option 3
+                      li
+                        a href="page-about4.html"  About us Option 4
+                      li.divider
+                      li
+                        a href="page-team.html"  Our Team Option 1
+                      li
+                        a href="page-team2.html"  Our Team Option 2
+                  li.dropdown-submenu
+                    a.has_children href="javascript:void(0)"  Form
+                    ul.dropdown-menu
+                      li
+                        a href="page-contact.html"  Contact Option 1
+                      li
+                        a href="page-contact2.html"  Contact Option 2
+                      li.divider
+                      li
+                        a href="page-login_register.html"  Login &amp; Register
+                      li
+                        a href="page-login.html"  Login Full
+                      li
+                        a href="page-login2.html"  Login Integrated
+                      li.divider
+                      li
+                        a href="page-login_register2.html"  Register Option 1
+                      li
+                        a href="page-register2.html"  Register Option 2
+                  li.dropdown-submenu
+                    a.has_children href="javascript:void(0)"  Profiles
+                    ul.dropdown-menu.dropdown-menu-left
+                      li
+                        a href="page-profile.html"  User Profile Option 1
+                      li
+                        a href="page-profile2.html"  User Profile Option 2
+                  li.dropdown-submenu
+                    a.has_children href="javascript:void(0)"  Error
+                    ul.dropdown-menu.dropdown-menu-left
+                      li
+                        a href="page-404.html"  Error 404 Full Page
+                      li
+                        a href="page-404_2.html"  Error 404 Integrated
+                      li
+                        a href="page-500.html"  Error 500 Full Page
+                      li
+                        a href="page-500_2.html"  Error 500 Integrated
+                  li.dropdown-submenu
+                    a.has_children href="javascript:void(0)"  Bussiness &amp; Products
+                    ul.dropdown-menu.dropdown-menu-left
+                      li
+                        a href="page-testimonial.html"  Testimonials
+                      li
+                        a href="page-clients.html"  Our Clients
+                      li
+                        a href="page-product.html"  Products
+                      li
+                        a href="page-services.html"  Services
+                  li.dropdown-submenu
+                    a.has_children href="javascript:void(0)"  Pricing
+                    ul.dropdown-menu.dropdown-menu-left
+                      li
+                        a href="page-pricing.html"  Pricing Box
+                      li
+                        a href="page-pricing2.html"  Pricing Box 2
+                      li
+                        a href="page-princing_table.html"  Pricing Mega Table
+                  li.dropdown-submenu
+                    a.has_children href="javascript:void(0)"  FAQ &amp; Support
+                    ul.dropdown-menu.dropdown-menu-left
+                      li
+                        a href="page-support.html"  Support Center
+                      li
+                        a href="page-faq.html"  FAQ Option 1
+                      li
+                        a href="page-faq2.html"  FAQ Option 2
+                  li.dropdown-submenu
+                    a.has_children href="javascript:void(0)"  Coming Soon
+                    ul.dropdown-menu.dropdown-menu-left
+                      li
+                        a href="page-coming.html"  Coming Soon Option 1
+                      li
+                        a href="page-coming2.html"  Coming Soon Option 2
+                      li
+                        a href="page-coming3.html"  Coming Soon Option 3
+                  li.dropdown-submenu
+                    a.has_children href="javascript:void(0)"  Timeline
+                    ul.dropdown-menu.dropdown-menu-left
+                      li
+                        a href="page-timeline_left.html"  Timeline Left
+                      li
+                        a href="page-timeline_left2.html"  Timeline Left 2
+                      li
+                        a href="page-timeline.html"  Timeline Center
+                  li.dropdown-submenu
+                    a.has_children href="javascript:void(0)"  Email Templates
+                    ul.dropdown-menu.dropdown-menu-left
+                      li
+                        a.with-label href="page-email.html"
+                          | Email Template 1
+                          span.label.label-success.text-right 1.2
+                      li
+                        a.with-label href="page-email2.html"
+                          | Email Template 2
+                          span.label.label-success.text-right 1.2
                   li
-                    a[href="page-contact2.html"]
-                      | Contact Option 2
+                    a.dropdown-link href="page-all.html"  All Pages
+              li.dropdown.yamm-fw
+                a.dropdown-toggle.animated.fadeIn.animation-delay-6 aria-expanded="false" aria-haspopup="true" data-hover="dropdown" data-name="component" data-toggle="dropdown" href="#" role="button"
+                  | UI Elements
+                  i.zmdi.zmdi-chevron-down
+                ul.dropdown-menu.dropdown-megamenu.animated.fadeIn.animated-2x
+                  li
+                    .row
+                      .col-sm-3.megamenu-col
+                        .megamenu-block.animated.fadeInLeft.animated-2x
+                          h3.megamenu-block-title
+                            i.fa.fa-bold
+                            | Bootstrap CSS
+                          ul.megamenu-block-list
+                            li
+                              a.withripple href="component-typography.html"
+                                i.fa.fa-font
+                                | Typography
+                            li
+                              a.withripple href="component-headers.html"
+                                i.fa.fa-header
+                                | Headers
+                            li
+                              a.withripple href="component-dividers.html"
+                                i.fa.fa-arrows-h
+                                | Dividers
+                            li
+                              a.withripple href="component-blockquotes.html"
+                                i.fa.fa-quote-right
+                                | Blockquotes
+                            li
+                              a.withripple href="component-forms.html"
+                                i.fa.fa-check-square-o
+                                | Forms
+                                span.label.label-info.pull-right
+                                  i.zmdi.zmdi-long-arrow-up.no-mr
+                                  | 1.5
+                            li
+                              a.withripple href="component-tables.html"
+                                i.fa.fa-table
+                                | Tables
+                        .megamenu-block.animated.fadeInLeft.animated-2x
+                          h3.megamenu-block-title
+                            i.fa.fa-hand-o-up
+                            | Buttons
+                          ul.megamenu-block-list
+                            li
+                              a.withripple href="component-basic-buttons.html"
+                                i.fa.fa-arrow-circle-right
+                                | Basic Buttons
+                            li
+                              a.withripple href="component-buttons-components.html"
+                                i.fa.fa-arrow-circle-right
+                                | Buttons Components
+                            li
+                              a.withripple href="component-social-buttons.html"
+                                i.fa.fa-arrow-circle-right
+                                | Social Buttons
+                                span.label.label-info.pull-right
+                                  i.zmdi.zmdi-long-arrow-up.no-mr
+                                  | 1.3
+                      .col-sm-3.megamenu-col
+                        .megamenu-block.animated.fadeInLeft.animated-2x
+                          h3.megamenu-block-title
+                            i.fa.fa-list-alt
+                            | Basic Components
+                          ul.megamenu-block-list
+                            li
+                              a.withripple href="component-panels.html"
+                                i.zmdi.zmdi-view-agenda
+                                | Panels
+                            li
+                              a.withripple href="component-alerts.html"
+                                i.zmdi.zmdi-info
+                                | Alerts &amp; Wells
+                            li
+                              a.withripple href="component-labels.html"
+                                i.zmdi.zmdi-tag
+                                | Labels &amp; Badges
+                            li
+                              a.withripple href="component-lists.html"
+                                i.zmdi.zmdi-view-list
+                                | Lists
+                            li
+                              a.withripple href="component-thumbnails.html"
+                                i.zmdi.zmdi-image-o
+                                | Thumbnails
+                            li
+                              a.withripple href="component-carousels.html"
+                                i.zmdi.zmdi-view-carousel
+                                | Carousels
+                            li
+                              a.withripple href="component-modals.html"
+                                i.zmdi.zmdi-window-maximize
+                                | Modals
+                            li
+                              a.withripple href="component-tooltip.html"
+                                i.zmdi.zmdi-pin-help
+                                | Tooltip &amp; Popover
+                            li
+                              a.withripple href="component-progress-bars.html"
+                                i.zmdi.zmdi-view-headline
+                                | Progress Bars
+                            li
+                              a.withripple href="component-pagination.html"
+                                i.zmdi.zmdi-n-2-square
+                                | Pagination
+                            li
+                              a.withripple href="component-dropdowns.html"
+                                i.fa.fa-info
+                                | Dropdowns
+                      .col-sm-3.megamenu-col
+                        .megamenu-block.animated.fadeInRight.animated-2x
+                          h3.megamenu-block-title
+                            i.zmdi.zmdi-folder-star-alt
+                            | Extra Components
+                          ul.megamenu-block-list
+                            li
+                              a.withripple href="component-cards.html"
+                                i.zmdi.zmdi-card-membership
+                                | Cards
+                            li
+                              a.withripple href="component-composite-cards.html"
+                                i.zmdi.zmdi-card-giftcard
+                                | Composite Cards
+                            li
+                              a.withripple href="component-counters.html"
+                                i.zmdi.zmdi-n-6-square
+                                | Counters
+                            li
+                              a.withripple href="component-audio-video.html"
+                                i.zmdi.zmdi-play-circle
+                                | Audio &amp; Video
+                            li
+                              a.withripple href="component-masonry.html"
+                                i.zmdi.zmdi-view-dashboard
+                                | Masonry Layer
+                            li
+                              a.withripple href="component-snackbar.html"
+                                i.zmdi.zmdi-notifications-active
+                                | SnackBar
+                                span.label.label-success.pull-right 1.2
+                            li
+                              a.withripple href="component-lightbox.html"
+                                i.zmdi.zmdi-collection-image-o
+                                | Lightbox
+                                span.label.label-success.pull-right 1.5
+                        .megamenu-block.animated.fadeInRight.animated-2x
+                          h3.megamenu-block-title
+                            i.zmdi.zmdi-tab
+                            | Collapses &amp; Tabs
+                          ul.megamenu-block-list
+                            li
+                              a.withripple href="component-collapses.html"
+                                i.zmdi.zmdi-view-day
+                                | Collapses
+                            li
+                              a.withripple href="component-horizontal-tabs.html"
+                                i.zmdi.zmdi-tab
+                                | Horitzontal Tabs
+                            li
+                              a.withripple href="component-vertical-tabs.html"
+                                i.zmdi.zmdi-menu
+                                | Vertical Tabs
+                      .col-sm-3.megamenu-col
+                        .megamenu-block.animated.fadeInRight.animated-2x
+                          h3.megamenu-block-title
+                            i.fa.fa-briefcase
+                            | Icons
+                          ul.megamenu-block-list
+                            li
+                              a.withripple href="component-icons-basic.html"
+                                i.fa.fa-arrow-circle-right
+                                | Basic Icons
+                            li
+                              a.withripple href="component-icons-fontawesome.html"
+                                i.fa.fa-arrow-circle-right
+                                | Font Awesome
+                            li
+                              a.withripple href="component-icons-iconic.html"
+                                i.fa.fa-arrow-circle-right
+                                | Material Design Iconic
+                            li
+                              a.withripple href="component-icons-glyphicons.html"
+                                i.fa.fa-arrow-circle-right
+                                | Glyphicons
+                        .megamenu-block.animated.fadeInRight.animated-2x
+                          h3.megamenu-block-title
+                            i.fa.fa-area-chart
+                            | Charts
+                          ul.megamenu-block-list
+                            li
+                              a.withripple href="component-charts-circle.html"
+                                i.zmdi.zmdi-chart-donut
+                                | Circle Charts
+                            li
+                              a.withripple href="component-charts-bar.html"
+                                i.fa.fa-bar-chart
+                                | Bars Charts
+                            li
+                              a.withripple href="component-charts-line.html"
+                                i.fa.fa-line-chart
+                                | Line Charts
+                            li
+                              a.withripple href="component-charts-more.html"
+                                i.fa.fa-pie-chart
+                                | More Charts
+              li.dropdown
+                a.dropdown-toggle.animated.fadeIn.animation-delay-7 aria-expanded="false" aria-haspopup="true" data-hover="dropdown" data-name="blog" data-toggle="dropdown" href="#" role="button"
+                  | Blog
+                  i.zmdi.zmdi-chevron-down
+                ul.dropdown-menu
+                  li
+                    a href="blog-sidebar.html"
+                      i.zmdi.zmdi-view-compact
+                      | Blog Sidebar 1
+                  li
+                    a href="blog-sidebar2.html"
+                      i.zmdi.zmdi-view-compact
+                      | Blog Sidebar 2
+                  li
+                    a href="blog-masonry.html"
+                      i.zmdi.zmdi-view-dashboard
+                      | Blog Masonry 1
+                  li
+                    a href="blog-masonry2.html"
+                      i.zmdi.zmdi-view-dashboard
+                      | Blog Masonry 2
+                  li
+                    a href="blog-full.html"
+                      i.zmdi.zmdi.zmdi-view-stream
+                      | Blog Full Page 1
+                  li
+                    a href="blog-full2.html"
+                      i.zmdi.zmdi.zmdi-view-stream
+                      | Blog Full Page 2
                   li.divider
                   li
-                    a[href="page-login_register.html"]
-                      | Login & Register
+                    a href="blog-post.html"
+                      i.zmdi.zmdi-file-text
+                      | Blog Post 1
                   li
-                    a[href="page-login.html"]
-                      | Login Full
+                    a href="blog-post2.html"
+                      i.zmdi.zmdi-file-text
+                      | Blog Post 2
+              li.dropdown
+                a.dropdown-toggle.animated.fadeIn.animation-delay-8 aria-expanded="false" aria-haspopup="true" data-hover="dropdown" data-name="portfolio" data-toggle="dropdown" href="#" role="button"
+                  | Portfolio
+                  i.zmdi.zmdi-chevron-down
+                ul.dropdown-menu
                   li
-                    a[href="page-login2.html"]
-                      | Login Integrated
+                    a href="portfolio-filters_sidebar.html"
+                      i.zmdi.zmdi-view-compact
+                      | Portfolio Sidebar Filters
+                  li
+                    a href="portfolio-filters_topbar.html"
+                      i.zmdi.zmdi-view-agenda
+                      | Portfolio Topbar Filters
+                  li
+                    a href="portfolio-filters_sidebar_fluid.html"
+                      i.zmdi.zmdi-view-compact
+                      | Portfolio Sidebar Fluid
+                  li
+                    a href="portfolio-filters_topbar_fluid.html"
+                      i.zmdi.zmdi-view-agenda
+                      | Portfolio Topbar Fluid
+                  li
+                    a href="portfolio-cards.html"
+                      i.zmdi.zmdi-card-membership
+                      | Porfolio Cards
+                  li
+                    a href="portfolio-masonry.html"
+                      i.zmdi.zmdi-view-dashboard
+                      | Porfolio Masonry
+                  li
+                    a.with-label href="portfolio-gallery.html"
+                      i.zmdi.zmdi-apps
+                      | Picture Gallery
+                      span.label.label-success.text-right 1.5
                   li.divider
                   li
-                    a[href="page-login_register2.html"]
-                      | Register Option 1
+                    a href="portfolio-item.html"
+                      i.zmdi.zmdi-collection-item-1
+                      | Portfolio Item 1
                   li
-                    a[href="page-register2.html"]
-                      | Register Option 2
-              li.dropdown-submenu
-                a.has_children[href="javascript:void(0)"]
-                  | Profiles
-                ul.dropdown-menu.dropdown-menu-left
+                    a href="portfolio-item2.html"
+                      i.zmdi.zmdi-collection-item-2
+                      | Portfolio Item 2
+              li.dropdown
+                a.dropdown-toggle.animated.fadeIn.animation-delay-9 aria-expanded="false" aria-haspopup="true" data-hover="dropdown" data-name="ecommerce" data-toggle="dropdown" href="#" role="button"
+                  | E-Commerce
+                  i.zmdi.zmdi-chevron-down
+                ul.dropdown-menu
                   li
-                    a[href="page-profile.html"]
-                      | User Profile Option 1
+                    a href="ecommerce-filters.html"  E-Commerce Sidebar
                   li
-                    a[href="page-profile2.html"]
-                      | User Profile Option 2
-              li.dropdown-submenu
-                a.has_children[href="javascript:void(0)"]
-                  | Error
-                ul.dropdown-menu.dropdown-menu-left
+                    a href="ecommerce-filters-full.html"  E-Commerce Sidebar Full
                   li
-                    a[href="page-404.html"]
-                      | Error 404 Full Page
+                    a href="ecommerce-filters-full2.html"  E-Commerce Topbar Full
+                  li.divider
                   li
-                    a[href="page-404_2.html"]
-                      | Error 404 Integrated
+                    a href="ecommerce-item.html"  E-Commerce Item
                   li
-                    a[href="page-500.html"]
-                      | Error 500 Full Page
+                    a href="ecommerce-cart.html"  E-Commerce Cart
+              /! <li class="btn-navbar-menu"><a href="javascript:void(0)" class="sb-toggle-left"><i class="zmdi zmdi-menu"></i></a></li
+          /! navbar-collapse collapse
+          a.sb-toggle-left.btn-navbar-menu href="javascript:void(0)"
+            i.zmdi.zmdi-menu
+        /! container
+      .ms-hero-page.ms-hero-img-city2.ms-hero-bg-info.mb-6
+        .text-center.color-white.mt-6.mb-6.index-1
+          h1 Material Style Store
+          p.lead.lead-lg
+            | Welcome to the Material Style Store. Discover the latest products at incredible prices.
+            br/
+            | Don't forget to check our daily offers.
+          a.btn.btn-raised.btn-white.color-danger href="javascript:void(0)"
+            i.zmdi.zmdi-label
+            | Latest offers
+      .container
+        .row
+          .col-md-3
+            .card.card-primary
+              .card-header
+                h3.card-title Filter List
+              .card-block
+                form#Filters.form-horizontal
+                  h4.mb-1.no-mt Devices
+                  fieldset
+                    .form-group.no-mt
+                      .checkbox.ml-2
+                        label
+                          input type="checkbox" value=".smartphone" /
+                          | Smartphones
+                      .checkbox.ml-2
+                        label
+                          input type="checkbox" value=".tablet" /
+                          | Tablets
+                      .checkbox.ml-2
+                        label
+                          input type="checkbox" value=".laptop" /
+                          | Laptops
+                      .checkbox.ml-2
+                        label
+                          input type="checkbox" value=".accessory" /
+                          | Accesories
+                  fieldset
+                    h4.mb-1 Brand
+                    .form-group.no-mt
+                      .checkbox.ml-2
+                        label
+                          input type="checkbox" value=".apple" /
+                          | Apple
+                      .checkbox.ml-2
+                        label
+                          input type="checkbox" value=".microsoft" /
+                          | Microsoft
+                      .checkbox.ml-2
+                        label
+                          input type="checkbox" value=".samsung" /
+                          | Samsung
+                  button#Reset.btn.btn-danger.btn-block.no-mb.mt-2
+                    i.zmdi.zmdi-delete
+                    | Clear Filters
+                form.form-horizontal
+                  h4 Sort by
+                  select#SortSelect.form-control.selectpicker
+                    option value="random"  Popular
+                    option value="price:asc"  Price ASC
+                    option value="price:desc"  Price DESC
+                    option value="date:asc"  Release ASC
+                    option value="date:desc"  Release DESC
+          .col-md-9
+            #Container.row
+              .col-lg-4.col-md-6.col-xs-12.mix.laptop.apple data-date="20160901" data-price="1999.99"
+                .card.ms-feature
+                  .card-block.text-center
+                    a href="ecommerce-item.html"
+                      img.img-responsive.center-block alt="" src="assets/img/demo/products/macbook.png" /
+                    h4.text-normal.text-center Macbook Pro 2015
+                    p Quibusdam aperiam tempora ut blanditiis cumque ab pariatur.
+                    .mt-2
+                      span.mr-2
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star
+                      span.ms-tag.ms-tag-success $ 1999.99
+                    a.btn.btn-primary.btn-sm.btn-block.btn-raised.mt-2.no-mb href="javascript:void(0)"
+                      i.zmdi.zmdi-shopping-cart-plus
+                      | Add to Cart
+              .col-lg-4.col-md-6.col-xs-12.mix.tablet.apple data-date="20160705" data-price="999.99"
+                .card.ms-feature
+                  .card-block.text-center
+                    a href="ecommerce-item.html"
+                      img.img-responsive.center-block alt="" src="assets/img/demo/products/ipad.png" /
+                    h4.text-normal.text-center iPad Pro
+                    p Quibusdam aperiam tempora ut blanditiis cumque ab pariatur.
+                    .mt-2
+                      span.mr-2
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                      span.ms-tag.ms-tag-success $ 999.99
+                    a.btn.btn-primary.btn-sm.btn-block.btn-raised.mt-2.no-mb href="javascript:void(0)"
+                      i.zmdi.zmdi-shopping-cart-plus
+                      | Add to Cart
+              .col-lg-4.col-md-6.col-xs-12.mix.accessory.samsung data-date="20160815" data-price="459.89"
+                .card.ms-feature
+                  .card-block.text-center
+                    a href="ecommerce-item.html"
+                      img.img-responsive.center-block alt="" src="assets/img/demo/products/gear.png" /
+                    h4.text-normal.text-center Galaxy Gear S3
+                    p Quibusdam aperiam tempora ut blanditiis cumque ab pariatur.
+                    .mt-2
+                      span.mr-2
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star
+                        i.zmdi.zmdi-star
+                      span.ms-tag.ms-tag-success $ 459.89
+                    a.btn.btn-primary.btn-sm.btn-block.btn-raised.mt-2.no-mb href="javascript:void(0)"
+                      i.zmdi.zmdi-shopping-cart-plus
+                      | Add to Cart
+              .col-lg-4.col-md-6.col-xs-12.mix.accessory.apple data-date="20151014" data-price="769.99"
+                .card.ms-feature
+                  .card-block.text-center
+                    a href="ecommerce-item.html"
+                      img.img-responsive.center-block alt="" src="assets/img/demo/products/appleWatch.png" /
+                    h4.text-normal.text-center Apple Watch Serie 2
+                    p Quibusdam aperiam tempora ut blanditiis cumque ab pariatur.
+                    .mt-2
+                      span.mr-2
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star
+                        i.zmdi.zmdi-star
+                      span.ms-tag.ms-tag-success $ 769.99
+                    a.btn.btn-primary.btn-sm.btn-block.btn-raised.mt-2.no-mb href="javascript:void(0)"
+                      i.zmdi.zmdi-shopping-cart-plus
+                      | Add to Cart
+              .col-lg-4.col-md-6.col-xs-12.mix.smartphone.samsung data-date="20151201" data-price="569.99"
+                .card.ms-feature
+                  .card-block.text-center
+                    a href="ecommerce-item.html"
+                      img.img-responsive.center-block alt="" src="assets/img/demo/products/s7.png" /
+                    h4.text-normal.text-center Samsung Galaxy S7
+                    p Quibusdam aperiam tempora ut blanditiis cumque ab pariatur.
+                    .mt-2
+                      span.mr-2
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star
+                      span.ms-tag.ms-tag-success $ 569.99
+                    a.btn.btn-primary.btn-sm.btn-block.btn-raised.mt-2.no-mb href="javascript:void(0)"
+                      i.zmdi.zmdi-shopping-cart-plus
+                      | Add to Cart
+              .col-lg-4.col-md-6.col-xs-12.mix.laptop.microsoft data-date="20161205" data-price="2499.25"
+                .card.ms-feature
+                  .card-block.text-center
+                    a href="ecommerce-item.html"
+                      img.img-responsive.center-block alt="" src="assets/img/demo/products/surfaceBook.png" /
+                    h4.text-normal.text-center Microsoft Surface Book
+                    p Quibusdam aperiam tempora ut blanditiis cumque ab pariatur.
+                    .mt-2
+                      span.mr-2
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star
+                      span.ms-tag.ms-tag-success $ 2499.25
+                    a.btn.btn-primary.btn-sm.btn-block.btn-raised.mt-2.no-mb href="javascript:void(0)"
+                      i.zmdi.zmdi-shopping-cart-plus
+                      | Add to Cart
+              .col-lg-4.col-md-6.col-xs-12.mix.smartphone.apple data-date="20160907" data-price="769.00"
+                .card.ms-feature
+                  .card-block.text-center
+                    a href="ecommerce-item.html"
+                      img.img-responsive.center-block alt="" src="assets/img/demo/products/iphone7.png" /
+                    h4.text-normal.text-center iPhone 7 Plus
+                    p Quibusdam aperiam tempora ut blanditiis cumque ab pariatur.
+                    .mt-2
+                      span.mr-2
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star
+                      span.ms-tag.ms-tag-success $ 769.00
+                    a.btn.btn-primary.btn-sm.btn-block.btn-raised.mt-2.no-mb href="javascript:void(0)"
+                      i.zmdi.zmdi-shopping-cart-plus
+                      | Add to Cart
+              .col-lg-4.col-md-6.col-xs-12.mix.accessory.samsung data-date="20160725" data-price="819.00"
+                .card.ms-feature
+                  .card-block.text-center
+                    a href="ecommerce-item.html"
+                      img.img-responsive.center-block alt="" src="assets/img/demo/products/vr.png" /
+                    h4.text-normal.text-center Gear VR
+                    p Quibusdam aperiam tempora ut blanditiis cumque ab pariatur.
+                    .mt-2
+                      span.mr-2
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star
+                      span.ms-tag.ms-tag-success $ 2499.25
+                    a.btn.btn-primary.btn-sm.btn-block.btn-raised.mt-2.no-mb href="javascript:void(0)"
+                      i.zmdi.zmdi-shopping-cart-plus
+                      | Add to Cart
+              .col-lg-4.col-md-6.col-xs-12.mix.tablet.microsoft data-date="20151015" data-price="799.80"
+                .card.ms-feature
+                  .card-block.text-center
+                    a href="ecommerce-item.html"
+                      img.img-responsive.center-block alt="" src="assets/img/demo/products/surface.png" /
+                    h4.text-normal.text-center Surface Pro 4
+                    p Quibusdam aperiam tempora ut blanditiis cumque ab pariatur.
+                    .mt-2
+                      span.mr-2
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star
+                      span.ms-tag.ms-tag-success $ 799.80
+                    a.btn.btn-primary.btn-sm.btn-block.btn-raised.mt-2.no-mb href="javascript:void(0)"
+                      i.zmdi.zmdi-shopping-cart-plus
+                      | Add to Cart
+              .col-lg-4.col-md-6.col-xs-12.mix.accessory.microsoft data-date="20151015" data-price="79.95"
+                .card.ms-feature
+                  .card-block.text-center
+                    a href="ecommerce-item.html"
+                      img.img-responsive.center-block alt="" src="assets/img/demo/products/xboxController.png" /
+                    h4.text-normal.text-center Xbox One Controller
+                    p Quibusdam aperiam tempora ut blanditiis cumque ab pariatur.
+                    .mt-2
+                      span.mr-2
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star
+                      span.ms-tag.ms-tag-success $ 79.95
+                    a.btn.btn-primary.btn-sm.btn-block.btn-raised.mt-2.no-mb href="javascript:void(0)"
+                      i.zmdi.zmdi-shopping-cart-plus
+                      | Add to Cart
+              .col-lg-4.col-md-6.col-xs-12.mix.smartphone.microsoft data-date="20141015" data-price="298.99"
+                .card.ms-feature
+                  .card-block.text-center
+                    a href="ecommerce-item.html"
+                      img.img-responsive.center-block alt="" src="assets/img/demo/products/lumia.png" /
+                    h4.text-normal.text-center Lumia 950
+                    p Quibusdam aperiam tempora ut blanditiis cumque ab pariatur.
+                    .mt-2
+                      span.mr-2
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star
+                      span.ms-tag.ms-tag-success $ 298.99
+                    a.btn.btn-primary.btn-sm.btn-block.btn-raised.mt-2.no-mb href="javascript:void(0)"
+                      i.zmdi.zmdi-shopping-cart-plus
+                      | Add to Cart
+              .col-lg-4.col-md-6.col-xs-12.mix.tablet.samsung data-date="20151015" data-price="538.99"
+                .card.ms-feature
+                  .card-block.text-center
+                    a href="ecommerce-item.html"
+                      img.img-responsive.center-block alt="" src="assets/img/demo/products/galaxyTab.png" /
+                    h4.text-normal.text-center Galaxy Tab S2
+                    p Quibusdam aperiam tempora ut blanditiis cumque ab pariatur.
+                    .mt-2
+                      span.mr-2
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star.color-warning
+                        i.zmdi.zmdi-star
+                      span.ms-tag.ms-tag-success $ 538.99
+                    a.btn.btn-primary.btn-sm.btn-block.btn-raised.mt-2.no-mb href="javascript:void(0)"
+                      i.zmdi.zmdi-shopping-cart-plus
+                      | Add to Cart
+      /! container
+      aside.ms-footbar
+        .container
+          .row
+            .col-md-4.ms-footer-col
+              .ms-footbar-block
+                h3.ms-footbar-title Sitemap
+                ul.list-unstyled.ms-icon-list.three_cols
                   li
-                    a[href="page-500_2.html"]
-                      | Error 500 Integrated
-              li.dropdown-submenu
-                a.has_children[href="javascript:void(0)"]
-                  | Bussiness & Products
-                ul.dropdown-menu.dropdown-menu-left
+                    a href="index.html"
+                      i.zmdi.zmdi-home
+                      | Home
                   li
-                    a[href="page-testimonial.html"]
-                      | Testimonials
+                    a href="page-blog.html"
+                      i.zmdi.zmdi-edit
+                      | Blog
                   li
-                    a[href="page-clients.html"]
-                      | Our Clients
+                    a href="page-blog.html"
+                      i.zmdi.zmdi-image-o
+                      | Portafolio
                   li
-                    a[href="page-product.html"]
-                      | Products
+                    a href="portfolio-filters_sidebar.html"
+                      i.zmdi.zmdi-case
+                      | Works
                   li
-                    a[href="page-services.html"]
+                    a href="page-timeline_left2.html"
+                      i.zmdi.zmdi-time
+                      | Timeline
+                  li
+                    a href="page-pricing.html"
+                      i.zmdi.zmdi-money
+                      | Pricing
+                  li
+                    a href="page-about.html"
+                      i.zmdi.zmdi-favorite-outline
+                      | About Us
+                  li
+                    a href="page-team2.html"
+                      i.zmdi.zmdi-accounts
+                      | Our Team
+                  li
+                    a href="page-services.html"
+                      i.zmdi.zmdi-face
                       | Services
-              li.dropdown-submenu
-                a.has_children[href="javascript:void(0)"]
-                  | Pricing
-                ul.dropdown-menu.dropdown-menu-left
                   li
-                    a[href="page-pricing.html"]
-                      | Pricing Box
+                    a href="page-faq2.html"
+                      i.zmdi.zmdi-help
+                      | FAQ
                   li
-                    a[href="page-pricing2.html"]
-                      | Pricing Box 2
+                    a href="page-login2.html"
+                      i.zmdi.zmdi-lock
+                      | Login
                   li
-                    a[href="page-princing_table.html"]
-                      | Pricing Mega Table
-              li.dropdown-submenu
-                a.has_children[href="javascript:void(0)"]
-                  | FAQ & Support
-                ul.dropdown-menu.dropdown-menu-left
-                  li
-                    a[href="page-support.html"]
-                      | Support Center
-                  li
-                    a[href="page-faq.html"]
-                      | FAQ Option 1
-                  li
-                    a[href="page-faq2.html"]
-                      | FAQ Option 2
-              li.dropdown-submenu
-                a.has_children[href="javascript:void(0)"]
-                  | Coming Soon
-                ul.dropdown-menu.dropdown-menu-left
-                  li
-                    a[href="page-coming.html"]
-                      | Coming Soon Option 1
-                  li
-                    a[href="page-coming2.html"]
-                      | Coming Soon Option 2
-                  li
-                    a[href="page-coming3.html"]
-                      | Coming Soon Option 3
-              li.dropdown-submenu
-                a.has_children[href="javascript:void(0)"]
-                  | Timeline
-                ul.dropdown-menu.dropdown-menu-left
-                  li
-                    a[href="page-timeline_left.html"]
-                      | Timeline Left
-                  li
-                    a[href="page-timeline_left2.html"]
-                      | Timeline Left 2
-                  li
-                    a[href="page-timeline.html"]
-                      | Timeline Center
-              li.dropdown-submenu
-                a.has_children[href="javascript:void(0)"]
-                  | Email Templates
-                ul.dropdown-menu.dropdown-menu-left
-                  li
-                    a.with-label[href="page-email.html"]
-                      | Email Template 1
-                      span.label.label-success.text-right
-                        | 1.2
-                  li
-                    a.with-label[href="page-email2.html"]
-                      | Email Template 2
-                      span.label.label-success.text-right
-                        | 1.2
-              li
-                a.dropdown-link[href="page-all.html"]
-                  | All Pages
-          li.dropdown
-            a.dropdown-toggle.animated.fadeIn.animation-delay-7[href="#" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="blog"]
-              | Blog
-              i.zmdi.zmdi-chevron-down
-            ul.dropdown-menu
-              li
-                a[href="blog-sidebar.html"]
-                  i.zmdi.zmdi-view-compact
-                  |  Blog Sidebar 1
-              li
-                a[href="blog-sidebar2.html"]
-                  i.zmdi.zmdi-view-compact
-                  |  Blog Sidebar 2
-              li
-                a[href="blog-masonry.html"]
-                  i.zmdi.zmdi-view-dashboard
-                  |  Blog Masonry 1
-              li
-                a[href="blog-masonry2.html"]
-                  i.zmdi.zmdi-view-dashboard
-                  |  Blog Masonry 2
-              li
-                a[href="blog-full.html"]
-                  i.zmdi.zmdi.zmdi-view-stream
-                  |  Blog Full Page 1
-              li
-                a[href="blog-full2.html"]
-                  i.zmdi.zmdi.zmdi-view-stream
-                  |  Blog Full Page 2
-              li.divider
-              li
-                a[href="blog-post.html"]
-                  i.zmdi.zmdi-file-text
-                  |  Blog Post 1
-              li
-                a[href="blog-post2.html"]
-                  i.zmdi.zmdi-file-text
-                  |  Blog Post 2
-          li.dropdown
-            a.dropdown-toggle.animated.fadeIn.animation-delay-8[href="#" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="portfolio"]
-              | Portfolio
-              i.zmdi.zmdi-chevron-down
-            ul.dropdown-menu
-              li
-                a[href="portfolio-filters_sidebar.html"]
-                  i.zmdi.zmdi-view-compact
-                  |  Portfolio Sidebar Filters
-              li
-                a[href="portfolio-filters_topbar.html"]
-                  i.zmdi.zmdi-view-agenda
-                  |  Portfolio Topbar Filters
-              li
-                a[href="portfolio-filters_sidebar_fluid.html"]
-                  i.zmdi.zmdi-view-compact
-                  |  Portfolio Sidebar Fluid
-              li
-                a[href="portfolio-filters_topbar_fluid.html"]
-                  i.zmdi.zmdi-view-agenda
-                  |  Portfolio Topbar Fluid
-              li
-                a[href="portfolio-cards.html"]
-                  i.zmdi.zmdi-card-membership
-                  |  Porfolio Cards
-              li
-                a[href="portfolio-masonry.html"]
-                  i.zmdi.zmdi-view-dashboard
-                  |  Porfolio Masonry
-              li
-                a.with-label[href="portfolio-gallery.html"]
-                  i.zmdi.zmdi-apps
-                  |  Picture Gallery
-                  span.label.label-success.text-right
-                    | 1.5
-              li.divider
-              li
-                a[href="portfolio-item.html"]
-                  i.zmdi.zmdi-collection-item-1
-                  |  Portfolio Item 1
-              li
-                a[href="portfolio-item2.html"]
-                  i.zmdi.zmdi-collection-item-2
-                  |  Portfolio Item 2
-          li.dropdown
-            a.dropdown-toggle.animated.fadeIn.animation-delay-9[href="#" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-name="ecommerce"]
-              | E-Commerce
-              i.zmdi.zmdi-chevron-down
-            ul.dropdown-menu
-              li
-                a[href="ecommerce-filters.html"]
-                  | E-Commerce Sidebar
-              li
-                a[href="ecommerce-filters-full.html"]
-                  | E-Commerce Sidebar Full
-              li
-                a[href="ecommerce-filters-full2.html"]
-                  | E-Commerce Topbar Full
-              li.divider
-              li
-                a[href="ecommerce-item.html"]
-                  | E-Commerce Item
-              li
-                a[href="ecommerce-cart.html"]
-                  | E-Commerce Cart
-      a.sb-toggle-left.btn-navbar-menu[href="javascript:void(0)"]
-        i.zmdi.zmdi-menu
-  .ms-hero-page.ms-hero-img-coffee.ms-hero-bg-success.mb-6
-    .container
-      .text-center
-        h1.no-m.ms-site-title.color-white.center-block.ms-site-title-lg.mt-2.animated.zoomInDown.animation-delay-5
-          | Portfolio
-        p.lead.lead-lg.color-white.text-center.center-block.mt-2.mb-4.mw-800.text-uppercase.fw-300.animated.fadeInUp.animation-delay-7
-          | Discover our projects and the
-          span.color-warning
-            | rigorous process
-          |  of creation. Our principles are creativity, design, experience and knowledge.
-        a.btn.btn-raised.btn-warning.animated.fadeInUp.animation-delay-10[href="javascript:void(0)"]
-          i.zmdi.zmdi-accounts
-          |  Our Services
-        a.btn.btn-raised.btn-info.animated.fadeInUp.animation-delay-10[href="javascript:void(0)"]
-          i.zmdi.zmdi-email
-          |  Concact us
-  .container
-    .row
-      .col-md-3.hidden-sm.hidden-xs
-        .card.card-primary
-          .card-header
-            h3.card-title
-              i.zmdi.zmdi-filter-list
-              | Filter List
-          .card-block.no-pb
-            form.form-horizontal
-              h4.no-m.color-primary
-                | Categories
-              .form-group.mt-1
-                .radio.no-mb
-                  label
-                    input#optionsRadios0.filter[type="radio" name="optionsRadios" value="option0" checked="" data-filter="all"]
-                    |  All
-                .radio.no-mb
-                  label
-                    input#optionsRadios1.filter[type="radio" name="optionsRadios" value="option1" data-filter=".category-1"]
-                    |  Category One
-                .radio.no-mb
-                  label
-                    input#optionsRadios2.filter[type="radio" name="optionsRadios" value="option2" data-filter=".category-2"]
-                    |  Category Two
-                .radio.no-mb
-                  label
-                    input#optionsRadios3.filter[type="radio" name="optionsRadios" value="option3" data-filter=".category-3"]
-                    |  Category Three
-                .radio.no-mb
-                  label
-                    input#optionsRadios4.filter[type="radio" name="optionsRadios" value="option4" data-filter=".category-4"]
-                    |  Category Four
-                .radio.no-mb
-                  label
-                    input#optionsRadios5.filter[type="radio" name="optionsRadios" value="option5" data-filter=".category-5"]
-                    |  Category Five
-                .radio.no-mb
-                  label
-                    input#optionsRadios6.filter[type="radio" name="optionsRadios" value="option6" data-filter=".category-6"]
-                    |  Category Six
-            h4.mt-2.color-primary.no-mb
-              | Columns
-          ul.nav.nav-tabs.nav-tabs-transparent.indicator-primary.nav-tabs-full.nav-tabs-4[role="tablist"]
-            li
-              a#Cols1.withoutripple[href="#home7" aria-controls="home7" role="tab" data-toggle="tab"]
-                | 1
-            li
-              a#Cols2.withoutripple[href="#profile7" aria-controls="profile7" role="tab" data-toggle="tab"]
-                | 2
-            li.active
-              a#Cols3.withoutripple[href="#messages7" aria-controls="messages7" role="tab" data-toggle="tab"]
-                | 3
-            li
-              a#Cols4.withoutripple[href="#settings7" aria-controls="settings7" role="tab" data-toggle="tab"]
-                | 4
-          .card-block
-            form.form-horizontal
-              .form-group.no-mt
-                .col-md-12
-                  h4.no-m.color-primary.mb-2
-                    | Descriptions
-                  .togglebutton
-                    label
-                      input#port-show[type="checkbox"]
-                      |  Show description
-      .col-md-9
-        #Container.row
-          .col-md-4.col-sm-6.mix.category-1
-            .card
-              figure.ms-thumbnail
-                = image_tag("port14.jpg", class: "img-responsive")
-                /img.img-responsive[src="assets/images/port14.jpg" alt=""]
-                figcaption.ms-thumbnail-caption.text-center
-                  .ms-thumbnail-caption-content
-                    h4.ms-thumbnail-caption-title.mb-2
-                      | Lorem ipsum dolor
-                    a.btn-circle.btn-circle-raised.btn-circle-xs.mr-1.btn-circle-white.color-danger[href="javascript:void(0)"]
-                      i.zmdi.zmdi-favorite
-                    a.btn-circle.btn-circle-raised.btn-circle-xs.ml-1.mr-1.btn-circle-white.color-warning[href="javascript:void(0)"]
-                      i.zmdi.zmdi-star
-                    a.btn-circle.btn-circle-raised.btn-circle-xs.ml-1.btn-circle-white.color-success[href="javascript:void(0)"]
-                      i.zmdi.zmdi-share
-              .card-block.text-center.portfolio-item-caption.hidden
-                h3.color-primary.no-mt
-                  | Lorem ipsum dolor
-                p
-                  | Explicabo consequatur quidem praesentium quas qui eius ina Cupiditate ratione sint.
-          .col-md-4.col-sm-6.mix.category-3
-            .card
-              figure.ms-thumbnail
-                figcaption.ms-thumbnail-caption.text-center
-                  .ms-thumbnail-caption-content
-                    h4.ms-thumbnail-caption-title.mb-2
-                      | Lorem ipsum dolor
-                    a.btn-circle.btn-circle-raised.btn-circle-xs.mr-1.btn-circle-white.color-danger[href="javascript:void(0)"]
-                      i.zmdi.zmdi-favorite
-                    a.btn-circle.btn-circle-raised.btn-circle-xs.ml-1.mr-1.btn-circle-white.color-warning[href="javascript:void(0)"]
-                      i.zmdi.zmdi-star
-                    a.btn-circle.btn-circle-raised.btn-circle-xs.ml-1.btn-circle-white.color-success[href="javascript:void(0)"]
-                      i.zmdi.zmdi-share
-              .card-block.text-center.portfolio-item-caption.hidden
-                h3.color-primary.no-mt
-                  | Lorem ipsum dolor
-                p
-                  | Explicabo consequatur quidem praesentium quas qui eius ina Cupiditate ratione sint.
-  aside.ms-footbar
-    .container
-      .row
-        .col-md-4.ms-footer-col
-          .ms-footbar-block
-            h3.ms-footbar-title
-              | Sitemap
-            ul.list-unstyled.ms-icon-list.three_cols
-              li
-                a[href="index.html"]
-                  i.zmdi.zmdi-home
-                  |  Home
-              li
-                a[href="page-blog.html"]
-                  i.zmdi.zmdi-edit
-                  |  Blog
-              li
-                a[href="page-blog.html"]
-                  i.zmdi.zmdi-image-o
-                  |  Portafolio
-              li
-                a[href="portfolio-filters_sidebar.html"]
-                  i.zmdi.zmdi-case
-                  |  Works
-              li
-                a[href="page-timeline_left2.html"]
-                  i.zmdi.zmdi-time
-                  |  Timeline
-              li
-                a[href="page-pricing.html"]
-                  i.zmdi.zmdi-money
-                  |  Pricing
-              li
-                a[href="page-about.html"]
-                  i.zmdi.zmdi-favorite-outline
-                  |  About Us
-              li
-                a[href="page-team2.html"]
-                  i.zmdi.zmdi-accounts
-                  |  Our Team
-              li
-                a[href="page-services.html"]
-                  i.zmdi.zmdi-face
-                  |  Services
-              li
-                a[href="page-faq2.html"]
-                  i.zmdi.zmdi-help
-                  |  FAQ
-              li
-                a[href="page-login2.html"]
-                  i.zmdi.zmdi-lock
-                  |  Login
-              li
-                a[href="page-contact.html"]
-                  i.zmdi.zmdi-email
-                  |  Contact
-          .ms-footbar-block
-            h3.ms-footbar-title
-              | Subscribe
-            p
-              | Lorem ipsum Amet fugiat elit nisi anim mollit minim labore ut esse Duis ullamco ad dolor veniam velit.
-            form
-              .form-group.label-floating.mt-2.mb-1
-                .input-group.ms-input-subscribe
-                  label.control-label[for="ms-subscribe"]
-                    i.zmdi.zmdi-email
-                    |  Email Adress
-                  input#ms-subscribe.form-control[type="email"]
-              button.ms-subscribre-btn[type="button"]
-                | Subscribe
-        .col-md-5.col-sm-7.ms-footer-col.ms-footer-alt-color
-          .ms-footbar-block
-            h3.ms-footbar-title.text-center.mb-2
-              | Last Articles
-            .ms-footer-media
-              .media
-                .media-left.media-middle
-                  a[href="javascript:void(0)"]
-                    = image_tag("p75.jpg", class: "media-object media-object-circle")
-                    /img.media-object.media-object-circle[src="assets/images/p75.jpg" alt="..."]
-                .media-body
-                  h4.media-heading
-                    a[href="javascript:void(0)"]
-                      | Lorem ipsum dolor sit expedita cumque amet consectetur adipisicing repellat
-                  .media-footer
-                    span
-                      i.zmdi.zmdi-time.color-info-light
-                      |  August 18, 2016
-                    span
-                      i.zmdi.zmdi-folder-outline.color-warning-light
-                      a[href="javascript:void(0)"]
-                        | Design
-              .media
-                .media-left.media-middle
-                  a[href="javascript:void(0)"]
-                    = image_tag("p75.jpg", class: "media-object media-object-circle")
-                    /img.media-object.media-object-circle[src="assets/images/p75.jpg" alt="..."]
-                .media-body
-                  h4.media-heading
-                    a[href="javascript:void(0)"]
-                      | Labore ut esse Duis consectetur expedita cumque ullamco ad dolor veniam velit
-                  .media-footer
-                    span
-                      i.zmdi.zmdi-time.color-info-light
-                      |  August 18, 2016
-                    span
-                      i.zmdi.zmdi-folder-outline.color-warning-light
-                      a[href="javascript:void(0)"]
-                        | News
-              .media
-                .media-left.media-middle
-                  a[href="javascript:void(0)"]
-                    = image_tag("p75.jpg", class: "media-object media-object-circle")
-                    /img.media-object.media-object-circle[src="assets/images/p75.jpg" alt="..."]
-                .media-body
-                  h4.media-heading
-                    a[href="javascript:void(0)"]
-                      | voluptates deserunt ducimus expedita cumque quaerat molestiae labore
-                  .media-footer
-                    span
-                      i.zmdi.zmdi-time.color-info-light
-                      |  August 18, 2016
-                    span
-                      i.zmdi.zmdi-folder-outline.color-warning-light
-                      a[href="javascript:void(0)"]
-                        | Productivity
-        .col-md-3.col-sm-5.ms-footer-col.ms-footer-text-right
-          .ms-footbar-block
-            .ms-footbar-title
-              span.ms-logo.ms-logo-white.ms-logo-sm.mr-1
-                | M
-              h3.no-m.ms-site-title
-                | Material
-                span
-                  | Style
-            address.no-mb
-              p
-                i.color-danger-light.zmdi.zmdi-pin.mr-1
-                |  795 Folsom Ave, Suite 600
-              p
-                i.color-warning-light.zmdi.zmdi-map.mr-1
-                |  San Francisco, CA 94107
-              p
-                i.color-info-light.zmdi.zmdi-email.mr-1
-                a[href="mailto:joe@example.com"]
-                  | example@domain.com
-              p
-                i.color-royal-light.zmdi.zmdi-phone.mr-1
-                | +34 123 456 7890
-              p
-                i.color-success-light.fa.fa-fax.mr-1
-                | +34 123 456 7890
-          .ms-footbar-block
-            h3.ms-footbar-title
-              | Social Media
-            .ms-footbar-social
-              a.btn-circle.btn-facebook[href="javascript:void(0)"]
-                i.zmdi.zmdi-facebook
-              a.btn-circle.btn-twitter[href="javascript:void(0)"]
-                i.zmdi.zmdi-twitter
-              a.btn-circle.btn-youtube[href="javascript:void(0)"]
-                i.zmdi.zmdi-youtube
-              br
-              a.btn-circle.btn-google[href="javascript:void(0)"]
-                i.zmdi.zmdi-google
-              a.btn-circle.btn-instagram[href="javascript:void(0)"]
-                i.zmdi.zmdi-instagram
-              a.btn-circle.btn-github[href="javascript:void(0)"]
-                i.zmdi.zmdi-github
-  footer.ms-footer
-    .container
-      p
-        | Copyright © Material Style 2017
-  .btn-back-top
-    a#back-top.btn-circle.btn-circle-primary.btn-circle-sm.btn-circle-raised[href="#" data-scroll]
-      i.zmdi.zmdi-long-arrow-up
-#ms-slidebar.ms-slidebar.sb-slidebar.sb-left.sb-style-overlay
-  .sb-slidebar-container
-    header.ms-slidebar-header
-      .ms-slidebar-login
-        a.withripple[href="javascript:void(0)"]
-          i.zmdi.zmdi-account
-          |  Login
-        a.withripple[href="javascript:void(0)"]
-          i.zmdi.zmdi-account-add
-          |  Register
-      .ms-slidebar-title
-        form.search-form
-          input#search-box-slidebar.search-input[type="text" placeholder="Search..." name="q"]
-          label[for="search-box-slidebar"]
-            i.zmdi.zmdi-search
-        .ms-slidebar-t
-          span.ms-logo.ms-logo-sm
-            | M
-          h3
-            | Material
-            span
-              | Style
-    ul#slidebar-menu.ms-slidebar-menu[role="tablist" aria-multiselectable="true"]
-      li#sch1.panel[role="tab"]
-        a.collapsed[role="button" data-toggle="collapse" data-parent="#slidebar-menu" href="#sc1" aria-expanded="false" aria-controls="sc1"]
-          i.zmdi.zmdi-home
-          |  Home
-        ul#sc1.panel-collapse.collapse[role="tabpanel" aria-labelledby="sch1"]
-          li
-            a[href="index.html"]
-              | Default Home
-          li
-            a[href="home-generic-2.html"]
-              | Home Black Slider
-          li
-            a[href="home-landing.html"]
-              | Home Landing Intro
-          li
-            a[href="home-landing3.html"]
-              | Home Landing Video
-          li
-            a[href="home-shop.html"]
-              | Home Shop 1
-      li#sch2.panel[role="tab"]
-        a.collapsed[role="button" data-toggle="collapse" data-parent="#slidebar-menu" href="#sc2" aria-expanded="false" aria-controls="sc2"]
-          i.zmdi.zmdi-desktop-mac
-          |  Pages
-        ul#sc2.panel-collapse.collapse[role="tabpanel" aria-labelledby="sch2"]
-          li
-            a[href="page-about.html"]
-              | About US
-          li
-            a[href="page-team.html"]
-              | Our Team
-          li
-            a[href="page-product.html"]
-              | Products
-          li
-            a[href="page-services.html"]
-              | Services
-          li
-            a[href="page-faq.html"]
-              | FAQ
-          li
-            a[href="page-timeline_left.html"]
-              | Timeline
-          li
-            a[href="page-contact.html"]
-              | Contact Option
-          li
-            a[href="page-login.html"]
+                    a href="page-contact.html"
+                      i.zmdi.zmdi-email
+                      | Contact
+              .ms-footbar-block
+                h3.ms-footbar-title Subscribe
+                p Lorem ipsum Amet fugiat elit nisi anim mollit minim labore ut esse Duis ullamco ad dolor veniam velit.
+                form
+                  .form-group.label-floating.mt-2.mb-1
+                    .input-group.ms-input-subscribe
+                      label.control-label for="ms-subscribe"
+                        i.zmdi.zmdi-email
+                        | Email Adress
+                      input#ms-subscribe.form-control type="email" /
+                  button.ms-subscribre-btn type="button"  Subscribe
+            .col-md-5.col-sm-7.ms-footer-col.ms-footer-alt-color
+              .ms-footbar-block
+                h3.ms-footbar-title.text-center.mb-2 Last Articles
+                .ms-footer-media
+                  .media
+                    .media-left.media-middle
+                      a href="javascript:void(0)"
+                        img.media-object.media-object-circle alt="..." src="assets/img/demo/p75.jpg" /
+                    .media-body
+                      h4.media-heading
+                        a href="javascript:void(0)"  Lorem ipsum dolor sit expedita cumque amet consectetur adipisicing repellat
+                      .media-footer
+                        span
+                          i.zmdi.zmdi-time.color-info-light
+                          | August 18, 2016
+                        span
+                          i.zmdi.zmdi-folder-outline.color-warning-light
+                          a href="javascript:void(0)"  Design
+                  .media
+                    .media-left.media-middle
+                      a href="javascript:void(0)"
+                        img.media-object.media-object-circle alt="..." src="assets/img/demo/p75.jpg" /
+                    .media-body
+                      h4.media-heading
+                        a href="javascript:void(0)"  Labore ut esse Duis consectetur expedita cumque ullamco ad dolor veniam velit
+                      .media-footer
+                        span
+                          i.zmdi.zmdi-time.color-info-light
+                          | August 18, 2016
+                        span
+                          i.zmdi.zmdi-folder-outline.color-warning-light
+                          a href="javascript:void(0)"  News
+                  .media
+                    .media-left.media-middle
+                      a href="javascript:void(0)"
+                        img.media-object.media-object-circle alt="..." src="assets/img/demo/p75.jpg" /
+                    .media-body
+                      h4.media-heading
+                        a href="javascript:void(0)"  voluptates deserunt ducimus expedita cumque quaerat molestiae labore
+                      .media-footer
+                        span
+                          i.zmdi.zmdi-time.color-info-light
+                          | August 18, 2016
+                        span
+                          i.zmdi.zmdi-folder-outline.color-warning-light
+                          a href="javascript:void(0)"  Productivity
+            .col-md-3.col-sm-5.ms-footer-col.ms-footer-text-right
+              .ms-footbar-block
+                .ms-footbar-title
+                  span.ms-logo.ms-logo-white.ms-logo-sm.mr-1 M
+                  h3.no-m.ms-site-title
+                    | Material
+                    span Style
+                address.no-mb
+                  p
+                    i.color-danger-light.zmdi.zmdi-pin.mr-1
+                    | 795 Folsom Ave, Suite 600
+                  p
+                    i.color-warning-light.zmdi.zmdi-map.mr-1
+                    | San Francisco, CA 94107
+                  p
+                    i.color-info-light.zmdi.zmdi-email.mr-1
+                    a href="mailto:joe@example.com"  example@domain.com
+                  p
+                    i.color-royal-light.zmdi.zmdi-phone.mr-1
+                    | +34 123 456 7890
+                  p
+                    i.color-success-light.fa.fa-fax.mr-1
+                    | +34 123 456 7890
+              .ms-footbar-block
+                h3.ms-footbar-title Social Media
+                .ms-footbar-social
+                  a.btn-circle.btn-facebook href="javascript:void(0)"
+                    i.zmdi.zmdi-facebook
+                  a.btn-circle.btn-twitter href="javascript:void(0)"
+                    i.zmdi.zmdi-twitter
+                  a.btn-circle.btn-youtube href="javascript:void(0)"
+                    i.zmdi.zmdi-youtube
+                  br/
+                  a.btn-circle.btn-google href="javascript:void(0)"
+                    i.zmdi.zmdi-google
+                  a.btn-circle.btn-instagram href="javascript:void(0)"
+                    i.zmdi.zmdi-instagram
+                  a.btn-circle.btn-github href="javascript:void(0)"
+                    i.zmdi.zmdi-github
+      footer.ms-footer
+        .container
+          p Copyright © Material Style 2017
+      .btn-back-top
+        a#back-top.btn-circle.btn-circle-primary.btn-circle-sm.btn-circle-raised data-scroll="" href="#"
+          i.zmdi.zmdi-long-arrow-up
+    /! sb-site-container
+    #ms-slidebar.ms-slidebar.sb-slidebar.sb-left.sb-style-overlay
+      .sb-slidebar-container
+        header.ms-slidebar-header
+          .ms-slidebar-login
+            a.withripple href="javascript:void(0)"
+              i.zmdi.zmdi-account
               | Login
+            a.withripple href="javascript:void(0)"
+              i.zmdi.zmdi-account-add
+              | Register
+          .ms-slidebar-title
+            form.search-form
+              input#search-box-slidebar.search-input name="q" placeholder="Search..." type="text" /
+              label for="search-box-slidebar"
+                i.zmdi.zmdi-search
+            .ms-slidebar-t
+              span.ms-logo.ms-logo-sm M
+              h3
+                | Material
+                span Style
+        ul#slidebar-menu.ms-slidebar-menu aria-multiselectable="true" role="tablist"
+          li#sch1.panel role="tab"
+            a.collapsed aria-controls="sc1" aria-expanded="false" data-parent="#slidebar-menu" data-toggle="collapse" href="#sc1" role="button"
+              i.zmdi.zmdi-home
+              | Home
+            ul#sc1.panel-collapse.collapse aria-labelledby="sch1" role="tabpanel"
+              li
+                a href="index.html"  Default Home
+              li
+                a href="home-generic-2.html"  Home Black Slider
+              li
+                a href="home-landing.html"  Home Landing Intro
+              li
+                a href="home-landing3.html"  Home Landing Video
+              li
+                a href="home-shop.html"  Home Shop 1
+          li#sch2.panel role="tab"
+            a.collapsed aria-controls="sc2" aria-expanded="false" data-parent="#slidebar-menu" data-toggle="collapse" href="#sc2" role="button"
+              i.zmdi.zmdi-desktop-mac
+              | Pages
+            ul#sc2.panel-collapse.collapse aria-labelledby="sch2" role="tabpanel"
+              li
+                a href="page-about.html"  About US
+              li
+                a href="page-team.html"  Our Team
+              li
+                a href="page-product.html"  Products
+              li
+                a href="page-services.html"  Services
+              li
+                a href="page-faq.html"  FAQ
+              li
+                a href="page-timeline_left.html"  Timeline
+              li
+                a href="page-contact.html"  Contact Option
+              li
+                a href="page-login.html"  Login
+              li
+                a href="page-pricing.html"  Pricing
+              li
+                a href="page-coming.html"  Coming Soon
+          li#sch4.panel role="tab"
+            a.collapsed aria-controls="sc4" aria-expanded="false" data-parent="#slidebar-menu" data-toggle="collapse" href="#sc4" role="button"
+              i.zmdi.zmdi-edit
+              | Blog
+            ul#sc4.panel-collapse.collapse aria-labelledby="sch4" role="tabpanel"
+              li
+                a href="blog-sidebar.html"  Blog Sidebar 1
+              li
+                a href="blog-sidebar2.html"  Blog Sidebar 2
+              li
+                a href="blog-masonry.html"  Blog Masonry 1
+              li
+                a href="blog-masonry2.html"  Blog Masonry 2
+              li
+                a href="blog-full.html"  Blog Full Page 1
+              li
+                a href="blog-full2.html"  Blog Full Page 2
+              li
+                a href="blog-post.html"  Blog Post 1
+              li
+                a href="blog-post2.html"  Blog Post 2
+          li#sch5.panel role="tab"
+            a.collapsed aria-controls="sc5" aria-expanded="false" data-parent="#slidebar-menu" data-toggle="collapse" href="#sc5" role="button"
+              i.zmdi.zmdi-shopping-basket
+              | E-Commerce
+            ul#sc5.panel-collapse.collapse aria-labelledby="sch5" role="tabpanel"
+              li
+                a href="ecommerce-filters.html"  E-Commerce Sidebar
+              li
+                a href="ecommerce-filters-full.html"  E-Commerce Sidebar Full
+              li
+                a href="ecommerce-filters-full2.html"  E-Commerce Topbar Full
+              li
+                a href="ecommerce-item.html"  E-Commerce Item
+              li
+                a href="ecommerce-cart.html"  E-Commerce Cart
+          li#sch6.panel role="tab"
+            a.collapsed aria-controls="sc6" aria-expanded="false" data-parent="#slidebar-menu" data-toggle="collapse" href="#sc6" role="button"
+              i.zmdi.zmdi-collection-image-o
+              | Portfolio
+            ul#sc6.panel-collapse.collapse aria-labelledby="sch6" role="tabpanel"
+              li
+                a href="portfolio-filters_sidebar.html"  Portfolio Sidebar Filters
+              li
+                a href="portfolio-filters_topbar.html"  Portfolio Topbar Filters
+              li
+                a href="portfolio-filters_sidebar_fluid.html"  Portfolio Sidebar Fluid
+              li
+                a href="portfolio-filters_topbar_fluid.html"  Portfolio Topbar Fluid
+              li
+                a href="portfolio-cards.html"  Porfolio Cards
+              li
+                a href="portfolio-masonry.html"  Porfolio Masonry
+              li
+                a href="portfolio-item.html"  Portfolio Item 1
+              li
+                a href="portfolio-item2.html"  Portfolio Item 2
           li
-            a[href="page-pricing.html"]
-              | Pricing
+            a.link href="component-typography.html"
+              i.zmdi.zmdi-view-compact
+              | UI Elements
           li
-            a[href="page-coming.html"]
-              | Coming Soon
-      li#sch4.panel[role="tab"]
-        a.collapsed[role="button" data-toggle="collapse" data-parent="#slidebar-menu" href="#sc4" aria-expanded="false" aria-controls="sc4"]
-          i.zmdi.zmdi-edit
-          |  Blog
-        ul#sc4.panel-collapse.collapse[role="tabpanel" aria-labelledby="sch4"]
-          li
-            a[href="blog-sidebar.html"]
-              | Blog Sidebar 1
-          li
-            a[href="blog-sidebar2.html"]
-              | Blog Sidebar 2
-          li
-            a[href="blog-masonry.html"]
-              | Blog Masonry 1
-          li
-            a[href="blog-masonry2.html"]
-              | Blog Masonry 2
-          li
-            a[href="blog-full.html"]
-              | Blog Full Page 1
-          li
-            a[href="blog-full2.html"]
-              | Blog Full Page 2
-          li
-            a[href="blog-post.html"]
-              | Blog Post 1
-          li
-            a[href="blog-post2.html"]
-              | Blog Post 2
-      li#sch5.panel[role="tab"]
-        a.collapsed[role="button" data-toggle="collapse" data-parent="#slidebar-menu" href="#sc5" aria-expanded="false" aria-controls="sc5"]
-          i.zmdi.zmdi-shopping-basket
-          |  E-Commerce
-        ul#sc5.panel-collapse.collapse[role="tabpanel" aria-labelledby="sch5"]
-          li
-            a[href="ecommerce-filters.html"]
-              | E-Commerce Sidebar
-          li
-            a[href="ecommerce-filters-full.html"]
-              | E-Commerce Sidebar Full
-          li
-            a[href="ecommerce-filters-full2.html"]
-              | E-Commerce Topbar Full
-          li
-            a[href="ecommerce-item.html"]
-              | E-Commerce Item
-          li
-            a[href="ecommerce-cart.html"]
-              | E-Commerce Cart
-      li#sch6.panel[role="tab"]
-        a.collapsed[role="button" data-toggle="collapse" data-parent="#slidebar-menu" href="#sc6" aria-expanded="false" aria-controls="sc6"]
-          i.zmdi.zmdi-collection-image-o
-          |  Portfolio
-        ul#sc6.panel-collapse.collapse[role="tabpanel" aria-labelledby="sch6"]
-          li
-            a[href="portfolio-filters_sidebar.html"]
-              | Portfolio Sidebar Filters
-          li
-            a[href="portfolio-filters_topbar.html"]
-              | Portfolio Topbar Filters
-          li
-            a[href="portfolio-filters_sidebar_fluid.html"]
-              | Portfolio Sidebar Fluid
-          li
-            a[href="portfolio-filters_topbar_fluid.html"]
-              | Portfolio Topbar Fluid
-          li
-            a[href="portfolio-cards.html"]
-              | Porfolio Cards
-          li
-            a[href="portfolio-masonry.html"]
-              | Porfolio Masonry
-          li
-            a[href="portfolio-item.html"]
-              | Portfolio Item 1
-          li
-            a[href="portfolio-item2.html"]
-              | Portfolio Item 2
-      li
-        a.link[href="component-typography.html"]
-          i.zmdi.zmdi-view-compact
-          |  UI Elements
-      li
-        a.link[href="page-all.html"]
-          i.zmdi.zmdi-link
-          |  All Pages
-    .ms-slidebar-social.ms-slidebar-block
-      h4.ms-slidebar-block-title
-        | Social Links
-      .ms-slidebar-social
-        a.btn-circle.btn-circle-raised.btn-facebook[href="javascript:void(0)"]
-          i.zmdi.zmdi-facebook
-          span.badge.badge-pink
-            | 12
-        .ripple-container
-        a.btn-circle.btn-circle-raised.btn-twitter[href="javascript:void(0)"]
-          i.zmdi.zmdi-twitter
-          span.badge.badge-pink
+            a.link href="page-all.html"
+              i.zmdi.zmdi-link
+              | All Pages
+        .ms-slidebar-social.ms-slidebar-block
+          h4.ms-slidebar-block-title Social Links
+          .ms-slidebar-social
+            a.btn-circle.btn-circle-raised.btn-facebook href="javascript:void(0)"
+              i.zmdi.zmdi-facebook
+              span.badge.badge-pink 12
+              .ripple-container
+            a.btn-circle.btn-circle-raised.btn-twitter href="javascript:void(0)"
+              i.zmdi.zmdi-twitter
+              span.badge.badge-pink 4
+              .ripple-container
+            a.btn-circle.btn-circle-raised.btn-google href="javascript:void(0)"
+              i.zmdi.zmdi-google
+              .ripple-container
+            a.btn-circle.btn-circle-raised.btn-instagram href="javascript:void(0)"
+              i.zmdi.zmdi-instagram
+              .ripple-container
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+/.row
+  .col-md-3.hidden-sm.hidden-xs
+    .card.card-primary
+      .card-header
+        h3.card-title
+          i.zmdi.zmdi-filter-list
+          | Filter List
+      .card-block.no-pb
+        form.form-horizontal
+          h4.no-m.color-primary
+            | Categories
+          .form-group.mt-1
+            .radio.no-mb
+              label
+                input#optionsRadios0.filter[type="radio" name="optionsRadios" value="option0" checked="" data-filter="all"]
+                |  All
+            .radio.no-mb
+              label
+                input#optionsRadios1.filter[type="radio" name="optionsRadios" value="option1" data-filter=".category-1"]
+                |  Category One
+            .radio.no-mb
+              label
+                input#optionsRadios2.filter[type="radio" name="optionsRadios" value="option2" data-filter=".category-2"]
+                |  Category Two
+            .radio.no-mb
+              label
+                input#optionsRadios3.filter[type="radio" name="optionsRadios" value="option3" data-filter=".category-3"]
+                |  Category Three
+            .radio.no-mb
+              label
+                input#optionsRadios4.filter[type="radio" name="optionsRadios" value="option4" data-filter=".category-4"]
+                |  Category Four
+            .radio.no-mb
+              label
+                input#optionsRadios5.filter[type="radio" name="optionsRadios" value="option5" data-filter=".category-5"]
+                |  Category Five
+            .radio.no-mb
+              label
+                input#optionsRadios6.filter[type="radio" name="optionsRadios" value="option6" data-filter=".category-6"]
+                |  Category Six
+        h4.mt-2.color-primary.no-mb
+          | Columns
+      ul.nav.nav-tabs.nav-tabs-transparent.indicator-primary.nav-tabs-full.nav-tabs-4[role="tablist"]
+        li
+          a#Cols1.withoutripple[href="#home7" aria-controls="home7" role="tab" data-toggle="tab"]
+            | 1
+        li
+          a#Cols2.withoutripple[href="#profile7" aria-controls="profile7" role="tab" data-toggle="tab"]
+            | 2
+        li.active
+          a#Cols3.withoutripple[href="#messages7" aria-controls="messages7" role="tab" data-toggle="tab"]
+            | 3
+        li
+          a#Cols4.withoutripple[href="#settings7" aria-controls="settings7" role="tab" data-toggle="tab"]
             | 4
-        .ripple-container
-        a.btn-circle.btn-circle-raised.btn-google[href="javascript:void(0)"]
-          i.zmdi.zmdi-google
-        .ripple-container
-        a.btn-circle.btn-circle-raised.btn-instagram[href="javascript:void(0)"]
-          i.zmdi.zmdi-instagram
-        .ripple-container
+      .card-block
+        form.form-horizontal
+          .form-group.no-mt
+            .col-md-12
+              h4.no-m.color-primary.mb-2
+                | Descriptions
+              .togglebutton
+                label
+                  input#port-show[type="checkbox"]
+                  |  Show description
+  .col-md-9
+    #Container.row
+      .col-md-4.col-sm-6.mix.category-1
+        .card
+          figure.ms-thumbnail
+            = image_tag("port14.jpg", class: "img-responsive")
+            figcaption.ms-thumbnail-caption.text-center
+              .ms-thumbnail-caption-content
+                h4.ms-thumbnail-caption-title.mb-2
+                  | Lorem ipsum dolor
+                a.btn-circle.btn-circle-raised.btn-circle-xs.mr-1.btn-circle-white.color-danger[href="javascript:void(0)"]
+                  i.zmdi.zmdi-favorite
+                a.btn-circle.btn-circle-raised.btn-circle-xs.ml-1.mr-1.btn-circle-white.color-warning[href="javascript:void(0)"]
+                  i.zmdi.zmdi-star
+                a.btn-circle.btn-circle-raised.btn-circle-xs.ml-1.btn-circle-white.color-success[href="javascript:void(0)"]
+                  i.zmdi.zmdi-share
+          .card-block.text-center.portfolio-item-caption.hidden
+            h3.color-primary.no-mt
+              | Lorem ipsum dolor
+            p
+              | Explicabo consequatur quidem praesentium quas qui eius ina Cupiditate ratione sint.
+      .col-md-4.col-sm-6.mix.category-3
+        .card
+          figure.ms-thumbnail
+            figcaption.ms-thumbnail-caption.text-center
+              .ms-thumbnail-caption-content
+                h4.ms-thumbnail-caption-title.mb-2
+                  | Lorem ipsum dolor
+                a.btn-circle.btn-circle-raised.btn-circle-xs.mr-1.btn-circle-white.color-danger[href="javascript:void(0)"]
+                  i.zmdi.zmdi-favorite
+                a.btn-circle.btn-circle-raised.btn-circle-xs.ml-1.mr-1.btn-circle-white.color-warning[href="javascript:void(0)"]
+                  i.zmdi.zmdi-star
+                a.btn-circle.btn-circle-raised.btn-circle-xs.ml-1.btn-circle-white.color-success[href="javascript:void(0)"]
+                  i.zmdi.zmdi-share
+          .card-block.text-center.portfolio-item-caption.hidden
+            h3.color-primary.no-mt
+              | Lorem ipsum dolor
+            p
+              | Explicabo consequatur quidem praesentium quas qui eius ina Cupiditate ratione sint.

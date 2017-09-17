@@ -15,8 +15,8 @@
 //= require rails-ujs
 //= require turbolinks
 //= require popper
-//= require bootstrap-sprockets
-//= require ecommerce
+//= require bootstrap
+
 //= require plugins.min
 //= require app.min
 //= require portfolio
