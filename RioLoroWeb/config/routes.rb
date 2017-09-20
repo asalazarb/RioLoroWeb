@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'home/index'
   resources :especies
 
-  root 'home#index'
+  root 'especies#index'
 
 
 end

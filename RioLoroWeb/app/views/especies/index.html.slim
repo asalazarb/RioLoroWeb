@@ -79,7 +79,7 @@
               figcaption.ms-thumbnail-caption.text-center
                 .ms-thumbnail-caption-content
                   h4.ms-thumbnail-caption-title.mb-2
-                    = especie.nombreComun
+                    = link_to especie.nombreComun, controller: "especies", action: "show" , id: especie.id
 
             .card-block.text-center.portfolio-item-caption.hidden
               h3.color-primary.no-mt
