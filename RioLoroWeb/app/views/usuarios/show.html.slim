@@ -1,27 +1,134 @@
-p
-  strong
-    | Nombre:
-  = @usuario.nombre
-p
-  strong
-    | Apellido1:
-  = @usuario.apellido1
-p
-  strong
-    | Apellido2:
-  = @usuario.apellido2
-p
-  strong
-    | Cedula:
-  = @usuario.cedula
-p
-  strong
-    | Nombreusuario:
-  = @usuario.nombreUsuario
-p
-  strong
-    | Password:
-  = @usuario.password
-= link_to 'Edit', edit_usuario_path(@usuario)
-|  | 
-= link_to 'Back', usuarios_path
+/!p
+/!  strong
+/!    | Nombre:
+/!  = @usuario.nombre
+/!p
+/!  strong
+/!    | Apellido1:
+/!  = @usuario.apellido1
+/!p
+/!  strong
+/!    | Apellido2:
+/!  = @usuario.apellido2
+/!p
+/!  strong
+/!    | Cedula:
+/!  = @usuario.cedula
+/!p
+/!  strong
+/!    | Nombreusuario:
+/!  = @usuario.nombreUsuario
+/!p
+/!  strong
+/!    | Password:
+/!  = @usuario.password
+/!= link_to 'Edit', edit_usuario_path(@usuario)
+/!|  |
+/!= link_to 'Back', usuarios_path
+
+.container
+  .row
+    .col-md-4
+      .card.animated.fadeInUp.animation-delay-7
+        .ms-hero-bg-primary.ms-hero-img-coffee
+          h3.color-white.index-1.text-center.no-m.pt-4 = @usuario.nombre+' '+@usuario.apellido1+' '+@usuario.apellido2
+          .color-medium.index-1.text-center.np-m  = '@'+@usuario.nombreUsuario
+          /!img.img-avatar-circle alt="..." src="assets/img/demo/avatar1.jpg" /
+          /!img.img-avatar-circle alt="..." src=image_tag("avatar1.jpg", class: "img-responsive")
+          = image_tag("avatar1.jpg", class: "img-avatar-circle")
+        .card-block.pt-4.text-center
+          /!h3.color-primary Bio
+          /!p Lorem ipsum dolor sit amet, consectetur alter adipisicing elit. Facilis, natuse inse voluptates officia repudiandae beatae magni es magnam autem molestias.
+          a.btn-circle.btn-circle-raised.btn-circle-xs.mt-1.mr-1.no-mr-md.btn-facebook href="javascript:void(0)"
+            i.zmdi.zmdi-facebook
+          a.btn-circle.btn-circle-raised.btn-circle-xs.mt-1.mr-1.no-mr-md.btn-twitter href="javascript:void(0)"
+            i.zmdi.zmdi-twitter
+          a.btn-circle.btn-circle-raised.btn-circle-xs.mt-1.mr-1.no-mr-md.btn-instagram href="javascript:void(0)"
+            i.zmdi.zmdi-instagram
+      a.btn.btn-warning.btn-raised.btn-block.animated.fadeInUp.animation-delay-12 href="javascript:void(0)"
+        i.zmdi.zmdi-edit
+        | Editar Perfil
+      a.btn.btn-danger.btn-raised.btn-block.animated.fadeInUp.animation-delay-12 href="javascript:void(0)"
+        i.zmdi.zmdi-delete
+        | Borrar Usuario
+    .col-md-8
+      .card.card-primary.animated.fadeInUp.animation-delay-12
+        .card-header
+          h3.card-title
+            i.zmdi.zmdi-account-circle
+            | Información General
+        table.table.table-no-border.table-striped
+          tr
+            th
+              i.zmdi.zmdi-account.mr-1.color-success
+              | Nombre de usuario
+            td = '@'+@usuario.nombreUsuario
+          tr
+            th
+              i.zmdi.zmdi-face.mr-1.color-warning
+              | Nombre completo
+            td = @usuario.nombre+' '+@usuario.apellido1+' '+@usuario.apellido2
+          tr
+            th
+              i.zmdi.zmdi-email.mr-1.color-danger
+              | E-mail
+            td
+              a href="#"  mail@example.com
+          tr
+            th
+              i.zmdi.zmdi-lock.mr-1.color-info
+              | Password
+            td = @usuario.password
+              /!a href="#"  www.example.com
+          tr
+            th
+              i.zmdi.zmdi-assignment-o.mr-1.color-royal
+              | Cedula
+            td = @usuario.cedula
+      .card.animated.fadeInUp.animation-delay-12
+        .ms-hero-bg-royal.ms-hero-img-mountain
+          h3.color-white.index-1.text-center.pb-4.pt-4 Recent Contacts
+        .card-block
+          .ms-media-list
+            .media.mb-2
+              .media-left.media-middle
+                a href="#"
+                  = image_tag("avatar6.jpg", class: "img-avatar-circle")
+              .media-body
+                h4.media-heading Maria Sharaphova
+                a href="mailto:joe@example.com?subject=feedback"  maria.sha@example.com
+                div
+                  a.btn-circle.btn-circle-xs.no-mr-md.btn-facebook href="javascript:void(0)"
+                    i.zmdi.zmdi-facebook
+                  a.btn-circle.btn-circle-xs.no-mr-md.btn-twitter href="javascript:void(0)"
+                    i.zmdi.zmdi-twitter
+                  a.btn-circle.btn-circle-xs.no-mr-md.btn-instagram href="javascript:void(0)"
+                    i.zmdi.zmdi-instagram
+            .media.mb-2
+              .media-left.media-middle
+                a href="#"
+                  = image_tag("avatar3.jpg", class: "img-avatar-circle")
+              .media-body
+                h4.media-heading Rafael Nadal
+                a href="mailto:joe@example.com?subject=feedback"  rafa.nad@example.com
+                div
+                  a.btn-circle.btn-circle-xs.no-mr-md.btn-facebook href="javascript:void(0)"
+                    i.zmdi.zmdi-facebook
+                  a.btn-circle.btn-circle-xs.no-mr-md.btn-twitter href="javascript:void(0)"
+                    i.zmdi.zmdi-twitter
+                  a.btn-circle.btn-circle-xs.no-mr-md.btn-instagram href="javascript:void(0)"
+                    i.zmdi.zmdi-instagram
+            .media.mb-2
+              .media-left.media-middle
+                a href="#"
+                  = image_tag("avatar5.jpg", class: "img-avatar-circle")
+              .media-body
+                h4.media-heading Roger Federer
+                a href="mailto:joe@example.com?subject=feedback"  roger.fef@example.com
+                div
+                  a.btn-circle.btn-circle-xs.no-mr-md.btn-facebook href="javascript:void(0)"
+                    i.zmdi.zmdi-facebook
+                  a.btn-circle.btn-circle-xs.no-mr-md.btn-twitter href="javascript:void(0)"
+                    i.zmdi.zmdi-twitter
+                  a.btn-circle.btn-circle-xs.no-mr-md.btn-instagram href="javascript:void(0)"
+                    i.zmdi.zmdi-instagram
