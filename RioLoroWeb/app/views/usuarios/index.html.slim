@@ -1,43 +1,87 @@
-p#notice
-  = notice
-h1
-  | Usuarios
-table
-  thead
-    tr
-      th
-        | Nombre
-      th
-        | Apellido1
-      th
-        | Apellido2
-      th
-        | Cedula
-      th
-        | Nombreusuario
-      th
-        | Password
-      th[colspan="3"]
-  tbody
-    - @usuarios.each do |usuario|
-      tr
-        td
-          = usuario.nombre
-        td
-          = usuario.apellido1
-        td
-          = usuario.apellido2
-        td
-          = usuario.cedula
-        td
-          = usuario.nombreUsuario
-        td
-          = usuario.password
-        td
-          = link_to 'Show', usuario
-        td
-          = link_to 'Edit', edit_usuario_path(usuario)
-        td
-          = link_to 'Destroy', usuario, method: :delete, data: { confirm: 'Are you sure?' }
-br
-= link_to 'New Usuario', new_usuario_path
+/!p#notice
+/!  = notice
+/!h1
+/!  | Usuarios
+/!table
+/!  thead
+/!    tr
+/!      th
+/!        | Nombre
+/!      th
+/!        | Apellido1
+/!      th
+/!        | Apellido2
+/!      th
+/!        | Cedula
+/!      th
+/!        | Nombreusuario
+/!      th
+/!        | Password
+/!      th[colspan="3"]
+/!  tbody
+/!    - @usuarios.each do |usuario|
+/!      tr
+/!        td
+/!          = usuario.nombre
+/!        td
+/!          = usuario.apellido1
+/!        td
+/!          = usuario.apellido2
+/!        td
+/!          = usuario.cedula
+/!        td
+/!          = usuario.nombreUsuario
+/!        td
+/!          = usuario.password
+/!        td
+/!          = link_to 'Show', usuario
+/!        td
+/!          = link_to 'Edit', edit_usuario_path(usuario)
+/!        td
+/!          = link_to 'Destroy', usuario, method: :delete, data: { confirm: 'Are you sure?' }
+/!br
+/!= link_to 'New Usuario', new_usuario_path
+
+.container
+  h1.right-line.mb-4 Usuarios
+  .row
+    .col-md-9
+      - if @usuarios.count == 0
+        em No users found
+      - @usuarios.all.each do |usuario|
+        .card.mb-1
+          table.table.table-responsive.table-no-border.vertical-center
+            tr
+              td.hidden-xs
+                = image_tag("m1.jpg", class: "img-responsive")
+              td
+                h4 = usuario.nombre + ' ' + usuario.apellido1 + ' ' + usuario.apellido2
+              /!td
+              /!  .form-inline.input-number
+              /!    input.form-control.form-control-number pattern="[0-9]*" type="text" value="1" /
+              /!td
+              /!  span.color-success $1999.99
+              td.hidden-xs
+                button.btn.btn-primary
+                  i.zmdi.zmdi-edit
+                  | Edit
+              td.hidden-xs
+                button.btn.btn-danger
+                  i.zmdi.zmdi-delete
+                  | Delete
+/!      .card.mb-1
+/!        table.table.table-responsive.table-no-border.vertical-center
+/!          tr
+/!            td.hidden-xs
+/!              img alt="" src="assets/img/demo/products/m1.png" /
+/!            td
+/!              h4 Macbook Pro 2016 13" with Touch Bar
+/!            td
+/!              .form-inline.input-number
+/!                input.form-control.form-control-number pattern="[0-9]*" type="text" value="1" /
+/!            td
+/!              span.color-success $1999.99
+/!            td.hidden-xs
+/!              button.btn.btn-danger
+/!                i.zmdi.zmdi-delete
+/!                | Delete
