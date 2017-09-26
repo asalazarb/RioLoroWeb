@@ -53,22 +53,24 @@
           table.table.table-responsive.table-no-border.vertical-center
             tr
               td.hidden-xs
-                = image_tag("m1.jpg", class: "img-responsive")
+                = link_to image_tag("m1.jpg", class: "img-responsive"), usuario
               td
-                h4 = usuario.nombre + ' ' + usuario.apellido1 + ' ' + usuario.apellido2
+                h4 = link_to usuario.nombre + ' ' + usuario.apellido1 + ' ' + usuario.apellido2,usuario
               /!td
               /!  .form-inline.input-number
               /!    input.form-control.form-control-number pattern="[0-9]*" type="text" value="1" /
               /!td
               /!  span.color-success $1999.99
               td.hidden-xs
-                button.btn.btn-primary
+                button.btn.btn-warning
+                /!- link_to usuario, class: "btn btn-warning" do
                   i.zmdi.zmdi-edit
                   | Editar
               td.hidden-xs
                 button.btn.btn-danger
                   i.zmdi.zmdi-delete
                   | Borrar
+
 /!      .card.mb-1
 /!        table.table.table-responsive.table-no-border.vertical-center
 /!          tr
