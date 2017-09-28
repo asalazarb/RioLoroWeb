@@ -53,8 +53,12 @@
             label.col-md-2.control-label for="inputEmail"  e-mail
             .col-md-9
               input#inputEmail.form-control placeholder=("e-mail") type="email" /
+          = form_for @usuario, html: { multipart: true } do |form|
+            div.field
+              = form.label "Nueva foto de perfil"
+              = form.file_field :image
+              - if @usuario.image.exists?
+                = image_tag @usuario.image.url(:medium)
           .row
             .col-md-4.col-md-offset-8
               button.btn.btn-raised.btn-primary.btn-block.mt-4 Guardar Cambios
-      = form_for @usuario, html: { multipart: true } do |form|
-        = form.file_field :image
