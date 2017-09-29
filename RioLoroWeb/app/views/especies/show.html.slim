@@ -1,7 +1,7 @@
   .ms-hero-page.mb-6.ms-hero-bg-primary.ms-hero-img-coffee
     /!h2.text-center.no-m.pt-4.pb-4.color-white.index-1 Nombre de especie
     h2.text-center.no-m.pt-4.pb-4.color-white.index-1 = @especy.nombreComun
-    p.lead.color-white.index-1.text-center Put here the description of your work.
+    p.lead.color-white.index-1.text-center = @especy.nombreCientifico
   .container
     .row
       .col-md-8
@@ -59,9 +59,9 @@
               li
                 strong Tipo de especie:
                 | 2014
-            h3.color-primary Usos
-            p Lorem ipsum dolor sit amet, consectetur quas adipisicing elit. Voluptatem vitae similique illum quia ipsa a temporibus ratione libero aliquam debitis temporibus.
-            p Lorem ipsum similique illum quia ipsa elit consectetur.
+            h3.color-primary Usos y Caracteristicas
+            p = @especy.usos
+            p = @especy.caracteristicas
             p.text-center
               a.btn.btn-raised.btn-primary href="#"
                 i.fa.fa-desktop

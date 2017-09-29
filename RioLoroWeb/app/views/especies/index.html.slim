@@ -22,12 +22,12 @@
                 |  Todos
             .radio.no-mb
               label
-                input#optionsRadios1.filter[type="radio" name="optionsRadios" value="option1" data-filter=".category-1"]
-                |  Category One
+                input#optionsRadios1.filter[type="radio" name="optionsRadios" value="option1" data-filter=".2"]
+                |  Animales
             .radio.no-mb
               label
-                input#optionsRadios2.filter[type="radio" name="optionsRadios" value="option2" data-filter=".category-2"]
-                |  Category Two
+                input#optionsRadios2.filter[type="radio" name="optionsRadios" value="option2" data-filter=".1"]
+                |  Plantas
             .radio.no-mb
               label
                 input#optionsRadios3.filter[type="radio" name="optionsRadios" value="option3" data-filter=".category-3"]
@@ -72,7 +72,8 @@
   .col-md-9
     #Container.row
       - @especies.each do |especie|
-        .col-md-4.col-sm-6.mix.category-1
+        - dynamicClass = especie.reino_id
+        .col-md-4.col-sm-6.mix class="#{dynamicClass}"
           .card
             figure.ms-thumbnail
               = image_tag("port14.jpg", class: "img-responsive")
@@ -85,4 +86,4 @@
               h3.color-primary.no-mt
                 = especie.nombreComun
               p
-                = especie.taxomomia
+                = especie.caracteristicas
