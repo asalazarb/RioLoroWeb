@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927015411) do
+ActiveRecord::Schema.define(version: 20171006214613) do
 
   create_table "accions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "accion"
@@ -24,11 +24,21 @@ ActiveRecord::Schema.define(version: 20170927015411) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "especie_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.bigint "especie_id"
+    t.index ["especie_id"], name: "index_especie_images_on_especie_id"
+  end
+
   create_table "especies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "nombreComun"
     t.string "nombreCientifico"
     t.string "imagen"
-    t.string "taxomomia"
     t.boolean "estaEnPeligro"
     t.bigint "reino_id"
     t.bigint "orden_id"
@@ -36,6 +46,12 @@ ActiveRecord::Schema.define(version: 20170927015411) do
     t.bigint "clase_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "usos"
+    t.string "caracteristicas"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["clase_id"], name: "index_especies_on_clase_id"
     t.index ["familium_id"], name: "index_especies_on_familium_id"
     t.index ["orden_id"], name: "index_especies_on_orden_id"
@@ -112,6 +128,8 @@ ActiveRecord::Schema.define(version: 20170927015411) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.string "email"
   end
 
+  add_foreign_key "especie_images", "especies", column: "especie_id"
 end
