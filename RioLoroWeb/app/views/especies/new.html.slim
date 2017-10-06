@@ -12,14 +12,12 @@ body
       .card-block
         form.form-horizontal
           fieldset
-            = form_for @especie_image, html: { multipart: true } do |form|
+            = form_for @especy, html: { multipart: true } do |form|
               div.field
-                = form.label "Nueva imagen"
+                = form.label "Agregar imagen"
                 = form.file_field :image
-                - if @especie_image.image.exists?
-                  = image_tag @especie_image.image.url(:medium)
-
-
+                - if @especy.image.exists?
+                  = image_tag @especy.image.url(:medium)
             .form-group
               label.col-md-2.control-label for="inputUser"  Nombre Común
               .col-md-9
