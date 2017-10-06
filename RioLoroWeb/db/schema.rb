@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928051958) do
+ActiveRecord::Schema.define(version: 20171005071349) do
 
   create_table "accions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "accion"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20170928051958) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.bigint "especie_id"
+    t.index ["especie_id"], name: "index_especie_images_on_especie_id"
   end
 
   create_table "especies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -124,4 +126,5 @@ ActiveRecord::Schema.define(version: 20170928051958) do
     t.datetime "image_updated_at"
   end
 
+  add_foreign_key "especie_images", "especies", column: "especie_id"
 end
