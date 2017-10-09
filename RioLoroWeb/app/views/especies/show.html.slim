@@ -23,7 +23,7 @@
                     p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 .item
                   /!img alt="..." src="assets/img/demo/port2.jpg" /
-                  = image_tag("port2.jpg", class: "img-responsive")
+                  = image_tag(@especy.imagen_url.to_s, class: "img-responsive")
                   .carousel-caption
                     h3 = @especy.nombreComun
                     p Lorem ipsum dolor sit amet, consectetur adipisicing elit.

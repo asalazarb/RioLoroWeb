@@ -1,27 +1,80 @@
-= form_with(model: especy, local: true) do |form|
-  - if especy.errors.any?
+/ = form_with(model: especy, local: true) do |form|
+/   - if especy.errors.any?
+/     #error_explanation
+/       h2
+/         = pluralize(especy.errors.count, "error")
+/         |  prohibited this especy from being saved:
+/       ul
+/         - especy.errors.full_messages.each do |message|
+/           li
+/             = message
+/   .field
+/     = form.label :nombreComun
+/     = form.text_field :nombreComun, id: :especy_nombreComun
+/   .field
+/     = form.label :nombreCientifico
+/     = form.text_field :nombreCientifico, id: :especy_nombreCientifico
+/   .field
+/     = form.label :imagen
+/     = form.text_field :imagen, id: :especy_imagen
+/   .field
+/     = form.label :taxomomia
+/     = form.text_field :taxomomia, id: :especy_taxomomia
+/   .field
+/     = form.label :estaEnPeligro
+/     = form.text_field :estaEnPeligro, id: :especy_estaEnPeligro
+/   .actions
+/     = form.submit
+
+= form_with(model: @especy, local: true, html: { multipart: true }) do |form|
+  - if @especy.errors.any?
     #error_explanation
       h2
-        = pluralize(especy.errors.count, "error")
+        = pluralize(@especy.errors.count, "error")
         |  prohibited this especy from being saved:
       ul
-        - especy.errors.full_messages.each do |message|
+        - @especy.errors.full_messages.each do |message|
           li
             = message
-  .field
-    = form.label :nombreComun
-    = form.text_field :nombreComun, id: :especy_nombreComun
-  .field
-    = form.label :nombreCientifico
-    = form.text_field :nombreCientifico, id: :especy_nombreCientifico
-  .field
-    = form.label :imagen
-    = form.text_field :imagen, id: :especy_imagen
-  .field
-    = form.label :taxomomia
-    = form.text_field :taxomomia, id: :especy_taxomomia
-  .field
-    = form.label :estaEnPeligro
-    = form.text_field :estaEnPeligro, id: :especy_estaEnPeligro
-  .actions
-    = form.submit
+  .container
+    .card.card-primary.card-hero.animated.fadeInUp.animation-delay-7
+      .card-block
+        form.form-horizontal
+          fieldset
+            .form-group
+              label.col-md-2.control-label for="inputUser"  Nombre Común
+              .col-md-9
+                = form.label "Agregar imagen"
+                = form.file_field :imagen
+            .form-group
+              label.col-md-2.control-label for="inputUser"  Nombre Común
+              .col-md-9
+                = form.text_field :nombreComun, value: @especy.nombreComun, class: 'form-control', placeholder:'Nombre Comun'
+            .form-group
+              label.col-md-2.control-label for="inputEmail"  Nombre Científico
+              .col-md-9
+                = form.text_field :nombreCientifico, value: @especy.nombreCientifico, class: 'form-control', placeholder:'Nombre Cientifico'
+            .form-group
+              label.col-md-2.control-label for="inputPassword"  Características
+              .col-md-9
+                = form.text_field :caracteristicas, class: 'form-control', placeholder:'Características'
+            .form-group
+              label.col-md-2.control-label for="inputPassword"  Familia
+              .col-md-9
+                = form.text_field :familium_id, class: 'form-control', placeholder:'Familia'
+            / .form-group
+            /   label.col-md-2.control-label for="inputName"  Usos
+            /   .col-md-9
+            /     = form.text_field :usos, class: 'form-control', placeholder:'Usos'
+            /     /input#inputName.form-control placeholder="Usos" type="text" /
+            / .form-group
+            /   label.col-md-2.control-label for="inputGen"  En peligro
+            /   .col-md-9
+            /     select#inputGen.form-control.selectpicker
+            /       option Sí
+            /       option No
+            .row
+              .col-md-4.col-md-offset-8
+                button.btn.btn-raised.btn-primary.btn-block.mt-4 Agregar Especie
+                .actions
+                  = form.submit
