@@ -84,6 +84,6 @@
 
             .card-block.text-center.portfolio-item-caption.hidden
               h3.color-primary.no-mt
-                = especie.nombreComun
+                = link_to especie.nombreComun, controller: "especies", action: "show" , id: especie.id
               p
-                = especie.caracteristicas
+                = especie.nombreCientifico

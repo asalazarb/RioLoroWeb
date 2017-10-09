@@ -25,7 +25,6 @@ class EspeciesController < ApplicationController
   # POST /especies.json
   def create
     @especy = Especie.new(especy_params)
-    puts @especy.nombreComun
     respond_to do |format|
       if @especy.save
         format.html { redirect_to @especy, notice: 'Especie was successfully created.' }
@@ -70,6 +69,6 @@ class EspeciesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def especy_params
-      params.require(:especie).permit(:nombreComun, :nombreCientifico, :caracteristicas,:familium_id, :imagen)
+      params.require(:especie).permit(:nombreComun, :nombreCientifico, :caracteristicas,:familium_id, :imagen, :usos, :estaEnPeligro)
     end
 end

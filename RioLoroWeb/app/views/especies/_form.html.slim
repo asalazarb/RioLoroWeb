@@ -57,24 +57,23 @@
             .form-group
               label.col-md-2.control-label for="inputPassword"  Características
               .col-md-9
-                = form.text_field :caracteristicas, class: 'form-control', placeholder:'Características'
+                = form.text_area :caracteristicas, class: 'form-control', placeholder:'Características', cols: 20, rows: 5
+            .form-group
+              label.col-md-2.control-label for="inputName"  Usos
+              .col-md-9
+                = form.text_area :usos, class: 'form-control', placeholder:'Usos', cols: 20, rows: 5
             .form-group
               label.col-md-2.control-label for="inputPassword"  Familia
               .col-md-9
-                = form.text_field :familium_id, class: 'form-control', placeholder:'Familia'
-            / .form-group
-            /   label.col-md-2.control-label for="inputName"  Usos
-            /   .col-md-9
-            /     = form.text_field :usos, class: 'form-control', placeholder:'Usos'
-            /     /input#inputName.form-control placeholder="Usos" type="text" /
-            / .form-group
-            /   label.col-md-2.control-label for="inputGen"  En peligro
-            /   .col-md-9
-            /     select#inputGen.form-control.selectpicker
-            /       option Sí
-            /       option No
+                /- opciones = options_from_collection_for_select(Familium.all, 'nombreFamilia', 'id')
+                /= form.select(:familium_id, grouped_options_for_select(opciones), class: 'form-control')
+                = form.select(:familium_id, Familium.all.collect {|f| [ f.nombreFamilia, f.id ] }, class: 'form-control')
+            .form-group
+              label.col-md-2.control-label for="inputGen"  En peligro
+              .col-md-9
+                - opciones = {'Opcion' => [['SI', 1], ['NO',0]]}
+                = form.select(:estaEnPeligro, grouped_options_for_select(opciones), class: 'form-control')
             .row
               .col-md-4.col-md-offset-8
-                button.btn.btn-raised.btn-primary.btn-block.mt-4 Agregar Especie
-                .actions
+                button.btn.btn-raised.btn-primary.btn-block.mt-4.actions
                   = form.submit
