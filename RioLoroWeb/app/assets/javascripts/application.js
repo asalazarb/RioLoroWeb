@@ -15,3 +15,6 @@
 //= require plugins.min
 //= require app.min
 //= require portfolio
+//= require highcharts/highcharts
+//= require highcharts/highcharts-more
+//= require highcharts/highstock

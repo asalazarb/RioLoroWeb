@@ -5,6 +5,12 @@ class UsuariosController < ApplicationController
   # GET /usuarios.json
   def index
     @usuarios = Usuario.all
+    @reinosData = ReinosController.get_graph_data
+
+    @reinosData.each do |reinoData|
+      reinoData
+
+
   end
 
   # GET /usuarios/1
@@ -71,5 +77,9 @@ class UsuariosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def usuario_params
       params.require(:usuario).permit(:nombre, :apellido1, :apellido2, :cedula, :nombreUsuario, :password, :image)
+    end
+
+    def get_report_data
+
     end
 end
