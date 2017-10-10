@@ -43,6 +43,8 @@
 /!= link_to 'New Usuario', new_usuario_path
 
 .container
+  = high_chart_globals(@chart_globals)
+  = high_chart("id", @chart)
   h1.right-line.mb-4 Usuarios
   .row
     .col-md-9
