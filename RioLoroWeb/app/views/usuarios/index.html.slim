@@ -43,8 +43,9 @@
 /!= link_to 'New Usuario', new_usuario_path
 
 .container
-  = high_chart_globals(@chart_globals)
-  = high_chart("id", @chart)
+  h1.right-line.mb-4 Reportes
+  = high_chart("chart_id", @chart)
+
   h1.right-line.mb-4 Usuarios
   .row
     .col-md-9
@@ -71,6 +72,14 @@
                 button.btn.btn-danger
                   i.zmdi.zmdi-delete
                   | Borrar
+
+  / /.clearfix
+  /   .row
+  /     .col-md-12.col-xs-12
+  /       .x_panel LKNSLKFNSLDKFNLSKN
+  /         .x_content#container
+  /           = render "charts/bar_chart"
+
 
 /!      .card.mb-1
 /!        table.table.table-responsive.table-no-border.vertical-center

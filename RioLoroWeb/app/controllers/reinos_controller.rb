@@ -23,7 +23,6 @@ class ReinosController < ApplicationController
 
   def self.get_graph_data
     return Reino.joins("INNER JOIN especies on especies.reino_id = reinos.id")
-    #return Reino.joins("INNER JOIN especies on especies.reino_id = reinos.id").group(:nombreReino).count
   end
 
   # POST /reinos

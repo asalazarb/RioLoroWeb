@@ -6,50 +6,25 @@ class UsuariosController < ApplicationController
   def index
     @usuarios = Usuario.all
     reinosData = ReinosController.get_graph_data
+    especiesData = EspeciesController.get_graph_data
+
     temp = reinosData.uniq
     cantidad = Array.new(temp.size,0)
+    enPeligro = Array.new(temp.size, 0)
     categorias = Array.new()
 
     temp.each do |cat|
       categorias.push(cat.nombreReino)
     end
 
-    reinosData.each do |reino|
+    (reinosData.zip(especiesData)).each do |reino, especie|
       index = categorias.index(reino.nombreReino)
       cantidad[index] = cantidad[index] + 1
+      if especie.estaEnPeligro
+        enPeligro[index] = enPeligro[index] + 1
+      end
     end
-    @chart = LazyHighCharts::HighChart.new('graph') do |f|
-      f.title(text: "Population vs GDP For 5 Big Countries [2009]")
-      f.xAxis(:categories => categorias)
-      f.series(name: "GDP in Billions", yAxis: 0, :data => cantidad)
-      f.yAxis [
-        {title: {text: "GDP in Billions", margin: 70} },
-        {title: {text: "Population in Millions"}, opposite: true},
-      ]
-
-      f.legend(align: 'right', verticalAlign: 'top', y: 75, x: -50, layout: 'vertical')
-      f.chart({defaultSeriesType: "column"})
-    end
-
-
-    @chart_globals = LazyHighCharts::HighChartGlobals.new do |f|
-      f.global(useUTC: false)
-      f.chart(
-        backgroundColor: {
-          linearGradient: [0, 0, 500, 500],
-          stops: [
-            [0, "rgb(255, 255, 255)"],
-            [1, "rgb(240, 240, 255)"]
-          ]
-        },
-        borderWidth: 2,
-        plotBackgroundColor: "rgba(255, 255, 255, .9)",
-        plotShadow: true,
-        plotBorderWidth: 1
-      )
-      f.lang(thousandsSep: ",")
-      f.colors(["#90ed7d", "#f7a35c", "#8085e9", "#f15c80", "#e4d354"])
-    end
+    @chart = ReportesController.prepare_reino_especies_chart categorias, cantidad, enPeligro
   end
 
   # GET /usuarios/1

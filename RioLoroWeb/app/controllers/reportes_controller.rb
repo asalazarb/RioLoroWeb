@@ -21,6 +21,20 @@ class ReportesController < ApplicationController
   def edit
   end
 
+  def self.prepare_reino_especies_chart(categorias, cantidad, enPeligro)
+    @chart = LazyHighCharts::HighChart.new('graph') do |f|
+      f.title(text: "Especies por Reino")
+      f.xAxis(:categories => categorias)
+      f.series(name: "Cantidad", yAxis: 0, :data => cantidad)
+      f.series(name: "En Peligro", yAxis: 0, :data => enPeligro)
+
+      f.legend(align: 'right', verticalAlign: 'top', y: 75, x: -50, layout: 'vertical')
+      f.chart({defaultSeriesType: "column"})
+    end
+
+    return @chart
+
+  end
 
   # POST /reportes
   # POST /reportes.json
