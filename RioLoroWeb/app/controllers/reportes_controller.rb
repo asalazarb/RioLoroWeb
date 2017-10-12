@@ -25,11 +25,13 @@ class ReportesController < ApplicationController
     @chart = LazyHighCharts::HighChart.new('graph') do |f|
       f.title(text: "Especies por Reino")
       f.xAxis(:categories => categorias)
-      f.series(name: "Cantidad", yAxis: 0, :data => cantidad)
-      f.series(name: "En Peligro", yAxis: 0, :data => enPeligro)
+      f.series(name: "Cantidad", yAxis: 0, :data => cantidad, color: '#4DAE51')
+      f.series(name: "En Peligro", yAxis: 0, :data => enPeligro, color: '#F54337')
 
       f.legend(align: 'right', verticalAlign: 'top', y: 75, x: -50, layout: 'vertical')
-      f.chart({defaultSeriesType: "column"})
+      #f.chart({defaultSeriesType: "column"})
+      f.chart(type: "column")
+      f.plotOptions(column: {grouping: false})
     end
 
     return @chart
