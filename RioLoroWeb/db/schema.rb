@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(version: 20171009225512) do
     t.integer "image_file_size"
     t.datetime "image_updated_at"
     t.string "email"
+    t.string "image"
   end
 
   add_foreign_key "especie_images", "especies", column: "especie_id"
