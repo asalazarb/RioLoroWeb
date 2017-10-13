@@ -54,9 +54,12 @@
       = link_to edit_usuario_path(@usuario), :class => 'btn btn-warning btn-raised btn-block animated fadeInUp animation-delay-12' do
         i.zmdi.zmdi-edit
         | Editar Perfil
-      a.btn.btn-danger.btn-raised.btn-block.animated.fadeInUp.animation-delay-12 href="javascript:void(0)"
+      = button_to @usuario, :method => :delete, class: 'btn btn-danger btn-raised btn-block animated fadeInUp animation-delay-12' do
         i.zmdi.zmdi-delete
         | Borrar Usuario
+      / a.btn.btn-danger.btn-raised.btn-block.animated.fadeInUp.animation-delay-12 href="javascript:void(0)"
+      /   i.zmdi.zmdi-delete
+      /   | Borrar Usuario
     .col-md-8
       .card.card-primary.animated.fadeInUp.animation-delay-12
         .card-header

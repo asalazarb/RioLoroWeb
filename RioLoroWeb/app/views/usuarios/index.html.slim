@@ -76,7 +76,7 @@
                 /   | Editar
 
               td.hidden-xs
-                = button_to usuario, method: :delete, :class => 'btn btn-danger' do
+                = button_to usuario, method: :delete, :class => 'btn btn-danger', data: {confirm: 'Esta seguro?'} do
                   i.zmdi.zmdi-delete
                   | Borrar
                 / = button_to "delete", {:controller => :usuarios, :action => 'destroy', :id => usuario.id }, {:method => :delete, :class => 'btn btn-danger'} do
