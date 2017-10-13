@@ -44,8 +44,12 @@
                 strong Reino:
                 | Nature, Landscape, animals.
               li
-                strong Peligro de extincion:
-                | Andrew Ryan
+                - if @especy.estaEnPeligro
+                  strong Peligro de extincion:
+                    Si
+                - else
+                  strong Peligro de extincion:
+                    No
               li
                 strong Tipo de especie:
                 | 2014
@@ -55,7 +59,7 @@
             p.text-center
               a.btn.btn-raised.btn-primary href="#"
                 i.fa.fa-desktop
-                | Live Preview
+                | Leer Más
     h2.right-line.mt-6 Related Works
     .row
       .col-md-4

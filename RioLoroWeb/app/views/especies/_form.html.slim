@@ -76,4 +76,5 @@
             .row
               .col-md-4.col-md-offset-8
                 button.btn.btn-raised.btn-primary.btn-block.mt-4.actions
-                  = form.submit
+                  = link_to 'Destroy', @especy, method: :delete, data: { confirm: 'Are you sure?' }
+            = form.submit

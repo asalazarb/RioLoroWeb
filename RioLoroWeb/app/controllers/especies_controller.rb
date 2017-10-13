@@ -25,6 +25,7 @@ class EspeciesController < ApplicationController
     return Especie.joins("INNER JOIN reinos on reinos.id = reino_id")
   end
 
+
   # POST /especies
   # POST /especies.json
   def create
