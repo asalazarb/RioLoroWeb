@@ -22,9 +22,9 @@
     i.zmdi.zmdi-menu
 
 
-/ p.navbar-text.pull-right
+p.navbar-text.pull-right
   - if user_signed_in?
-    |  Logged in as
+    |  Logged in as 
     strong
       = current_user.email
     | .
