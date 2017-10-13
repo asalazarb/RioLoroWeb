@@ -28,19 +28,26 @@
 /     = form.text_field :password, id: :usuario_password
 /   .actions
 /     = form.submit
+= form_with(model: @usuario, local: true, html: {multipart: true}) do |form|
+  - if @usuario.errors.any?
+      #error_explanation
+        h2
+          = pluralize(@usuario.errors.count, "error")
+          |  prohibited this especy from being saved:
+        ul
+          - @usuario.errors.full_messages.each do |message|
+            li
+              = message
 
-.container
-  .card.card-primary.card-hero.animated.fadeInUp.animation-delay-7
-    .card-block
-      /!form.form-horizontal
-      = form_with(model: @usuario, local: true) do |form|
+  .container
+    .card.card-primary.card-hero.animated.fadeInUp.animation-delay-7
+      .card-block
         fieldset
-          = form_for @usuario, html: { multipart: true } do |form|
-            div.field
-              = form.label "Nueva foto de perfil"
-              = form.file_field :image
-              - if @usuario.image.exists?
-                = image_tag @usuario.image.url(:medium)
+          div.field
+            = form.label "Nueva foto de perfil"
+            = form.file_field :image
+              / - if @usuario.image.exists?
+              /   = image_tag @usuario.image.url(:medium)
           .form-group
             label.col-md-2.control-label for="inputUser"   Username
             .col-md-9
@@ -58,7 +65,7 @@
             label.col-md-2.control-label for="inputApellido1"  Apellido 1
             .col-md-9
               = form.text_field :appellido1, value: @usuario.apellido1, class: 'form-control', placeholder:'Apellido 1', type: 'text', :required => true
-            /  = text_field_tag(:apellido1, @usuario.apellido1, class: 'form-control', type: 'text')
+              /= text_field_tag(:apellido1, @usuario.apellido1, class: 'form-control', type: 'text')
               /!input#inputApellido1.form-control placeholder= "Apellido 1" value= @usuario.apellido1 type="text" /
           .form-group
             label.col-md-2.control-label for="inputApellido2"  Apellido 2

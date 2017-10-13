@@ -35,7 +35,10 @@
           .color-medium.index-1.text-center.np-m  = '@'+@usuario.nombreUsuario
           /!img.img-avatar-circle alt="..." src="assets/img/demo/avatar1.jpg" /
           /!img.img-avatar-circle alt="..." src=image_tag("avatar1.jpg", class: "img-responsive")
-          = image_tag("avatar1.jpg", class: "img-avatar-circle")
+          - if @usuario.image.url == nil
+            = image_tag("avatar.png", class: "img-avatar-circle")
+          - else
+            = image_tag(@usuario.image.url.to_s, class: "img-avatar-circle")
         .card-block.pt-4.text-center
           /!h3.color-primary Bio
           /!p Lorem ipsum dolor sit amet, consectetur alter adipisicing elit. Facilis, natuse inse voluptates officia repudiandae beatae magni es magnam autem molestias.
@@ -45,7 +48,10 @@
             i.zmdi.zmdi-twitter
           a.btn-circle.btn-circle-raised.btn-circle-xs.mt-1.mr-1.no-mr-md.btn-instagram href="javascript:void(0)"
             i.zmdi.zmdi-instagram
-      a.btn.btn-warning.btn-raised.btn-block.animated.fadeInUp.animation-delay-12 href="javascript:void(0)"
+      / a.btn.btn-warning.btn-raised.btn-block.animated.fadeInUp.animation-delay-12 href="javascript:void(0)"
+      /   i.zmdi.zmdi-edit
+      /   | Editar Perfil
+      = link_to edit_usuario_path(@usuario), :class => 'btn btn-warning btn-raised btn-block animated fadeInUp animation-delay-12' do
         i.zmdi.zmdi-edit
         | Editar Perfil
       a.btn.btn-danger.btn-raised.btn-block.animated.fadeInUp.animation-delay-12 href="javascript:void(0)"

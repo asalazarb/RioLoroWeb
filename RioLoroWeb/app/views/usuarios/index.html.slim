@@ -53,7 +53,10 @@
           table.table.table-responsive.table-no-border.vertical-center
             tr
               td.hidden-xs
-                = link_to image_tag("m1.jpg", class: "img-responsive"), usuario
+                - if usuario.image.url == nil
+                  = link_to image_tag("avatar.png", class: "img-responsive"), usuario
+                - else
+                  = link_to image_tag(usuario.image.url(:thumb).to_s, class: "img-responsive"), usuario
               td
                 h4 = link_to usuario.nombre + ' ' + usuario.apellido1 + ' ' + usuario.apellido2,usuario
               /!td
@@ -62,13 +65,29 @@
               /!td
               /!  span.color-success $1999.99
               td.hidden-xs
-                button.btn.btn-warning
+                = link_to edit_usuario_path(usuario), :class => 'btn btn-warning' do
                   i.zmdi.zmdi-edit
                   | Editar
+                / = link_to edit_usuario_path(usuario), :class => 'btn btn-warning' do
+                /   i.zmdi.zmdi-edit
+                /     | Editar
+                / button.btn.btn-warning
+                /   i.zmdi.zmdi-edit
+                /   | Editar
+
               td.hidden-xs
-                button.btn.btn-danger
+                = button_to usuario, method: :delete, :class => 'btn btn-danger' do
                   i.zmdi.zmdi-delete
                   | Borrar
+                / = button_to "delete", {:controller => :usuarios, :action => 'destroy', :id => usuario.id }, {:method => :delete, :class => 'btn btn-danger'} do
+                /   i.zmdi.zmdi-delete
+                /   | Borrar
+                / = link_to usuario_path(usuario), method: :delete, :confirm => "Esta seguro?" , :class => 'btn btn-danger' do
+                /   i.zmdi.zmdi-delete
+                /   | Borrar
+                / = button_to "delete", { action: "delete", id: usuario.id }, method: :delete, data: { confirm: "Are you sure?" }
+                /   i.zmdi.zmdi-delete
+                /     | Borrar
 
 /!      .card.mb-1
 /!        table.table.table-responsive.table-no-border.vertical-center
