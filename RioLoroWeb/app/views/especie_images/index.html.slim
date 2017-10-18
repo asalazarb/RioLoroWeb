@@ -1,0 +1,19 @@
+h1 Listing especie_images
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @especie_images.each do |especie_image|
+      tr
+        td = link_to 'Show', especie_image
+        td = link_to 'Edit', edit_especie_image_path(especie_image)
+        td = link_to 'Destroy', especie_image, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Especie image', new_especie_image_path

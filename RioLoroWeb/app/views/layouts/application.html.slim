@@ -18,11 +18,9 @@ html
 
       /! HEADER
       = render :partial => 'layouts/header'
-      
+
       = yield :content_header
       .container
         = yield
       = render :partial => 'layouts/footer'
-    = render :partial => 'layouts/sliderbar_overlay'
-
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

@@ -21,6 +21,10 @@ class ReinosController < ApplicationController
   def edit
   end
 
+  def self.get_graph_data
+    return Reino.joins("INNER JOIN especies on especies.reino_id = reinos.id")
+  end
+
   # POST /reinos
   # POST /reinos.json
   def create

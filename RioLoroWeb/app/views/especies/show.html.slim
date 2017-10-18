@@ -1,7 +1,7 @@
   .ms-hero-page.mb-6.ms-hero-bg-primary.ms-hero-img-coffee
     /!h2.text-center.no-m.pt-4.pb-4.color-white.index-1 Nombre de especie
     h2.text-center.no-m.pt-4.pb-4.color-white.index-1 = @especy.nombreComun
-    p.lead.color-white.index-1.text-center Put here the description of your work.
+    p.lead.color-white.index-1.text-center = @especy.nombreCientifico
   .container
     .row
       .col-md-8
@@ -15,24 +15,14 @@
                 li data-slide-to="2" data-target="#carousel-example-generic"
               /! Wrapper for slides
               .carousel-inner role="listbox"
+
                 .item.active
-                  /!img alt="..." src="assets/img/demo/port20.jpg" /
-                  = image_tag("port20.jpg", class: "img-responsive")
-                  .carousel-caption
-                    h3 = @especy.nombreComun
-                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                .item
                   /!img alt="..." src="assets/img/demo/port2.jpg" /
-                  = image_tag("port2.jpg", class: "img-responsive")
+                  = image_tag(@especy.imagen_url.to_s, class: "img-responsive")
                   .carousel-caption
                     h3 = @especy.nombreComun
-                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                .item
-                  /!img alt="..." src="assets/img/demo/port3.jpg" /
-                  = image_tag("port3.jpg", class: "img-responsive")
-                  .carousel-caption
-                    h3 = @especy.nombreComun
-                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    p = @especy.nombreCientifico
+
               /! Controls
               a.btn-circle.btn-circle-xs.btn-circle-raised.btn-circle-primary.left.carousel-control data-slide="prev" href="#carousel-example-generic" role="button"
                 i.zmdi.zmdi-chevron-left
@@ -54,336 +44,40 @@
                 strong Reino:
                 | Nature, Landscape, animals.
               li
-                strong Peligro de extincion:
-                | Andrew Ryan
+                - if @especy.estaEnPeligro
+                  strong Peligro de extincion:
+                    Si
+                - else
+                  strong Peligro de extincion:
+                    No
               li
                 strong Tipo de especie:
                 | 2014
-            h3.color-primary Usos
-            p Lorem ipsum dolor sit amet, consectetur quas adipisicing elit. Voluptatem vitae similique illum quia ipsa a temporibus ratione libero aliquam debitis temporibus.
-            p Lorem ipsum similique illum quia ipsa elit consectetur.
+            h3.color-primary Usos y Caracteristicas
+            p = @especy.usos
+            p = @especy.caracteristicas
             p.text-center
               a.btn.btn-raised.btn-primary href="#"
                 i.fa.fa-desktop
-                | Live Preview
+                | Leer Más
     h2.right-line.mt-6 Related Works
     .row
       .col-md-4
         .card
           a href="javascript:void(0)"
             /!img.img-responsive alt="..." src="assets/img/demo/port4.jpg" /
-            = image_tag("port24.jpg", class: "img-responsive")
+            = image_tag(@especy.imagen_url.to_s, class: "img-responsive")
       .col-md-4
         .card
           a href="javascript:void(0)"
             /!img.img-responsive alt="..." src="assets/img/demo/port7.jpg" /
-            = image_tag("port7.jpg", class: "img-responsive")
+            = image_tag(@especy.imagen_url.to_s, class: "img-responsive")
       .col-md-4
         .card
           a href="javascript:void(0)"
             /!img.img-responsive alt="..." src="assets/img/demo/port9.jpg" /
-            = image_tag("port9.jpg", class: "img-responsive")
+            = image_tag(@especy.imagen_url.to_s, class: "img-responsive")
   /! container
-  aside.ms-footbar
-    .container
-      .row
-        .col-md-4.ms-footer-col
-          .ms-footbar-block
-            h3.ms-footbar-title Sitemap
-            ul.list-unstyled.ms-icon-list.three_cols
-              li
-                a href="index.html"
-                  i.zmdi.zmdi-home
-                  | Home
-              li
-                a href="page-blog.html"
-                  i.zmdi.zmdi-edit
-                  | Blog
-              li
-                a href="page-blog.html"
-                  i.zmdi.zmdi-image-o
-                  | Portafolio
-              li
-                a href="portfolio-filters_sidebar.html"
-                  i.zmdi.zmdi-case
-                  | Works
-              li
-                a href="page-timeline_left2.html"
-                  i.zmdi.zmdi-time
-                  | Timeline
-              li
-                a href="page-pricing.html"
-                  i.zmdi.zmdi-money
-                  | Pricing
-              li
-                a href="page-about.html"
-                  i.zmdi.zmdi-favorite-outline
-                  | About Us
-              li
-                a href="page-team2.html"
-                  i.zmdi.zmdi-accounts
-                  | Our Team
-              li
-                a href="page-services.html"
-                  i.zmdi.zmdi-face
-                  | Services
-              li
-                a href="page-faq2.html"
-                  i.zmdi.zmdi-help
-                  | FAQ
-              li
-                a href="page-login2.html"
-                  i.zmdi.zmdi-lock
-                  | Login
-              li
-                a href="page-contact.html"
-                  i.zmdi.zmdi-email
-                  | Contact
-          .ms-footbar-block
-            h3.ms-footbar-title Subscribe
-            p Lorem ipsum Amet fugiat elit nisi anim mollit minim labore ut esse Duis ullamco ad dolor veniam velit.
-            form
-              .form-group.label-floating.mt-2.mb-1
-                .input-group.ms-input-subscribe
-                  label.control-label for="ms-subscribe"
-                    i.zmdi.zmdi-email
-                    | Email Adress
-                  input#ms-subscribe.form-control type="email" /
-              button.ms-subscribre-btn type="button"  Subscribe
-        .col-md-5.col-sm-7.ms-footer-col.ms-footer-alt-color
-          .ms-footbar-block
-            h3.ms-footbar-title.text-center.mb-2 Last Articles
-            .ms-footer-media
-              .media
-                .media-left.media-middle
-                  a href="javascript:void(0)"
-                    img.media-object.media-object-circle alt="..." src="assets/img/demo/p75.jpg" /
-                .media-body
-                  h4.media-heading
-                    a href="javascript:void(0)"  Lorem ipsum dolor sit expedita cumque amet consectetur adipisicing repellat
-                  .media-footer
-                    span
-                      i.zmdi.zmdi-time.color-info-light
-                      | August 18, 2016
-                    span
-                      i.zmdi.zmdi-folder-outline.color-warning-light
-                      a href="javascript:void(0)"  Design
-              .media
-                .media-left.media-middle
-                  a href="javascript:void(0)"
-                    img.media-object.media-object-circle alt="..." src="assets/img/demo/p75.jpg" /
-                .media-body
-                  h4.media-heading
-                    a href="javascript:void(0)"  Labore ut esse Duis consectetur expedita cumque ullamco ad dolor veniam velit
-                  .media-footer
-                    span
-                      i.zmdi.zmdi-time.color-info-light
-                      | August 18, 2016
-                    span
-                      i.zmdi.zmdi-folder-outline.color-warning-light
-                      a href="javascript:void(0)"  News
-              .media
-                .media-left.media-middle
-                  a href="javascript:void(0)"
-                    img.media-object.media-object-circle alt="..." src="assets/img/demo/p75.jpg" /
-                .media-body
-                  h4.media-heading
-                    a href="javascript:void(0)"  voluptates deserunt ducimus expedita cumque quaerat molestiae labore
-                  .media-footer
-                    span
-                      i.zmdi.zmdi-time.color-info-light
-                      | August 18, 2016
-                    span
-                      i.zmdi.zmdi-folder-outline.color-warning-light
-                      a href="javascript:void(0)"  Productivity
-        .col-md-3.col-sm-5.ms-footer-col.ms-footer-text-right
-          .ms-footbar-block
-            .ms-footbar-title
-              span.ms-logo.ms-logo-white.ms-logo-sm.mr-1 M
-              h3.no-m.ms-site-title
-                | Material
-                span Style
-            address.no-mb
-              p
-                i.color-danger-light.zmdi.zmdi-pin.mr-1
-                | 795 Folsom Ave, Suite 600
-              p
-                i.color-warning-light.zmdi.zmdi-map.mr-1
-                | San Francisco, CA 94107
-              p
-                i.color-info-light.zmdi.zmdi-email.mr-1
-                a href="mailto:joe@example.com"  example@domain.com
-              p
-                i.color-royal-light.zmdi.zmdi-phone.mr-1
-                | +34 123 456 7890
-              p
-                i.color-success-light.fa.fa-fax.mr-1
-                | +34 123 456 7890
-          .ms-footbar-block
-            h3.ms-footbar-title Social Media
-            .ms-footbar-social
-              a.btn-circle.btn-facebook href="javascript:void(0)"
-                i.zmdi.zmdi-facebook
-              a.btn-circle.btn-twitter href="javascript:void(0)"
-                i.zmdi.zmdi-twitter
-              a.btn-circle.btn-youtube href="javascript:void(0)"
-                i.zmdi.zmdi-youtube
-              br/
-              a.btn-circle.btn-google href="javascript:void(0)"
-                i.zmdi.zmdi-google
-              a.btn-circle.btn-instagram href="javascript:void(0)"
-                i.zmdi.zmdi-instagram
-              a.btn-circle.btn-github href="javascript:void(0)"
-                i.zmdi.zmdi-github
-  footer.ms-footer
-    .container
-      p Copyright © Material Style 2017
-  .btn-back-top
-    a#back-top.btn-circle.btn-circle-primary.btn-circle-sm.btn-circle-raised data-scroll="" href="#"
-      i.zmdi.zmdi-long-arrow-up
-  /! sb-site-container
-  #ms-slidebar.ms-slidebar.sb-slidebar.sb-left.sb-style-overlay
-    .sb-slidebar-container
-      header.ms-slidebar-header
-        .ms-slidebar-login
-          a.withripple href="javascript:void(0)"
-            i.zmdi.zmdi-account
-            | Login
-          a.withripple href="javascript:void(0)"
-            i.zmdi.zmdi-account-add
-            | Register
-        .ms-slidebar-title
-          form.search-form
-            input#search-box-slidebar.search-input name="q" placeholder="Search..." type="text" /
-            label for="search-box-slidebar"
-              i.zmdi.zmdi-search
-          .ms-slidebar-t
-            span.ms-logo.ms-logo-sm M
-            h3
-              | Material
-              span Style
-      ul#slidebar-menu.ms-slidebar-menu aria-multiselectable="true" role="tablist"
-        li#sch1.panel role="tab"
-          a.collapsed aria-controls="sc1" aria-expanded="false" data-parent="#slidebar-menu" data-toggle="collapse" href="#sc1" role="button"
-            i.zmdi.zmdi-home
-            | Home
-          ul#sc1.panel-collapse.collapse aria-labelledby="sch1" role="tabpanel"
-            li
-              a href="index.html"  Default Home
-            li
-              a href="home-generic-2.html"  Home Black Slider
-            li
-              a href="home-landing.html"  Home Landing Intro
-            li
-              a href="home-landing3.html"  Home Landing Video
-            li
-              a href="home-shop.html"  Home Shop 1
-        li#sch2.panel role="tab"
-          a.collapsed aria-controls="sc2" aria-expanded="false" data-parent="#slidebar-menu" data-toggle="collapse" href="#sc2" role="button"
-            i.zmdi.zmdi-desktop-mac
-            | Pages
-          ul#sc2.panel-collapse.collapse aria-labelledby="sch2" role="tabpanel"
-            li
-              a href="page-about.html"  About US
-            li
-              a href="page-team.html"  Our Team
-            li
-              a href="page-product.html"  Products
-            li
-              a href="page-services.html"  Services
-            li
-              a href="page-faq.html"  FAQ
-            li
-              a href="page-timeline_left.html"  Timeline
-            li
-              a href="page-contact.html"  Contact Option
-            li
-              a href="page-login.html"  Login
-            li
-              a href="page-pricing.html"  Pricing
-            li
-              a href="page-coming.html"  Coming Soon
-        li#sch4.panel role="tab"
-          a.collapsed aria-controls="sc4" aria-expanded="false" data-parent="#slidebar-menu" data-toggle="collapse" href="#sc4" role="button"
-            i.zmdi.zmdi-edit
-            | Blog
-          ul#sc4.panel-collapse.collapse aria-labelledby="sch4" role="tabpanel"
-            li
-              a href="blog-sidebar.html"  Blog Sidebar 1
-            li
-              a href="blog-sidebar2.html"  Blog Sidebar 2
-            li
-              a href="blog-masonry.html"  Blog Masonry 1
-            li
-              a href="blog-masonry2.html"  Blog Masonry 2
-            li
-              a href="blog-full.html"  Blog Full Page 1
-            li
-              a href="blog-full2.html"  Blog Full Page 2
-            li
-              a href="blog-post.html"  Blog Post 1
-            li
-              a href="blog-post2.html"  Blog Post 2
-        li#sch5.panel role="tab"
-          a.collapsed aria-controls="sc5" aria-expanded="false" data-parent="#slidebar-menu" data-toggle="collapse" href="#sc5" role="button"
-            i.zmdi.zmdi-shopping-basket
-            | E-Commerce
-          ul#sc5.panel-collapse.collapse aria-labelledby="sch5" role="tabpanel"
-            li
-              a href="ecommerce-filters.html"  E-Commerce Sidebar
-            li
-              a href="ecommerce-filters-full.html"  E-Commerce Sidebar Full
-            li
-              a href="ecommerce-filters-full2.html"  E-Commerce Topbar Full
-            li
-              a href="ecommerce-item.html"  E-Commerce Item
-            li
-              a href="ecommerce-cart.html"  E-Commerce Cart
-        li#sch6.panel role="tab"
-          a.collapsed aria-controls="sc6" aria-expanded="false" data-parent="#slidebar-menu" data-toggle="collapse" href="#sc6" role="button"
-            i.zmdi.zmdi-collection-image-o
-            | Portfolio
-          ul#sc6.panel-collapse.collapse aria-labelledby="sch6" role="tabpanel"
-            li
-              a href="portfolio-filters_sidebar.html"  Portfolio Sidebar Filters
-            li
-              a href="portfolio-filters_topbar.html"  Portfolio Topbar Filters
-            li
-              a href="portfolio-filters_sidebar_fluid.html"  Portfolio Sidebar Fluid
-            li
-              a href="portfolio-filters_topbar_fluid.html"  Portfolio Topbar Fluid
-            li
-              a href="portfolio-cards.html"  Porfolio Cards
-            li
-              a href="portfolio-masonry.html"  Porfolio Masonry
-            li
-              a href="portfolio-item.html"  Portfolio Item 1
-            li
-              a href="portfolio-item2.html"  Portfolio Item 2
-        li
-          a.link href="component-typography.html"
-            i.zmdi.zmdi-view-compact
-            | UI Elements
-        li
-          a.link href="page-all.html"
-            i.zmdi.zmdi-link
-            | All Pages
-      .ms-slidebar-social.ms-slidebar-block
-        h4.ms-slidebar-block-title Social Links
-        .ms-slidebar-social
-          a.btn-circle.btn-circle-raised.btn-facebook href="javascript:void(0)"
-            i.zmdi.zmdi-facebook
-            span.badge.badge-pink 12
-            .ripple-container
-          a.btn-circle.btn-circle-raised.btn-twitter href="javascript:void(0)"
-            i.zmdi.zmdi-twitter
-            span.badge.badge-pink 4
-            .ripple-container
-          a.btn-circle.btn-circle-raised.btn-google href="javascript:void(0)"
-            i.zmdi.zmdi-google
-            .ripple-container
-          a.btn-circle.btn-circle-raised.btn-instagram href="javascript:void(0)"
-            i.zmdi.zmdi-instagram
-            .ripple-container
+
   script src="assets/js/plugins.min.js"
   script src="assets/js/app.min.js"

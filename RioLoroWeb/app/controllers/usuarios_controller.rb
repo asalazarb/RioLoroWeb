@@ -5,6 +5,26 @@ class UsuariosController < ApplicationController
   # GET /usuarios.json
   def index
     @usuarios = Usuario.all
+    reinosData = ReinosController.get_graph_data
+    especiesData = EspeciesController.get_graph_data
+
+    temp = reinosData.uniq
+    cantidad = Array.new(temp.size,0)
+    enPeligro = Array.new(temp.size, 0)
+    categorias = Array.new()
+
+    temp.each do |cat|
+      categorias.push(cat.nombreReino)
+    end
+
+    (reinosData.zip(especiesData)).each do |reino, especie|
+      index = categorias.index(reino.nombreReino)
+      cantidad[index] = cantidad[index] + 1
+      if especie.estaEnPeligro
+        enPeligro[index] = enPeligro[index] + 1
+      end
+    end
+    @chart = ReportesController.prepare_reino_especies_chart categorias, cantidad, enPeligro
   end
 
   # GET /usuarios/1
@@ -71,5 +91,9 @@ class UsuariosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def usuario_params
       params.require(:usuario).permit(:nombre, :apellido1, :apellido2, :cedula, :nombreUsuario,:email, :password, :image)
+    end
+
+    def get_report_data
+
     end
 end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :reportes
+  resources :especie_images
   devise_for :users
   resources :tipo_usuarios
   resources :usuarios

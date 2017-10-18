@@ -1,7 +1,8 @@
 class Especie < ApplicationRecord
-  belongs_to :reino, foreign_key: "reino_id"
-  belongs_to :orden, foreign_key: "orden_id"
+
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
+  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   belongs_to :familium, foreign_key: "familium_id"
-  belongs_to :clase, foreign_key: "clase_id"
+  mount_uploader :imagen, ImagenUploader
 
 end

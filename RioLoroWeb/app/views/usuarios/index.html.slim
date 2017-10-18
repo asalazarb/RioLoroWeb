@@ -43,6 +43,9 @@
 /!= link_to 'New Usuario', new_usuario_path
 
 .container
+  h1.right-line.mb-4 Reportes
+  = high_chart("chart_id", @chart)
+
   h1.right-line.mb-4 Usuarios
   .row
     .col-md-9
@@ -88,6 +91,14 @@
                 / = button_to "delete", { action: "delete", id: usuario.id }, method: :delete, data: { confirm: "Are you sure?" }
                 /   i.zmdi.zmdi-delete
                 /     | Borrar
+
+  / /.clearfix
+  /   .row
+  /     .col-md-12.col-xs-12
+  /       .x_panel LKNSLKFNSLDKFNLSKN
+  /         .x_content#container
+  /           = render "charts/bar_chart"
+
 
 /!      .card.mb-1
 /!        table.table.table-responsive.table-no-border.vertical-center
