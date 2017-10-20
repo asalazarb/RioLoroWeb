@@ -10,6 +10,10 @@ class EspeciesController < ApplicationController
   # GET /especies/1
   # GET /especies/1.json
   def show
+    @especie = Especie.find(params[:id])
+    reinoID = params[:reino_id]
+    @nombreReino = Reino.select(:nombreReino).where("reinos.id = #{reinoID}").first
+    puts @nombreReino.nombreReino
   end
 
   # GET /especies/new

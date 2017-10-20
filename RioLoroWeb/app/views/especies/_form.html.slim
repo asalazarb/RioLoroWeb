@@ -41,11 +41,9 @@
       .card-block
         form.form-horizontal
           fieldset
-            .form-group
-              label.col-md-2.control-label for="inputUser"  Nombre Común
-              .col-md-9
-                = form.label "Agregar imagen"
-                = form.file_field :imagen
+            div.field
+              = form.label "Nueva foto"
+              = form.file_field :image
             .form-group
               label.col-md-2.control-label for="inputUser"  Nombre Común
               .col-md-9
@@ -65,16 +63,17 @@
             .form-group
               label.col-md-2.control-label for="inputPassword"  Familia
               .col-md-9
-                /- opciones = options_from_collection_for_select(Familium.all, 'nombreFamilia', 'id')
-                /= form.select(:familium_id, grouped_options_for_select(opciones), class: 'form-control')
                 = form.select(:familium_id, Familium.all.collect {|f| [ f.nombreFamilia, f.id ] }, class: 'form-control')
             .form-group
               label.col-md-2.control-label for="inputGen"  En peligro
               .col-md-9
                 - opciones = {'Opcion' => [['SI', 1], ['NO',0]]}
                 = form.select(:estaEnPeligro, grouped_options_for_select(opciones), class: 'form-control')
-            .row
+
+            .actions
               .col-md-4.col-md-offset-8
-                button.btn.btn-raised.btn-primary.btn-block.mt-4.actions
-                  = link_to 'Destroy', @especy, method: :delete, data: { confirm: 'Are you sure?' }
-            = form.submit
+                = form.submit "Guardar cambios", class: "btn btn-raised btn-primary btn-block mt-4"
+                - if locals[:new] == 0
+                  = button_to @especy, :method => :delete, class: 'btn btn-danger btn-raised btn-block animated fadeInUp animation-delay-12' do
+                    i.zmdi.zmdi-delete
+                    | Borrar Especie

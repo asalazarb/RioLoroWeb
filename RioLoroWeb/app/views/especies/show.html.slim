@@ -42,7 +42,7 @@
                 = @especy.nombreCientifico
               li
                 strong Reino:
-                | Nature, Landscape, animals.
+                = @nombreReino.nombreReino
               li
                 - if @especy.estaEnPeligro
                   strong Peligro de extincion:
@@ -50,9 +50,6 @@
                 - else
                   strong Peligro de extincion:
                     No
-              li
-                strong Tipo de especie:
-                | 2014
             h3.color-primary Usos y Caracteristicas
             p = @especy.usos
             p = @especy.caracteristicas
