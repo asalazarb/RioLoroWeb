@@ -71,6 +71,7 @@
                   |  Mostrar descripciones
   .col-md-9
     #Container.row
+      - @especies = @especies.sort_by &:nombreComun 
       - @especies.each do |especie|
         - dynamicClass = especie.reino_id
         .col-md-4.col-sm-6.mix class="#{dynamicClass}"
