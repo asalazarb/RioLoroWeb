@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171009225512) do
+ActiveRecord::Schema.define(version: 20171027032713) do
 
   create_table "accions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "accion"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20171009225512) do
     t.string "nombreClase"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "reino_id"
+    t.index ["reino_id"], name: "fk_rails_9cfad1d1c5"
   end
 
   create_table "especie_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -62,6 +64,8 @@ ActiveRecord::Schema.define(version: 20171009225512) do
     t.string "nombreFamilia"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "orden_id"
+    t.index ["orden_id"], name: "fk_rails_70f35be4a6"
   end
 
   create_table "inventarios", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -83,6 +87,8 @@ ActiveRecord::Schema.define(version: 20171009225512) do
     t.string "nombreOrden"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "clase_id"
+    t.index ["clase_id"], name: "fk_rails_a7e7834fb7"
   end
 
   create_table "reinos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -116,6 +122,11 @@ ActiveRecord::Schema.define(version: 20171009225512) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "nombre"
+    t.string "apellido1"
+    t.string "apellido2"
+    t.string "cedula"
+    t.string "nombreUsuario"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -133,9 +144,19 @@ ActiveRecord::Schema.define(version: 20171009225512) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
-    t.string "email"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
     t.string "image"
   end
 
+  add_foreign_key "clases", "reinos"
   add_foreign_key "especie_images", "especies", column: "especie_id"
+  add_foreign_key "familia", "ordens"
+  add_foreign_key "ordens", "clases"
 end
