@@ -55,13 +55,16 @@
         .card.mb-1
           table.table.table-responsive.table-no-border.vertical-center
             tr
-              / td.hidden-xs
-              /   - if user.image.url == nil
-              /     = link_to image_tag("avatar.png", class: "img-responsive"), user
-              /   - else
-              /     = link_to image_tag(user.image.url(:thumb).to_s, class: "img-responsive"), user
-              / td
-              /   h4 = link_to user.nombre + ' ' + user.apellido1 + ' ' + user.apellido2,user
+              td.hidden-xs
+                - if user.image.url == nil
+                  = link_to image_tag("avatar.png", class: "img-responsive"), user
+                - else
+                  = link_to image_tag(user.image.url(:thumb).to_s, class: "img-responsive"), user
+              td
+                - if (user.nombre == nil)
+                  h4 = link_to user.email, user
+                - else
+                  h4 = link_to user.nombre + ' ' + user.apellido1 + ' ' + user.apellido2,user
               /!td
               /!  .form-inline.input-number
               /!    input.form-control.form-control-number pattern="[0-9]*" type="text" value="1" /
