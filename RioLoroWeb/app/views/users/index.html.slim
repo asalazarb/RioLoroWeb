@@ -94,7 +94,8 @@
                 / = button_to "delete", { action: "delete", id: usuario.id }, method: :delete, data: { confirm: "Are you sure?" }
                 /   i.zmdi.zmdi-delete
                 /     | Borrar
-
+    .col-md-4.col-md-offset-7
+      = link_to "Crear Usuario", new_user_registration_path, :class => 'btn btn-success'
   / /.clearfix
   /   .row
   /     .col-md-12.col-xs-12
