@@ -1,30 +1,3 @@
-/ = form_with(model: especy, local: true) do |form|
-/   - if especy.errors.any?
-/     #error_explanation
-/       h2
-/         = pluralize(especy.errors.count, "error")
-/         |  prohibited this especy from being saved:
-/       ul
-/         - especy.errors.full_messages.each do |message|
-/           li
-/             = message
-/   .field
-/     = form.label :nombreComun
-/     = form.text_field :nombreComun, id: :especy_nombreComun
-/   .field
-/     = form.label :nombreCientifico
-/     = form.text_field :nombreCientifico, id: :especy_nombreCientifico
-/   .field
-/     = form.label :imagen
-/     = form.text_field :imagen, id: :especy_imagen
-/   .field
-/     = form.label :taxomomia
-/     = form.text_field :taxomomia, id: :especy_taxomomia
-/   .field
-/     = form.label :estaEnPeligro
-/     = form.text_field :estaEnPeligro, id: :especy_estaEnPeligro
-/   .actions
-/     = form.submit
 
 = form_with(model: @especy, local: true, html: { multipart: true }) do |form|
   - if @especy.errors.any?
@@ -43,32 +16,32 @@
           fieldset
             div.field
               = form.label "Nueva foto"
-              = form.file_field :imagen
+              = form.file_field :imagen, required: true
             .form-group
               label.col-md-2.control-label for="inputUser"  Nombre Común
               .col-md-9
-                = form.text_field :nombreComun, value: @especy.nombreComun, class: 'form-control', placeholder:'Nombre Comun'
+                = form.text_field :nombreComun, value: @especy.nombreComun, class: 'form-control', placeholder:'Nombre Comun', required: true
             .form-group
               label.col-md-2.control-label for="inputEmail"  Nombre Científico
               .col-md-9
-                = form.text_field :nombreCientifico, value: @especy.nombreCientifico, class: 'form-control', placeholder:'Nombre Cientifico'
+                = form.text_field :nombreCientifico, value: @especy.nombreCientifico, class: 'form-control', placeholder:'Nombre Cientifico', required: true
             .form-group
               label.col-md-2.control-label for="inputPassword"  Características
               .col-md-9
-                = form.text_area :caracteristicas, class: 'form-control', placeholder:'Características', cols: 20, rows: 5
+                = form.text_area :caracteristicas, class: 'form-control', placeholder:'Características', cols: 20, rows: 5, required: true
             .form-group
               label.col-md-2.control-label for="inputName"  Usos
               .col-md-9
-                = form.text_area :usos, class: 'form-control', placeholder:'Usos', cols: 20, rows: 5
+                = form.text_area :usos, class: 'form-control', placeholder:'Usos', cols: 20, rows: 5, required: true
             .form-group
               label.col-md-2.control-label for="inputPassword"  Familia
               .col-md-9
-                = form.select(:familium_id, Familium.all.collect {|f| [ f.nombreFamilia, f.id ] }, class: 'form-control')
+                = form.select(:familium_id, Familium.all.collect {|f| [ f.nombreFamilia, f.id ] }, class: 'form-control', required: true)
             .form-group
               label.col-md-2.control-label for="inputGen"  En peligro
               .col-md-9
                 - opciones = {'Opcion' => [['SI', 1], ['NO',0]]}
-                = form.select(:estaEnPeligro, grouped_options_for_select(opciones), class: 'form-control')
+                = form.select(:estaEnPeligro, grouped_options_for_select(opciones), class: 'form-control', required: true)
 
             .actions
               .col-md-4.col-md-offset-8

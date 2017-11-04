@@ -70,19 +70,29 @@
     .row
       .col-md-4
         .card
-          a href="javascript:void(0)"
-            /!img.img-responsive alt="..." src="assets/img/demo/port4.jpg" /
-            = image_tag(@especy.imagen_url.to_s, class: "img-responsive")
+          figure.ms-thumbnail
+            = image_tag(@top3.at(0).imagen_url.to_s, class: "img-responsive")
+            figcaption.ms-thumbnail-caption.text-center
+              .ms-thumbnail-caption-content
+                h4.ms-thumbnail-caption-title.mb-2
+                  = link_to @top3.at(0).nombreComun, controller: "especies", action: "show" , id: @top3.at(0).id, :reino_id => @top3.at(0).reino_id
+
       .col-md-4
         .card
-          a href="javascript:void(0)"
-            /!img.img-responsive alt="..." src="assets/img/demo/port7.jpg" /
-            = image_tag(@especy.imagen_url.to_s, class: "img-responsive")
+          figure.ms-thumbnail
+            = image_tag(@top3.at(1).imagen_url.to_s, class: "img-responsive")
+            figcaption.ms-thumbnail-caption.text-center
+              .ms-thumbnail-caption-content
+                h4.ms-thumbnail-caption-title.mb-2
+                  = link_to @top3.at(1).nombreComun, controller: "especies", action: "show" , id: @top3.at(1).id, :reino_id => @top3.at(1).reino_id
       .col-md-4
         .card
-          a href="javascript:void(0)"
-            /!img.img-responsive alt="..." src="assets/img/demo/port9.jpg" /
-            = image_tag(@especy.imagen_url.to_s, class: "img-responsive")
+          figure.ms-thumbnail
+            = image_tag(@top3.at(2).imagen_url.to_s, class: "img-responsive")
+            figcaption.ms-thumbnail-caption.text-center
+              .ms-thumbnail-caption-content
+                h4.ms-thumbnail-caption-title.mb-2
+                  = link_to @top3.at(2).nombreComun, controller: "especies", action: "show" , id: @top3.at(2).id, :reino_id => @top3.at(2).reino_id
   /! container
 
   script src="assets/js/plugins.min.js"

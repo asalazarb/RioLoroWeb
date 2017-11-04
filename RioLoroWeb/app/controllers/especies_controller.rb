@@ -16,7 +16,15 @@ class EspeciesController < ApplicationController
     @nombreOrden = Orden.select(:nombreOrden).where("ordens.id = #{@especie.orden_id}").first
     @nombreClase = Clase.select(:nombreClase).where("clases.id = #{@especie.clase_id}").first
     @nombreFamilia = Familium.select(:nombreFamilia).where("familia.id = #{@especie.familium_id}").first
+    @top3 = getTop3 @especie.clase_id
+  end
 
+  def getTop3(claseID)
+    top3 = Especie.select(:nombreComun, :id, :imagen).where("especies.id = #{claseID}").last(3)
+    if(top3.size() < 3)
+      return Especie.last(3);
+    end
+    return top3
   end
 
   # GET /especies/new

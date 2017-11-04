@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :nombreOrden %>
-    <%= form.text_field :nombreOrden, id: :orden_nombreOrden %>
+    <%= form.text_field :nombreOrden, id: :orden_nombreOrden, required: true %>
   </div>
 
   <div class="field">
     <h2>Clase a la que pertenece</h2>
-    <%= form.select :clase_id, Clase.all.collect {|f| [ f.nombreClase, f.id ] }, class: 'form-control' %>
+    <%= form.select :clase_id, Clase.all.collect {|f| [ f.nombreClase, f.id ] }, class: 'form-control', required: true %>
   </div>
   <br/>
 
