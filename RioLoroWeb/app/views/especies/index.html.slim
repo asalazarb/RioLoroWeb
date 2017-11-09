@@ -40,10 +40,7 @@
               label
                 input#optionsRadios5.filter[type="radio" name="optionsRadios" value="option5" data-filter=".category-5"]
                 |  Category Five
-            .radio.no-mb
-              label
-                input#optionsRadios6.filter[type="radio" name="optionsRadios" value="option6" data-filter=".category-6"]
-                |  Category Six
+
         h4.mt-2.color-primary.no-mb
           | Columnas
       ul.nav.nav-tabs.nav-tabs-transparent.indicator-primary.nav-tabs-full.nav-tabs-4[role="tablist"]
@@ -69,9 +66,13 @@
                 label
                   input#port-show[type="checkbox"]
                   |  Mostrar descripciones
+              - if user_signed_in?
+                = link_to  new_especy_path, :class => 'btn btn-success' do
+                    i.zmdi.zmdi-edit
+                    | Crear Especie
   .col-md-9
     #Container.row
-      - @especies = @especies.sort_by &:nombreComun 
+      - @especies = @especies.sort_by &:nombreComun
       - @especies.each do |especie|
         - dynamicClass = especie.reino_id
         .col-md-4.col-sm-6.mix class="#{dynamicClass}"
@@ -81,10 +82,10 @@
               figcaption.ms-thumbnail-caption.text-center
                 .ms-thumbnail-caption-content
                   h4.ms-thumbnail-caption-title.mb-2
-                    = link_to especie.nombreComun, controller: "especies", action: "show" , id: especie.id, :reino_id => especie.reino_id
+                    = link_to especie.nombreComun, controller: "especies", action: "show" , id: especie.id
 
             .card-block.text-center.portfolio-item-caption.hidden
               h3.color-primary.no-mt
-                = link_to especie.nombreComun, controller: "especies", action: "show" , id: especie.id, :reino_id => especie.reino_id
+                = link_to especie.nombreComun, controller: "especies", action: "show" , id: especie.id
               p
                 = especie.nombreCientifico

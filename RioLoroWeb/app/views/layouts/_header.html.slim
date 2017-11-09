@@ -2,19 +2,20 @@ header.ms-header.ms-header-white
   .container.container-full
     .ms-title
       a href="/especies"
-        /! <img src="assets/img/demo/logo-header.png" alt=""
-        span.ms-logo.animated.zoomInDown.animation-delay-5
-          = image_tag("logoRioLoro.png", class: "img-responsive")
+        /span.ms-logo.animated.zoomInDown.animation-delay-5
+
         h1.animated.fadeInRight.animation-delay-6
           | Bio
           span Inventario
+
+
+
     = render :partial => 'layouts/header_right'
 
 nav.navbar.navbar-static-top.yamm.ms-navbar.ms-navbar-white
   .container.container-full
     .navbar-header
       a.navbar-brand href="/especies"
-        /! <img src="assets/img/demo/logo-navbar.png" alt=""
         span.ms-logo.ms-logo-sm B
         span.ms-title
           | Bio
