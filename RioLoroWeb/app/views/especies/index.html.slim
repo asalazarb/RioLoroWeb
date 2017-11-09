@@ -71,6 +71,7 @@
                   |  Mostrar descripciones
   .col-md-9
     #Container.row
+      - @especies = @especies.sort_by &:nombreComun 
       - @especies.each do |especie|
         - dynamicClass = especie.reino_id
         .col-md-4.col-sm-6.mix class="#{dynamicClass}"
@@ -80,10 +81,10 @@
               figcaption.ms-thumbnail-caption.text-center
                 .ms-thumbnail-caption-content
                   h4.ms-thumbnail-caption-title.mb-2
-                    = link_to especie.nombreComun, controller: "especies", action: "show" , id: especie.id
+                    = link_to especie.nombreComun, controller: "especies", action: "show" , id: especie.id, :reino_id => especie.reino_id
 
             .card-block.text-center.portfolio-item-caption.hidden
               h3.color-primary.no-mt
-                = link_to especie.nombreComun, controller: "especies", action: "show" , id: especie.id
+                = link_to especie.nombreComun, controller: "especies", action: "show" , id: especie.id, :reino_id => especie.reino_id
               p
                 = especie.nombreCientifico

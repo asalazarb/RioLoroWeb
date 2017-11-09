@@ -70,6 +70,6 @@ class OrdensController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def orden_params
-      params.require(:orden).permit(:nombreOrden)
+      params.require(:orden).permit(:nombreOrden, :id_clase)
     end
 end

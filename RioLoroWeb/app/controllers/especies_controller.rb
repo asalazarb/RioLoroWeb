@@ -10,6 +10,21 @@ class EspeciesController < ApplicationController
   # GET /especies/1
   # GET /especies/1.json
   def show
+    @especie = Especie.find(params[:id])
+    reinoID = params[:reino_id]
+    @nombreReino = Reino.select(:nombreReino).where("reinos.id = #{@especie.reino_id}").first
+    @nombreOrden = Orden.select(:nombreOrden).where("ordens.id = #{@especie.orden_id}").first
+    @nombreClase = Clase.select(:nombreClase).where("clases.id = #{@especie.clase_id}").first
+    @nombreFamilia = Familium.select(:nombreFamilia).where("familia.id = #{@especie.familium_id}").first
+    @top3 = getTop3 @especie.clase_id
+  end
+
+  def getTop3(claseID)
+    top3 = Especie.select(:nombreComun, :id, :imagen).where("especies.id = #{claseID}").last(3)
+    if(top3.size() < 3)
+      return Especie.last(3);
+    end
+    return top3
   end
 
   # GET /especies/new
@@ -30,6 +45,15 @@ class EspeciesController < ApplicationController
   # POST /especies.json
   def create
     @especy = Especie.new(especy_params)
+    familiaID = @especy.familium_id
+    ordenID = Familium.select(:orden_id).where("familia.id = #{familiaID}").first
+    claseID = Orden.select(:clase_id).where("ordens.id = #{ordenID.orden_id}").first
+    reinoID = Clase.select(:reino_id).where("clases.id = #{claseID.clase_id}").first
+
+    @especy.orden_id = ordenID.orden_id
+    @especy.clase_id = claseID.clase_id
+    @especy.reino_id = reinoID.reino_id
+
     respond_to do |format|
       if @especy.save
         format.html { redirect_to @especy, notice: 'Especie was successfully created.' }
@@ -74,6 +98,6 @@ class EspeciesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def especy_params
-      params.require(:especie).permit(:nombreComun, :nombreCientifico, :caracteristicas,:familium_id, :imagen, :usos, :estaEnPeligro)
+      params.require(:especie).permit(:nombreComun, :nombreCientifico, :caracteristicas,:familium_id, :orden_id, :clase_id, :reino_id, :imagen, :usos, :estaEnPeligro)
     end
 end

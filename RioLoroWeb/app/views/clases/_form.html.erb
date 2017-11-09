@@ -13,8 +13,14 @@
 
   <div class="field">
     <%= form.label :nombreClase %>
-    <%= form.text_field :nombreClase, id: :clase_nombreClase %>
+    <%= form.text_field :nombreClase, id: :clase_nombreClase, required: true %>
   </div>
+
+  <div class="field">
+    <h2>Reino al que pertenece</h2>
+    <%= form.select :reino_id, Reino.all.collect {|f| [ f.nombreReino, f.id ] }, class: 'form-control', required: true %>
+  </div>
+  <br/>
 
   <div class="actions">
     <%= form.submit %>

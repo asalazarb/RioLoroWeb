@@ -70,6 +70,6 @@ class FamiliaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def familium_params
-      params.require(:familium).permit(:nombreFamilia)
+      params.require(:familium).permit(:nombreFamilia, :orden_id)
     end
 end

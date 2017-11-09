@@ -1,11 +1,11 @@
 body
-  .ms-hero-page-override.ms-hero-img-airplane.ms-bg-fixed.ms-hero-bg-dark-light
+  .ms-hero-page-override.ms-hero-img-city2.ms-bg-fixed.ms-hero-bg-dark-light
     .container
       .text-center
         h1.no-m.ms-site-title.color-white.center-block.ms-site-title-lg.mt-2.animated.zoomInDown.animation-delay-5 Nueva Especie
         p.lead.lead-lg.color-light.text-center.center-block.mt-2.mw-800.text-uppercase.fw-300.animated.fadeInUp.animation-delay-7
           | Agregar nueva especie a la base de datos
-  = render 'form'
+  = render 'form', :locals => {:new => 1}
 
 
   .btn-back-top

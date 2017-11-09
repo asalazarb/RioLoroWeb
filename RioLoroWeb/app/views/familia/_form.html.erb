@@ -12,10 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :nombreFamilia %>
-    <%= form.text_field :nombreFamilia, id: :familium_nombreFamilia %>
+    <h2>Nombre Familia</h2>
+    <%= form.text_field :nombreFamilia, id: :familium_nombreFamilia, required: true %>
   </div>
 
+  <div class="field">
+    <h2>Orden al que pertenece</h2>
+    <%= form.select :orden_id, Orden.all.collect {|f| [ f.nombreOrden, f.id ] }, class: 'form-control', required: true %>
+  </div>
+  <br/>
   <div class="actions">
     <%= form.submit %>
   </div>

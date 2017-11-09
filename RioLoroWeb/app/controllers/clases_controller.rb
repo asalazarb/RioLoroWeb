@@ -70,6 +70,6 @@ class ClasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def clase_params
-      params.require(:clase).permit(:nombreClase)
+      params.require(:clase).permit(:nombreClase, :reino_id)
     end
 end
