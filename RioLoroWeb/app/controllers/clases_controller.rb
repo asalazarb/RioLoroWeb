@@ -1,5 +1,6 @@
 class ClasesController < ApplicationController
   before_action :set_clase, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /clases
   # GET /clases.json

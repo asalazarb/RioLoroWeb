@@ -1,5 +1,6 @@
 class ReinosController < ApplicationController
   before_action :set_reino, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /reinos
   # GET /reinos.json

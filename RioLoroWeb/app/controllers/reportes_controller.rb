@@ -1,5 +1,6 @@
 class ReportesController < ApplicationController
   before_action :set_reporte, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /reportes
   # GET /reportes.json

@@ -1,5 +1,6 @@
 class FamiliaController < ApplicationController
   before_action :set_familium, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /familia
   # GET /familia.json
