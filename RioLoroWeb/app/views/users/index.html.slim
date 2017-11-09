@@ -1,0 +1,122 @@
+/!p#notice
+/!  = notice
+/!h1
+/!  | Usuarios
+/!table
+/!  thead
+/!    tr
+/!      th
+/!        | Nombre
+/!      th
+/!        | Apellido1
+/!      th
+/!        | Apellido2
+/!      th
+/!        | Cedula
+/!      th
+/!        | Nombreusuario
+/!      th
+/!        | Password
+/!      th[colspan="3"]
+/!  tbody
+/!    - @usuarios.each do |usuario|
+/!      tr
+/!        td
+/!          = usuario.nombre
+/!        td
+/!          = usuario.apellido1
+/!        td
+/!          = usuario.apellido2
+/!        td
+/!          = usuario.cedula
+/!        td
+/!          = usuario.nombreUsuario
+/!        td
+/!          = usuario.password
+/!        td
+/!          = link_to 'Show', usuario
+/!        td
+/!          = link_to 'Edit', edit_usuario_path(usuario)
+/!        td
+/!          = link_to 'Destroy', usuario, method: :delete, data: { confirm: 'Are you sure?' }
+/!br
+/!= link_to 'New Usuario', new_usuario_path
+
+.container
+  / h1.right-line.mb-4 Reportes
+  / = high_chart("chart_id", @chart)
+
+  h1.right-line.mb-4 Usuarios
+  .row
+    .col-md-9
+      - if @users.count == 0
+        em No users found
+      - @users.all.each do |user|
+        .card.mb-1
+          table.table.table-responsive.table-no-border.vertical-center
+            tr
+              td.hidden-xs
+                - if user.image.url == nil
+                  = link_to image_tag("avatar.png", class: "img-responsive"), user
+                - else
+                  = link_to image_tag(user.image.url(:thumb).to_s, class: "img-responsive"), user
+              td
+                - if (user.nombre == nil)
+                  h4 = link_to user.email, user
+                - else
+                  h4 = link_to user.nombre + ' ' + user.apellido1 + ' ' + user.apellido2,user
+              /!td
+              /!  .form-inline.input-number
+              /!    input.form-control.form-control-number pattern="[0-9]*" type="text" value="1" /
+              /!td
+              /!  span.color-success $1999.99
+              td.hidden-xs
+                = link_to edit_user_registration_path, :class => 'btn btn-warning' do
+                  i.zmdi.zmdi-edit
+                  | Editar
+                / = link_to edit_usuario_path(usuario), :class => 'btn btn-warning' do
+                /   i.zmdi.zmdi-edit
+                /     | Editar
+                / button.btn.btn-warning
+                /   i.zmdi.zmdi-edit
+                /   | Editar
+
+              td.hidden-xs
+                = button_to user, method: :delete, :class => 'btn btn-danger', data: {confirm: 'Esta seguro?'} do
+                  i.zmdi.zmdi-delete
+                  | Borrar
+                / = button_to "delete", {:controller => :usuarios, :action => 'destroy', :id => usuario.id }, {:method => :delete, :class => 'btn btn-danger'} do
+                /   i.zmdi.zmdi-delete
+                /   | Borrar
+                / = link_to usuario_path(usuario), method: :delete, :confirm => "Esta seguro?" , :class => 'btn btn-danger' do
+                /   i.zmdi.zmdi-delete
+                /   | Borrar
+                / = button_to "delete", { action: "delete", id: usuario.id }, method: :delete, data: { confirm: "Are you sure?" }
+                /   i.zmdi.zmdi-delete
+                /     | Borrar
+    .col-md-4.col-md-offset-7
+      = link_to "Crear Usuario", new_user_registration_path, :class => 'btn btn-success'
+  / /.clearfix
+  /   .row
+  /     .col-md-12.col-xs-12
+  /       .x_panel LKNSLKFNSLDKFNLSKN
+  /         .x_content#container
+  /           = render "charts/bar_chart"
+
+
+/!      .card.mb-1
+/!        table.table.table-responsive.table-no-border.vertical-center
+/!          tr
+/!            td.hidden-xs
+/!              img alt="" src="assets/img/demo/products/m1.png" /
+/!            td
+/!              h4 Macbook Pro 2016 13" with Touch Bar
+/!            td
+/!              .form-inline.input-number
+/!                input.form-control.form-control-number pattern="[0-9]*" type="text" value="1" /
+/!            td
+/!              span.color-success $1999.99
+/!            td.hidden-xs
+/!              button.btn.btn-danger
+/!                i.zmdi.zmdi-delete
+/!                | Delete

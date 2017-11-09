@@ -9,39 +9,42 @@
         .modal-title.text-center
           span.ms-logo.ms-logo-white.ms-logo-sm.mr-1 M
           h3.no-m.ms-site-title
-            | Material
-            span Style
-        .modal-header-tabs
-          ul.nav.nav-tabs.nav-tabs-full.nav-tabs-3.nav-tabs-primary role="tablist"
-            li.active role="presentation"
-              a.withoutripple aria-controls="ms-login-tab" data-toggle="tab" href="#ms-login-tab" role="tab"
-                i.zmdi.zmdi-account
-                | Login
-            li role="presentation"
-              a.withoutripple aria-controls="ms-register-tab" data-toggle="tab" href="#ms-register-tab" role="tab" 
-                i.zmdi.zmdi-account-add
-                | Register
-            li role="presentation"
-              a.withoutripple aria-controls="ms-recovery-tab" data-toggle="tab" href="#ms-recovery-tab" role="tab"
-                i.zmdi.zmdi-key
-                | Recovery Pass
+            | Bio
+            span Inventario
+        / .modal-header-tabs
+        /   ul.nav.nav-tabs.nav-tabs-full.nav-tabs-3.nav-tabs-primary role="tablist"
+        /     li.active role="presentation"
+        /       a.withoutripple aria-controls="ms-login-tab" data-toggle="tab" href="#ms-login-tab" role="tab"
+        /         i.zmdi.zmdi-account
+        /         | Login
+        /     li role="presentation"
+        /       a.withoutripple aria-controls="ms-register-tab" data-toggle="tab" href="#ms-register-tab" role="tab"
+        /         i.zmdi.zmdi-account-add
+        /         | Register
+        /     li role="presentation"
+        /       a.withoutripple aria-controls="ms-recovery-tab" data-toggle="tab" href="#ms-recovery-tab" role="tab"
+        /         i.zmdi.zmdi-key
+        /         | Recovery Pass
       .modal-body
         .tab-content
           #ms-login-tab.tab-pane.fade.active.in role="tabpanel"
             form autocomplete="off"
               fieldset
-                .form-group.label-floating
-                  .input-group
-                    span.input-group-addon
-                      i.zmdi.zmdi-account
-                    label.control-label for="ms-form-user"  Username
-                    input#ms-form-user.form-control type="text" /
-                .form-group.label-floating
-                  .input-group
-                    span.input-group-addon
-                      i.zmdi.zmdi-lock
-                    label.control-label for="ms-form-pass"  Password
-                    input#ms-form-pass.form-control type="password" /
+                - if user_signed_in?
+                  .form-group.label-floating
+                    .input-group
+                      span.input-group-addon
+                        i.zmdi.zmdi-account.mr-1.color-success
+                      = current_user.email
+                      / label.control-label for="ms-form-user"  Username
+                      / input#ms-form-user.form-control type="text" /
+                  .form-group.label-floating
+                    .input-group
+                      span.input-group-addon
+                        i.zmdi.zmdi-email.mr-1.color-warning
+                      = current_user.email
+                      / label.control-label for="ms-form-pass"  Password
+                      / input#ms-form-pass.form-control type="password" /
                 .row.mt-2
                   .col-md-6
                     .form-group.no-mt

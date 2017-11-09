@@ -1,0 +1,128 @@
+/ h2
+/   | Edit #{resource_name.to_s.humanize}
+/ = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+/   = devise_error_messages!
+/   .field
+/     = f.label :email
+/     br/
+/     = f.email_field :email, autofocus: true
+/   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+/     div
+/       | Currently waiting confirmation for: #{resource.unconfirmed_email}
+/   .field
+/     = f.label :password
+/     |  (leave blank if you don't want to change it)
+/     br/
+/     = f.password_field :password, autocomplete: "off"
+/     - if @minimum_password_length
+/       br/
+/       em
+/         = @minimum_password_length
+/         |  caracteres como minimo
+/   .field
+/     = f.label :password_confirmation
+/     br/
+/     = f.password_field :password_confirmation, autocomplete: "off"
+/   .field
+/     = f.label :current_password
+/     i (necesitamos tu password actual para confirmar cambios)
+/     br/
+/     = f.password_field :current_password, autocomplete: "off"
+/   .actions
+/     = f.submit "Actualizar"
+/ h3 Cancelar mi cuenta
+/ p
+/   | Unhappy? #{button_to "Cancelar cuenta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+/ = link_to "Back", :back
+
+.ms-hero-page-override.ms-hero-img-airplane.ms-bg-fixed.ms-hero-bg-dark-light
+  .container
+    .text-center
+      h1.no-m.ms-site-title.color-white.center-block.ms-site-title-lg.mt-2.animated.zoomInDown.animation-delay-5 = 'Editar Perfil'
+      - if @user.image.url == nil
+        = image_tag("avatar.png", class: "img-avatar-circle")
+      - else
+        = image_tag(@user.image.url.to_s, class: "img-avatar-circle")
+
+= form_with(model: @user,url: registration_path(resource_name), local: true, html: {multipart: true, method: :put}) do |form|
+  - if @user.errors.any?
+      #error_explanation
+        h2
+          = pluralize(@user.errors.count, "error")
+          |  prohibited this especy from being saved:
+        ul
+          - @user.errors.full_messages.each do |message|
+            li
+              = message
+
+  .container
+    .card.card-primary.card-hero.animated.fadeInUp.animation-delay-7
+      .card-block
+        fieldset
+          div.field
+            = form.label "Nueva foto de perfil"
+            = form.file_field :image
+              - if @usuario.image.exists?
+                = image_tag @usuario.image.url(:medium)
+          .form-group
+            label.col-md-2.control-label for="inputUser"   Username
+            .col-md-9
+              = form.text_field :nombreUsuario, value: @user.nombreUsuario, class: 'form-control', placeholder:'Nombre de usuario', type: 'text', :required => true
+              /= text_field_tag(:nombreUsuario, @usuario.nombreUsuario, class: 'form-control', type: 'text')
+              /!= form.text_field :nombreComun, id: :usuario_nombreComun, :class => form-control
+              /!input#inputUser.form-control placeholder= "Username" value= @usuario.nombreUsuario type="text" /
+          .form-group
+            label.col-md-2.control-label for="inputNombre"  Nombre
+            .col-md-9
+              = form.text_field :nombre, value: @user.nombre, class: 'form-control', placeholder:'Nombre', type: 'text', :required => true
+              /= text_field_tag(:nombre, @usuario.nombre, class: 'form-control', type: 'text')
+              /!input#inputNombre.form-control placeholder= "Nombre" value= @usuario.nombre type="email" /
+          .form-group
+            label.col-md-2.control-label for="inputApellido1"  Apellido 1
+            .col-md-9
+              = form.text_field :apellido1, value: @user.apellido1, class: 'form-control', placeholder:'Apellido 1', type: 'text', :required => true
+              /= text_field_tag(:apellido1, @usuario.apellido1, class: 'form-control', type: 'text')
+              /!input#inputApellido1.form-control placeholder= "Apellido 1" value= @usuario.apellido1 type="text" /
+          .form-group
+            label.col-md-2.control-label for="inputApellido2"  Apellido 2
+            .col-md-9
+              = form.text_field :apellido2, value: @user.apellido2, class: 'form-control', placeholder:'Apellido 2', type: 'text', :required => true
+              /!= text_field_tag(:apellido2, @usuario.apellido2, class: 'form-control', type: 'text')
+              /!input#inputApellido2.form-control placeholder= "Apellido 2" value= @usuario.apellido2 type="text" /
+          .form-group
+            label.col-md-2.control-label for="inputEmail"  e-mail
+            .col-md-9
+              = form.text_field :email, value: @user.email, class: 'form-control', placeholder:'e-Mail', type: 'email', :required => true
+                - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+                  div
+                    | Esperando confirmacion de: #{resource.unconfirmed_email}
+              /!= text_field_tag('eMail', @usuario.email, class: 'form-control', type: 'email')
+              /!input#inputEmail.form-control placeholder=("e-mail") type="email" /
+          .form-group
+            label.col-md-2.control-label for="inputCedula"  Cedula
+            .col-md-9
+              = form.text_field :cedula, value: @user.cedula, class: 'form-control', placeholder:'Cedula', type: 'text', :required => true
+              /!= text_field_tag(:apellido2, @usuario.apellido2, class: 'form-control', type: 'text')
+              /!input#inputApellido2.form-control placeholder= "Apellido 2" value= @usuario.apellido2 type="text" /
+          .form-group
+            label.col-md-2.control-label for="inputPassword"  Contraseña
+            .col-md-9
+              = form.text_field :password, value: @user.password, class: 'form-control', placeholder:'Password', type: 'password'
+              /= text_field_tag(:password, @usuario.password, class: 'form-control', type: 'password')
+              /!input#inputPassword.form-control placeholder="Contraseña" value= @usuario.password type="password" /
+          .form-group
+            label.col-md-2.control-label for="inputPassword2"  Repita contraseña
+            .col-md-9
+              = form.text_field :password_confirmation, value: @user.password, class: 'form-control', placeholder:'Confirmar password', type: 'password'
+              /= text_field_tag(:password, @usuario.password, class: 'form-control', type: 'password')
+              /!input#inputPassword2.form-control placeholder="Contraseña" value= @usuario.password type="password" /
+          .form-group
+            label.col-md-2.control-label for="inputPassword3"  Contraseña actual
+            .col-md-9
+              i (necesitamos tu password actual para confirmar cambios)
+              br/
+              = form.password_field :current_password, autocomplete: "off"
+          .actions
+            .col-md-4.col-md-offset-8
+              = form.submit "Guardar cambios", class: "btn btn-raised btn-primary btn-block mt-4"
+              /!button.btn.btn-raised.btn-primary.btn-block.mt-4 Guardar Cambios

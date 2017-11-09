@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171026015335) do
+
+ActiveRecord::Schema.define(version: 20171101071742) do
 
   create_table "accions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "accion"
@@ -122,6 +123,12 @@ ActiveRecord::Schema.define(version: 20171026015335) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "nombre"
+    t.string "apellido1"
+    t.string "apellido2"
+    t.string "cedula"
+    t.string "nombreUsuario"
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
