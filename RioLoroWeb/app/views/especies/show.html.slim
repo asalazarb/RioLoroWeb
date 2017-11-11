@@ -69,6 +69,9 @@
                 = link_to  edit_especy_path(@especy), :class => 'btn btn-warning' do
                     i.zmdi.zmdi-edit
                     | Editar
+                = button_to @especy, :method => :delete, class: 'btn btn-danger btn-raised btn-block animated fadeInUp animation-delay-12' do
+                  i.zmdi.zmdi-delete
+                  | Borrar Especie
 
     h2.right-line.mt-6 Especies Relacionadas
     .row

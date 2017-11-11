@@ -46,7 +46,3 @@
             .actions
               .col-md-4.col-md-offset-8
                 = form.submit "Guardar cambios", class: "btn btn-raised btn-primary btn-block mt-4"
-                - if locals[:new] == 0
-                  = button_to @especy, :method => :delete, class: 'btn btn-danger btn-raised btn-block animated fadeInUp animation-delay-12' do
-                    i.zmdi.zmdi-delete
-                    | Borrar Especie
