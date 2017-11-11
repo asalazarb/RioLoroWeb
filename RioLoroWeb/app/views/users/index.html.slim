@@ -96,6 +96,28 @@
                 /     | Borrar
     .col-md-4.col-md-offset-7
       = link_to "Crear Usuario", new_user_registration_path, :class => 'btn btn-success'
+
+  h1.right-line.mb-4 Subdivisiones
+  .row
+    .col-md-2
+      .card.mb-1
+        table.table.table-responsive.table-no-border.vertical-center
+          tr
+            td.hidden-xs
+            td
+              = link_to "Reinos", "/reinos"
+          tr
+            td.hidden-xs
+            td
+              = link_to "Órden", "/ordens"
+          tr
+            td.hidden-xs
+            td
+              = link_to "Clases", "/clases"
+          tr
+            td.hidden-xs
+            td
+              = link_to "Familias", "/familia"
   / /.clearfix
   /   .row
   /     .col-md-12.col-xs-12

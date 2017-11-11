@@ -14,9 +14,9 @@
     <% @reinos.each do |reino| %>
       <tr>
         <td><%= reino.nombreReino %></td>
-        <td><%= link_to 'Show', reino %></td>
-        <td><%= link_to 'Edit', edit_reino_path(reino) %></td>
-        <td><%= link_to 'Destroy', reino, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', reino %></td>
+        <td><%= link_to 'Editar', edit_reino_path(reino) %></td>
+        <td><%= link_to 'Eliminar', reino, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Reino', new_reino_path %>
+<%= link_to 'Nuevo Reino', new_reino_path %>

@@ -14,9 +14,9 @@
     <% @ordens.each do |orden| %>
       <tr>
         <td><%= orden.nombreOrden %></td>
-        <td><%= link_to 'Show', orden %></td>
-        <td><%= link_to 'Edit', edit_orden_path(orden) %></td>
-        <td><%= link_to 'Destroy', orden, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', orden %></td>
+        <td><%= link_to 'Editar', edit_orden_path(orden) %></td>
+        <td><%= link_to 'Eliminar', orden, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Orden', new_orden_path %>
+<%= link_to 'Nuevo Orden', new_orden_path %>

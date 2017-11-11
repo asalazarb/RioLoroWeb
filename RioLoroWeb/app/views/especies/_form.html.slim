@@ -36,7 +36,7 @@
             .form-group
               label.col-md-2.control-label for="inputPassword"  Familia
               .col-md-9
-                = form.select(:familium_id, Familium.all.collect {|f| [ f.nombreFamilia, f.id ] }, class: 'form-control', required: true)
+                = form.select(:familium_id, Familium.all.collect {|f| [ f.nombreFamilia, f.id ] }, class: 'selectpicker', required: true)
             .form-group
               label.col-md-2.control-label for="inputGen"  En peligro
               .col-md-9
