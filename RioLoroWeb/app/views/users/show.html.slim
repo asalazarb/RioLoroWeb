@@ -26,7 +26,7 @@
       / a.btn.btn-warning.btn-raised.btn-block.animated.fadeInUp.animation-delay-12 href="javascript:void(0)"
       /   i.zmdi.zmdi-edit
       /   | Editar Perfil
-      = link_to edit_user_registration_path, :class => 'btn btn-warning btn-raised btn-block animated fadeInUp animation-delay-12' do
+      = link_to edit_user_path(@user), :class => 'btn btn-warning btn-raised btn-block animated fadeInUp animation-delay-12' do
         i.zmdi.zmdi-edit
         | Editar Perfil
       = button_to @user, :method => :delete, class: 'btn btn-danger btn-raised btn-block animated fadeInUp animation-delay-12' do

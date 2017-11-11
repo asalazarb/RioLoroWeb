@@ -1,5 +1,6 @@
 class OrdensController < ApplicationController
   before_action :set_orden, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /ordens
   # GET /ordens.json

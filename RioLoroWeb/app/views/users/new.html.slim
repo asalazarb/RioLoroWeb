@@ -1,0 +1,16 @@
+/!h1
+/!  | New Usuario
+/!= render 'form', usuario: @usuario
+/!= link_to 'Back', usuarios_path
+
+.ms-hero-page-override.ms-hero-img-airplane.ms-bg-fixed.ms-hero-bg-dark-light
+  .container
+    .text-center
+      h1.no-m.ms-site-title.color-white.center-block.ms-site-title-lg.mt-2.animated.zoomInDown.animation-delay-5 Crear User
+
+/!      p.lead.lead-lg.color-light.text-center.center-block.mt-2.mw-800.text-uppercase.fw-300.animated.fadeInUp.animation-delay-7
+/!        | Do not wait more register now! Access our great community and benefit from
+/!        span.color-info exclusive membership
+/!        | conditions.
+
+= render 'form', user: @user
