@@ -13,12 +13,13 @@ nav.navbar.navbar-static-top.yamm.ms-navbar.ms-navbar-white
     .navbar-header
       a.navbar-brand href="/especies"
         /! <img src="assets/img/demo/logo-navbar.png" alt=""
-        span.ms-logo.ms-logo-sm B
+        //span.ms-logo.ms-logo-sm B
+        = image_tag("logoRioLoro.png", class: "ms-logo ms-logo-sm")
         span.ms-title
           | Bio
           strong Inventario
     #navbar.navbar-collapse.collapse
       = render :partial => 'layouts/mainmenu'
     /! navbar-collapse collapse
-    a.sb-toggle-left.btn-navbar-menu href="javascript:void(0)"
-      i.zmdi.zmdi-menu
+    / a.sb-toggle-left.btn-navbar-menu href="javascript:void(0)"
+    /   i.zmdi.zmdi-menu

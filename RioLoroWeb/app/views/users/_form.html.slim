@@ -48,6 +48,11 @@
             = form.file_field :image
               / - if @usuario.image.exists?
               /   = image_tag @usuario.image.url(:medium)
+          / .form-group
+          /   label.col-md-2.control-label for="inputGen"  Nivel de Permiso
+          /   .col-md-9
+          /     - opciones = {'Opcion' => [['3',2], ['2', 1], ['1',0]]}
+          /     = form.select(:cedula,grouped_options_for_select(opciones), class: 'form-control selectpicker', required: true)
           .form-group
             label.col-md-2.control-label for="inputUser"   Username
             .col-md-9
