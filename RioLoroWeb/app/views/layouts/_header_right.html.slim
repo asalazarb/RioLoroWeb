@@ -15,10 +15,15 @@
   - if user_signed_in?
     a.btn-circle.btn-circle-primary.no-focus.animated.zoomInDown.animation-delay-8 data-target="#ms-account-modal" data-toggle="modal" href="javascript:void(0)"
       i.zmdi.zmdi-account
-  form.search-form.animated.zoomInDown.animation-delay-9
-    input#search-box.search-input name="q" placeholder="Search..." type="text" /
+  = form_tag search_especies_path, class: 'search-form animated zoomInDown animation-delay-9' do
+    input#search-box.search-input name="query" placeholder="Search..." type="text" /
     label for="search-box"
       i.zmdi.zmdi-search
+  end
+  / form.search-form.animated.zoomInDown.animation-delay-9
+  /   input#search-box.search-input name="q" placeholder="Search..." type="text" /
+  /   label for="search-box"
+  /     i.zmdi.zmdi-search
   - if user_signed_in?
     = button_to "Cerrar sesion", destroy_user_session_path, method: :delete, :class => 'btn btn-raised btn-danger', data: {confirm: 'Esta seguro?'}
 
