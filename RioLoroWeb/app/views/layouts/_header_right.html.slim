@@ -20,28 +20,9 @@
     label for="search-box"
       i.zmdi.zmdi-search
   end
-  / form.search-form.animated.zoomInDown.animation-delay-9
-  /   input#search-box.search-input name="q" placeholder="Search..." type="text" /
-  /   label for="search-box"
-  /     i.zmdi.zmdi-search
   - if user_signed_in?
     = button_to "Cerrar sesion", destroy_user_session_path, method: :delete, :class => 'btn btn-raised btn-danger', data: {confirm: 'Esta seguro?'}
 
-
-/ p.navbar-text.pull-right
-/   - if user_signed_in?
-/     |  Logged in as
-/     strong
-/       = current_user.email
-/     | .
-/     = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
-/     |  |
-/     = button_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', data: {confirm: 'Esta seguro?'}
-/     /= link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'navbar-link'
-/   - else
-/     = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
-/     |  |
-/     = link_to "Login", new_user_session_path, :class => 'navbar-link'
 - if notice
   p.alert.alert-success
     = notice

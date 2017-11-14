@@ -17,7 +17,6 @@
               .carousel-inner role="listbox"
 
                 .item.active
-                  /!img alt="..." src="assets/img/demo/port2.jpg" /
                   = image_tag(@especy.imagen_url.to_s, class: "img-responsive")
                   .carousel-caption
                     h3 = @especy.nombreComun
@@ -36,8 +35,6 @@
             h3.color-primary.no-mt Datos
             ul.list-unstyled
               li
-                /!strong Nombre cientifico:
-                /!| the title item
                 strong Nombre cientifico:
                 = @especy.nombreCientifico
               li

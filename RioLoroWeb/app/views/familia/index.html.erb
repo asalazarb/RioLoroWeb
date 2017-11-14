@@ -14,7 +14,7 @@
     <% @familia.each do |familium| %>
       <tr>
         <td><%= familium.nombreFamilia %></td>
-        <td><%= link_to 'Ver ', familium %></td>
+        <td><%= link_to 'Ver', familium %></td>
         <td><%= link_to 'Editar ', edit_familium_path(familium) %></td>
         <td><%= link_to 'Eliminar ', familium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

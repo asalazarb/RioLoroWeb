@@ -1,6 +1,6 @@
-h1
-  | Editing Especy
+body
+  .ms-hero-page.ms-hero-img-city2.ms-hero-bg-info.mb-6
+    .container
+      .text-center
+        h1.no-m.ms-site-title.color-white.center-block.ms-site-title-lg.mt-2.animated.zoomInDown.animation-delay-5 Editar Especie
 = render 'form', especy: @especy, :locals => {:new => 0}
-= link_to 'Show', @especy
-|  |
-= link_to 'Back', especies_path

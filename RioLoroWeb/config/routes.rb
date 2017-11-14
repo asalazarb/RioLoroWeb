@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   root 'especies#index'
 
   post 'especies/search' => 'especies#search', as: 'search_especies'
+
+  match '*a', :to => 'errors#show', via: :get
 end

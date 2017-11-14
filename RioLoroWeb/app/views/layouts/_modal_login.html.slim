@@ -13,20 +13,6 @@
             span Inventario
           -if user_signed_in?
             = image_tag(current_user.image.url(:thumb).to_s, class: "img-avatar-circle")
-        / .modal-header-tabs
-        /   ul.nav.nav-tabs.nav-tabs-full.nav-tabs-3.nav-tabs-primary role="tablist"
-        /     li.active role="presentation"
-        /       a.withoutripple aria-controls="ms-login-tab" data-toggle="tab" href="#ms-login-tab" role="tab"
-        /         i.zmdi.zmdi-account
-        /         | Login
-        /     li role="presentation"
-        /       a.withoutripple aria-controls="ms-register-tab" data-toggle="tab" href="#ms-register-tab" role="tab"
-        /         i.zmdi.zmdi-account-add
-        /         | Register
-        /     li role="presentation"
-        /       a.withoutripple aria-controls="ms-recovery-tab" data-toggle="tab" href="#ms-recovery-tab" role="tab"
-        /         i.zmdi.zmdi-key
-        /         | Recovery Pass
       .modal-body
         .tab-content
           #ms-login-tab.tab-pane.fade.active.in role="tabpanel"
@@ -38,76 +24,12 @@
                       span.input-group-addon
                         i.zmdi.zmdi-account.mr-1.color-success
                       = current_user.nombre + ' ' + current_user.apellido1 + ' ' + current_user.apellido2
-                      / label.control-label for="ms-form-user"  Username
-                      / input#ms-form-user.form-control type="text" /
                   .form-group.label-floating
                     .input-group
                       span.input-group-addon
                         i.zmdi.zmdi-email.mr-1.color-warning
                       = current_user.email
-                      / label.control-label for="ms-form-pass"  Password
-                      / input#ms-form-pass.form-control type="password" /
                 .row.mt-2
                   .col-md-6
-                  /   .form-group.no-mt
-                  /     .checkbox
-                  /       label
-                  /         input type="checkbox" /
-                  /         | Remember Me
                   .col-md-6
                     = button_to "Cerrar sesion", destroy_user_session_path(current_user), method: :delete, :class => 'btn btn-raised btn-danger pull-right', data: {confirm: 'Esta seguro?'}
-                    //button.btn.btn-raised.btn-primary.pull-right Login
-            / .text-center
-            /   h3 Login with
-            /   a.wave-effect-light.btn.btn-raised.btn-facebook href="javascript:void(0)"
-            /     i.zmdi.zmdi-facebook
-            /     | Facebook
-            /   a.wave-effect-light.btn.btn-raised.btn-twitter href="javascript:void(0)"
-            /     i.zmdi.zmdi-twitter
-            /     | Twitter
-            /   a.wave-effect-light.btn.btn-raised.btn-google href="javascript:void(0)"
-            /     i.zmdi.zmdi-google
-            /     | Google
-          #ms-register-tab.tab-pane.fade role="tabpanel"
-            form
-              fieldset
-                .form-group.label-floating
-                  .input-group
-                    span.input-group-addon
-                      i.zmdi.zmdi-account
-                    label.control-label for="ms-form-user"  Username
-                    input#ms-form-user.form-control type="text" /
-                .form-group.label-floating
-                  .input-group
-                    span.input-group-addon
-                      i.zmdi.zmdi-email
-                    label.control-label for="ms-form-email"  Email
-                    input#ms-form-email.form-control type="email" /
-                .form-group.label-floating
-                  .input-group
-                    span.input-group-addon
-                      i.zmdi.zmdi-lock
-                    label.control-label for="ms-form-pass"  Password
-                    input#ms-form-pass.form-control type="password" /
-                .form-group.label-floating
-                  .input-group
-                    span.input-group-addon
-                      i.zmdi.zmdi-lock
-                    label.control-label for="ms-form-pass"  Re-type Password
-                    input#ms-form-pass.form-control type="password" /
-                button.btn.btn-raised.btn-block.btn-primary Register Now
-          #ms-recovery-tab.tab-pane.fade role="tabpanel"
-            fieldset
-              .form-group.label-floating
-                .input-group
-                  span.input-group-addon
-                    i.zmdi.zmdi-account
-                  label.control-label for="ms-form-user"  Username
-                  input#ms-form-user.form-control type="text" /
-              .form-group.label-floating
-                .input-group
-                  span.input-group-addon
-                    i.zmdi.zmdi-email
-                  label.control-label for="ms-form-email"  Email
-                  input#ms-form-email.form-control type="email" /
-              button.btn.btn-raised.btn-block.btn-primary Send Password

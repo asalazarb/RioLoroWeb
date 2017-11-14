@@ -1,21 +1,12 @@
 ul.nav.navbar-nav
   li.dropdown.active
-    a data-name="home"  href="/especies"
+    a data-name="home"  href="/"
       | Inicio
 
   li.dropdown
     a data-name="home"  href="http://www.muni-carta.go.cr/"
       | Municipalidad Cartago
-    / a.dropdown-toggle.animated.fadeIn.animation-delay-5 data-hover="dropdown" data-name="page" data-toggle="dropdown" href="javascript:void(0)"
-    /   | Municipalidad Cartago
-    /   i.zmdi.zmdi-chevron-down
-    /ul.dropdown-menu.dropdown-menu-left.animated-2x.animated.fadeIn
-    /  li
-    /    a.dropdown-link href="page-all.html"  All Pages
   li.dropdown
     -if user_signed_in?
       a data-name="home"  href="/admin"
         | Admin
-    /ul.dropdown-menu.dropdown-menu-left.animated-2x.animated.fadeIn
-    /  li
-    /    a.dropdown-link href="page-all.html"  All Pages

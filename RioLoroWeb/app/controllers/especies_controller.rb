@@ -90,7 +90,6 @@ class EspeciesController < ApplicationController
   end
 
   def search
-
     @q = "%#{params[:query]}%"
     @especies = Especie.where("nombreComun LIKE ? or nombreCientifico LIKE ?", @q, @q)
     render 'index'

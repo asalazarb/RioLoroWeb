@@ -1,15 +1,3 @@
-/!h1
-/!  | Editing Usuario
-/!= render 'form', usuario: @usuario
-/!= link_to 'Show', @usuario
-/!|  |
-/!= link_to 'Back', usuarios_path
-
-/!h1
-/!  | New Usuario
-/!= render 'form', usuario: @usuario
-/!= link_to 'Back', usuarios_path
-
 .ms-hero-page-override.ms-hero-img-airplane.ms-bg-fixed.ms-hero-bg-dark-light
   .container
     .text-center
@@ -18,10 +6,5 @@
         = image_tag("avatar.png", class: "img-avatar-circle")
       - else
         = image_tag(@usuario.image.url.to_s, class: "img-avatar-circle")
-
-/!      p.lead.lead-lg.color-light.text-center.center-block.mt-2.mw-800.text-uppercase.fw-300.animated.fadeInUp.animation-delay-7
-/!        | Do not wait more register now! Access our great community and benefit from
-/!        span.color-info exclusive membership
-/!        | conditions.
-
+        
 = render 'form', usuario: @usuario

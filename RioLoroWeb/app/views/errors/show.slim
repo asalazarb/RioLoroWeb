@@ -1,0 +1,16 @@
+.container
+  .row
+    .col-md-8.col-md-offset-2
+      .card.animated.fadeInUp.animation-delay-7.color-primary.withripple
+        .card-block-big.color-dark
+          .text-center
+            h1.color-primary Error 404
+            h2 Página no encontrada
+            p.lead.lead-sm
+              | No hemos encontrado lo que estás buscando.
+            = link_to root_path, :class => 'btn btn-primary btn-raised' do
+              i.zmdi.zmdi-home
+              | Ir a Inicio
+            / a.btn.btn-primary.btn-raised href="index.html"
+            /   i.zmdi.zmdi-home
+            /   | Ir a Inicio
